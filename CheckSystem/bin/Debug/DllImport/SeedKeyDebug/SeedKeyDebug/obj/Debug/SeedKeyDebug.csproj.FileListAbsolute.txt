@@ -1,0 +1,16 @@
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.exe.config
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.exe
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.pdb
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.exe
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.pdb
+G:\Proj-2021\S12L控制器-华域三电\SeedKeyDebug\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.csprojResolveAssemblyReference.cache
+G:\Proj-2021\CheckSystem\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.exe.config
+G:\Proj-2021\CheckSystem\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.exe
+G:\Proj-2021\CheckSystem\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.pdb
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.exe.config
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.exe
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\bin\Debug\SeedKeyDebug.pdb
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.csproj.AssemblyReference.cache
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.csproj.CoreCompileInputs.cache
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.exe
+D:\Projects\CheckSystem\CheckSystem\bin\Debug\DllImport\SeedKeyDebug\SeedKeyDebug\obj\Debug\SeedKeyDebug.pdb

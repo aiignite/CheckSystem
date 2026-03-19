@@ -1,0 +1,2150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>SY-G-NDLB-PES</DeviceNo>
+        <DeviceName>NDLB_终检_PES光型检测</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2024-07-23 17:18:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器主站</Name>
+            <Type>SyRenesasMcuControllerMaster</Type>
+            <Note>Renesas控制器主站</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器ad从站_0x101</Name>
+            <Type>SyRenesasMcuControllerSlaveWith12ADs</Type>
+            <Note>Renesas控制器ad从站_0x101</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器RL从站_0x201</Name>
+            <Type>SyRenesasMcuControllerSlaveWith8RLs</Type>
+            <Note>Renesas控制器RL从站_0x201</Note>
+        </Controller>
+        <Controller>
+            <Name>PES光型检测</Name>
+            <Type>PesVisionAnalysisNDLB</Type>
+            <Note>PES光型检测</Note>
+        </Controller>
+        <Controller>
+            <Name>PLC</Name>
+            <Type>PesControlPlc</Type>
+            <Note>PLC</Note>
+        </Controller>
+        <Controller>
+            <Name>PowerNgi3412E</Name>
+            <Type>PowerNgi3412E</Type>
+            <Note>PowerNgi3412E</Note>
+        </Controller>
+        <Controller>
+            <Name>亮色度计</Name>
+            <Type>HopooColorOhs350XUsb</Type>
+            <Note>亮色度计</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器ad从站_0x102</Name>
+            <Type>SyRenesasMcuControllerSlaveWith12ADs</Type>
+            <Note>Renesas控制器ad从站_0x102</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>SY-G-NDLB-PES</ProcessNo>
+            <Name>模组运动启动</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool0</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>SY-G-NDLB-PES</ProcessNo>
+            <Name>调试变量1</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool1</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>开始检测</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>开始检测</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bstring0</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>近光25V色度</Name>
+            <DataType>double</DataType>
+            <Min>5500</Min>
+            <Max>8000</Max>
+            <Unit>K</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.OutputLb25VColor</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>远光HV色度</Name>
+            <DataType>double</DataType>
+            <Min>5500</Min>
+            <Max>8000</Max>
+            <Unit>K</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.OutputHbHVColor</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>二维码</Name>
+            <DataType>barcode</DataType>
+            <Value>[)&gt;?06?P26480135?80.03.07.04?547656863???????????????????</Value>
+            <Min />
+            <Max />
+            <Unit />
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PLC.Field.BarcodeResult</ControllerField>
+            <ControllerFieldOffset />
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>LB图像分析结果</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>Finish</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.AnalysisResult</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB图像分析结果</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>Finish</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.AnalysisResultHb</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HV</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>22</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayHv</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>EMax_At_H</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>2</Max>
+            <Unit>°</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.EMaxPointDegreeH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>EMax_At_V</Name>
+            <DataType>double</DataType>
+            <Min>-2</Min>
+            <Max>-1</Max>
+            <Unit>°</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.EMaxPointDegreeV</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>EMax</Name>
+            <DataType>double</DataType>
+            <Min>190</Min>
+            <Max>255</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayEMax</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>Grad_2.5L</Name>
+            <DataType>double</DataType>
+            <Min>0.2</Min>
+            <Max>0.35</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Grad2d5L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>B50L</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayB50L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>BR</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayBR</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段BLL</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>7</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLineBLL</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>P</Name>
+            <DataType>double</DataType>
+            <Min>5</Min>
+            <Max>40</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayP</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>Ⅲ区</Name>
+            <DataType>double</DataType>
+            <Min>5</Min>
+            <Max>40</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayArea3A</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>S50+S50LL+S50RR</Name>
+            <DataType>double</DataType>
+            <Min>3</Min>
+            <Max>15</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayS50S50LLS50RR</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>S100+S100LL+S100RR</Name>
+            <DataType>double</DataType>
+            <Min>5</Min>
+            <Max>18</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayS100S100LLS100RR</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>75R</Name>
+            <DataType>double</DataType>
+            <Min>170</Min>
+            <Max>220</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray75R</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>50R</Name>
+            <DataType>double</DataType>
+            <Min>190</Min>
+            <Max>245</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray50R</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>50V</Name>
+            <DataType>double</DataType>
+            <Min>160</Min>
+            <Max>210</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray50V</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>50L</Name>
+            <DataType>double</DataType>
+            <Min>85</Min>
+            <Max>165</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray50L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段50</Name>
+            <DataType>double</DataType>
+            <Min>85</Min>
+            <Max>165</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine50</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>40R</Name>
+            <DataType>double</DataType>
+            <Min>70</Min>
+            <Max>100</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray40R</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>40L</Name>
+            <DataType>double</DataType>
+            <Min>80</Min>
+            <Max>110</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray40L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段40RR</Name>
+            <DataType>double</DataType>
+            <Min>30</Min>
+            <Max>50</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine40RR</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段40LL</Name>
+            <DataType>double</DataType>
+            <Min>40</Min>
+            <Max>65</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine40LL</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段25R</Name>
+            <DataType>double</DataType>
+            <Min>20</Min>
+            <Max>40</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine25R</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段25</Name>
+            <DataType>double</DataType>
+            <Min>65</Min>
+            <Max>90</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine25</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>25V</Name>
+            <DataType>double</DataType>
+            <Min>180</Min>
+            <Max>225</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray25V</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段25L</Name>
+            <DataType>double</DataType>
+            <Min>30</Min>
+            <Max>50</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine25L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段15</Name>
+            <DataType>double</DataType>
+            <Min>1</Min>
+            <Max>30</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine15</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段10</Name>
+            <DataType>double</DataType>
+            <Min>35</Min>
+            <Max>75</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine10</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>线段10及以下</Name>
+            <DataType>double</DataType>
+            <Min>55</Min>
+            <Max>100</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayLine10Bottom</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_EMax</Name>
+            <DataType>double</DataType>
+            <Min>150</Min>
+            <Max>235</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayEMaxHb</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_12L-H</Name>
+            <DataType>double</DataType>
+            <Min>10</Min>
+            <Max>35</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray12LH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_9L-H</Name>
+            <DataType>double</DataType>
+            <Min>15</Min>
+            <Max>45</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray9LH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_6L-H</Name>
+            <DataType>double</DataType>
+            <Min>40</Min>
+            <Max>75</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gra6LH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_3L-H</Name>
+            <DataType>double</DataType>
+            <Min>100</Min>
+            <Max>160</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray3LH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_3R-H</Name>
+            <DataType>double</DataType>
+            <Min>80</Min>
+            <Max>125</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray3RH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_6R-H</Name>
+            <DataType>double</DataType>
+            <Min>35</Min>
+            <Max>75</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray6RH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_9R-H</Name>
+            <DataType>double</DataType>
+            <Min>10</Min>
+            <Max>35</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray9RH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_12R-H</Name>
+            <DataType>double</DataType>
+            <Min>5</Min>
+            <Max>25</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.Gray12RH</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>HB_V-2U</Name>
+            <DataType>double</DataType>
+            <Min>85</Min>
+            <Max>135</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PES光型检测.Field.GrayV2U</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>RBin</Name>
+            <DataType>LedGroup</DataType>
+            <Value>[S5+S4,S6+S5,S7+S6,S8+S7]</Value>
+            <Min>[1862,1491.5,1149.5]</Min>
+            <Max>[2058,1648.5,1270.5,903]</Max>
+            <Unit>Ω</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Resistance1</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>NTC</Name>
+            <DataType>double</DataType>
+            <Min>8000</Min>
+            <Max>12000</Max>
+            <Unit>Ω</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x102.Field.Resistance1</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>LB电流</Name>
+            <DataType>LedGroup</DataType>
+            <Value>[S5,S6,S7,S8]</Value>
+            <Min>[900,850,792,733]</Min>
+            <Max>[1100,1039,968,815]</Max>
+            <Unit>mA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Current4</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>LB电压</Name>
+            <DataType>double</DataType>
+            <Min>20</Min>
+            <Max>30</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Voltage2</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>LB+HB电流</Name>
+            <DataType>LedGroup</DataType>
+            <Value>[S5+S4,S6+S5,S7+S6,S8+S7]</Value>
+            <Min>[900,808,752.4,696.8]</Min>
+            <Max>[1100,987.5,919.6,851.6]</Max>
+            <Unit>mA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Current4</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>NDLBPES001</ProcessNo>
+            <Name>LB+HB电压</Name>
+            <DataType>double</DataType>
+            <Min>20</Min>
+            <Max>30</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Voltage2</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+    </Paras>
+    <Gears />
+    <WorkStations>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站2</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站3</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站4</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>PES光型检测.Field.CameraSn=DA0121338;
+PES光型检测.Field.Ratio=6000;
+PES光型检测.Field.PixelScale=2.4;
+PES光型检测.Field.CameraDistanceCm=57.7;
+PES光型检测.Field.FresnelLensDistanceCm=64;
+PES光型检测.Field.MatchTempFilePath=D:\PES\template.bmp;
+Renesas控制器主站.Method.InitRemoteIpAddress(192.168.1.28:8088);
+Renesas控制器ad从站_0x101.Method.ConnectMaster(192.168.1.28,0x101);
+Renesas控制器ad从站_0x102.Method.ConnectMaster(192.168.1.28,0x102);
+Renesas控制器RL从站_0x201.Method.ConnectMaster(192.168.1.28,0x201);
+Renesas控制器主站.Method.ResetOutPuts();
+Renesas控制器RL从站_0x201.Method.ResetOutPuts();
+PLC.Method.InitRemoteIpAddress(192.168.1.88:502);
+PLC.Method.CycleUpdate();
+PLC.Method.ConnectBarcode(192.168.1.3:502);
+PowerNgi3412E.Method.ConnectPower(192.168.1.2);
+亮色度计.Method.ConnectSerialPort(COM6);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>194,165,180,78</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1357,762,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteCheckOk=1;
+                PLC.Field.PcWriteCheckNg=0;
+                检测程序.Method.Sleep(500);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteCheckOk=1;
+                PLC.Field.PcWriteCheckNg=0;
+                检测程序.Method.Sleep(500);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>226,1452,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=1;
+                检测程序.Method.Sleep(500);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=1;
+                检测程序.Method.Sleep(500);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>159,1047,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteServoXPos=0;
+                PLC.Field.PcWriteServoZPos=0;
+                检测程序.Method.Sleep(1000);
+                PLC.Field.PcWriteBarcodeScanEnd=1;
+                SY-G-NDLB-PES.Part.模组运动启动=1;
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码结束</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteServoXPos=0;
+                PLC.Field.PcWriteServoZPos=0;
+                检测程序.Method.Sleep(1000);
+                PLC.Field.PcWriteBarcodeScanEnd=1;
+                SY-G-NDLB-PES.Part.模组运动启动=1;
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2424,-157,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PowerNgi3412E.Method.PowerOff();
+                PowerNgi3412E.Method.SetVoltage1(13.5);
+                PowerNgi3412E.Method.SetVoltage2(0);
+                PowerNgi3412E.Method.SetVoltage3(0);
+                PowerNgi3412E.Method.SetCurrent1(5);
+                PowerNgi3412E.Method.SetCurrent2(0);
+                PowerNgi3412E.Method.SetCurrent3(0);
+                PowerNgi3412E.Method.SetCombOff();
+                PowerNgi3412E.Method.PowerOn();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待开始检测信号</Name>
+            <EnterFunction>
+                PowerNgi3412E.Method.PowerOff();
+                PowerNgi3412E.Method.SetVoltage1(13.5);
+                PowerNgi3412E.Method.SetVoltage2(0);
+                PowerNgi3412E.Method.SetVoltage3(0);
+                PowerNgi3412E.Method.SetCurrent1(5);
+                PowerNgi3412E.Method.SetCurrent2(0);
+                PowerNgi3412E.Method.SetCurrent3(0);
+                PowerNgi3412E.Method.SetCombOff();
+                PowerNgi3412E.Method.PowerOn();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>3489,78,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>RBIN</Name>
+            <EnterFunction>Renesas控制器RL从站_0x201.Field.Relay4=1;
+Renesas控制器RL从站_0x201.Field.Relay6=1;
+Renesas控制器RL从站_0x201.Field.Relay8=1;
+Renesas控制器主站.Method.SetSlavesRLs();
+检测程序.Method.Sleep(500);
+Renesas控制器主站.Method.ReadSlavesADs();
+Renesas控制器RL从站_0x201.Field.Relay4=0;
+Renesas控制器RL从站_0x201.Field.Relay6=0;
+Renesas控制器RL从站_0x201.Field.Relay8=0;
+Renesas控制器主站.Method.SetSlavesRLs();
+检测程序.Method.Sleep(500);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>4570,699,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>NTC</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>3703,993,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>LB</Name>
+            <EnterFunction>Renesas控制器RL从站_0x201.Field.Relay3=1;
+Renesas控制器RL从站_0x201.Field.Relay5=1;
+Renesas控制器RL从站_0x201.Field.Relay7=1;
+Renesas控制器主站.Method.SetSlavesRLs();
+检测程序.Method.Sleep(500);
+PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=0;
+检测程序.Method.Sleep(5500);
+PES光型检测.Method.CaptureImage(近光原图,3000);
+Renesas控制器主站.Method.ReadSlavesADs();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2924,772,180,72</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=1;
+检测程序.Method.Sleep(5500);
+PES光型检测.Method.CaptureImage(远光原图,1500);
+Renesas控制器主站.Method.ReadSlavesADs();
+PES光型检测.Field.IsLbOn=0;
+PES光型检测.Field.IsHbOn=0;
+检测程序.Method.Sleep(5);
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>HB</Name>
+            <EnterFunction>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=1;
+检测程序.Method.Sleep(5500);
+PES光型检测.Method.CaptureImage(远光原图,1500);
+Renesas控制器主站.Method.ReadSlavesADs();
+PES光型检测.Field.IsLbOn=0;
+PES光型检测.Field.IsHbOn=0;
+检测程序.Method.Sleep(5);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2041,815,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PES光型检测.Method.AnalyzeImage(近光原图,远光原图);
+PES光型检测.Method.ResetTransferServoPosition();
+PES光型检测.Method.TransferServoPosistionLb();
+PES光型检测.Method.TransferServoPosistionHb();
+PES光型检测.Method.SaveImg();
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PES光型检测</Name>
+            <EnterFunction>PES光型检测.Method.AnalyzeImage(近光原图,远光原图);
+PES光型检测.Method.ResetTransferServoPosition();
+PES光型检测.Method.TransferServoPosistionLb();
+PES光型检测.Method.TransferServoPosistionHb();
+PES光型检测.Method.SaveImg();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3044,1245,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Method.ReadBarcode(P26480135:7:57);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码</Name>
+            <EnterFunction>
+                PLC.Method.ReadBarcode(P26480135:7:57);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>1696,161,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteCheckEnd=1;
+                PowerNgi3412E.Method.PowerOff();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>测试结束</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteCheckEnd=1;
+                PowerNgi3412E.Method.PowerOff();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>997,1223,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>在标定界面</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1131,66,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否示教模组</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>4454,1071,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>不示教模组</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>4588,1452,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteServoRun=1;
+                PES光型检测.Field.IsLbOn=1;
+                PES光型检测.Field.IsHbOn=0;
+                PES光型检测.Method.StartGrab();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>示教模组</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteServoRun=1;
+                PES光型检测.Field.IsLbOn=1;
+                PES光型检测.Field.IsHbOn=0;
+                PES光型检测.Method.StartGrab();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>5228,1267,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>近光模组位置计算OK</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>994,1680,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Method.DequeueBarocde();
+                PES光型检测.Field.ToSaveImgBarcode=PLC.Field.BarcodeResult;
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=1;
+                PLC.Field.PcWriteServoXPos=0;
+                PLC.Field.PcWriteServoZPos=70;
+                检测程序.Method.Sleep(500);
+                SY-G-NDLB-PES.Part.模组运动启动=1;
+                检测程序.Method.Sleep(780);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始检测</Name>
+            <EnterFunction>
+                PLC.Method.DequeueBarocde();
+                PES光型检测.Field.ToSaveImgBarcode=PLC.Field.BarcodeResult;
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=1;
+                PLC.Field.PcWriteServoXPos=0;
+                PLC.Field.PcWriteServoZPos=70;
+                检测程序.Method.Sleep(500);
+                SY-G-NDLB-PES.Part.模组运动启动=1;
+                检测程序.Method.Sleep(780);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2794,456,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>Start</Name>
+            <EnterFunction>检测程序.Field.Bstring0=开始检测;
+PES光型检测.Method.ClearAllImage();
+PES光型检测.Method.ClearAnalysisResult();
+PES光型检测.Method.ClearAnalysisResultHbAlb();
+PES光型检测.Method.ResetTransferServoPosition();
+PES光型检测.Field.IsLbOn=0;
+PES光型检测.Field.IsHbOn=0;
+Renesas控制器RL从站_0x201.Field.Relay3=0;
+Renesas控制器RL从站_0x201.Field.Relay4=0;
+Renesas控制器RL从站_0x201.Field.Relay5=0;
+Renesas控制器RL从站_0x201.Field.Relay6=0;
+Renesas控制器RL从站_0x201.Field.Relay7=0;
+Renesas控制器RL从站_0x201.Field.Relay8=0;
+Renesas控制器主站.Method.SetSlavesRLs();
+检测程序.Method.Sleep(500);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3733,420,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=0;
+PLC.Field.PcWriteServoXPos=199;
+PLC.Field.PcWriteServoZPos=126;
+检测程序.Method.Sleep(166);
+SY-G-NDLB-PES.Part.模组运动启动=1;
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>到LB的HV处测试色温</Name>
+            <EnterFunction>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=0;
+PLC.Field.PcWriteServoXPos=199;
+PLC.Field.PcWriteServoZPos=126;
+检测程序.Method.Sleep(166);
+SY-G-NDLB-PES.Part.模组运动启动=1;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>182,2128,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=1;
+PLC.Field.PcWriteServoXPos=187;
+PLC.Field.PcWriteServoZPos=113;
+检测程序.Method.Sleep(166);
+SY-G-NDLB-PES.Part.模组运动启动=1;
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>到HB的HV处测试色温</Name>
+            <EnterFunction>PES光型检测.Field.IsLbOn=1;
+PES光型检测.Field.IsHbOn=1;
+PLC.Field.PcWriteServoXPos=187;
+PLC.Field.PcWriteServoZPos=113;
+检测程序.Method.Sleep(166);
+SY-G-NDLB-PES.Part.模组运动启动=1;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>-1029,2780,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>判断色温</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>-1265,1694,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>882,558,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                Renesas控制器RL从站_0x201.Field.Relay1=0;
+                Renesas控制器RL从站_0x201.Field.Relay2=0;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PreStart</Name>
+            <EnterFunction>
+                Renesas控制器RL从站_0x201.Field.Relay1=0;
+                Renesas控制器RL从站_0x201.Field.Relay2=0;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>1402,884,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CheckEnd</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>456,1038,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CheckFail</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1312,1364,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                Renesas控制器RL从站_0x201.Field.Relay1=1;
+                Renesas控制器RL从站_0x201.Field.Relay2=0;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>LB</Name>
+            <EnterFunction>
+                Renesas控制器RL从站_0x201.Field.Relay1=1;
+                Renesas控制器RL从站_0x201.Field.Relay2=0;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2589,685,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                Renesas控制器RL从站_0x201.Field.Relay1=1;
+                Renesas控制器RL从站_0x201.Field.Relay2=1;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>HB</Name>
+            <EnterFunction>
+                Renesas控制器RL从站_0x201.Field.Relay1=1;
+                Renesas控制器RL从站_0x201.Field.Relay2=1;
+                Renesas控制器主站.Method.SetSlavesRLs();
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2326,1579,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1084,360,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>PreStart</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1747,732,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>CheckEnd</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1440,1350,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>CheckFail</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>986,927,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteServoRun=1;
+                检测程序.Method.Sleep(1000);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>开始运动模组</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteServoRun=1;
+                检测程序.Method.Sleep(1000);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2825,879,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteServoRun=0;
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>模组运动到位</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteServoRun=0;
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2595,1515,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>900,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1210,782,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>608,1120,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1142,1422,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Method.ReadBarcode(P26480135:7:57);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>扫码</Name>
+            <EnterFunction>
+                PLC.Method.ReadBarcode(P26480135:7:57);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2452,645,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>
+                PLC.Field.PcWriteBarcodeScanEnd=1;
+                检测程序.Method.Sleep(500);
+            </EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>扫码结束</Name>
+            <EnterFunction>
+                PLC.Field.PcWriteBarcodeScanEnd=1;
+                检测程序.Method.Sleep(500);
+            </EnterFunction>
+            <DuringFunction />
+            <PositionSize>2035,1363,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PES光型检测.Method.OpenCamera();
+                检测程序.Field.IsRun=1;
+            </ExitFunction>
+            <ExitNote>
+                PES光型检测.Method.OpenCamera();
+                检测程序.Field.IsRun=1;
+            </ExitNote>
+            <MiddlePisiton>743,740</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码结束_等待开始检测信号</Name>
+            <SourceSuName>扫码结束</SourceSuName>
+            <TargetSuName>等待开始检测信号</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadBarcodeScanStart==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadBarcodeScanStart==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PLC.Field.PcWriteBarcodeScanEnd=0;
+            </ExitFunction>
+            <ExitNote>
+                PLC.Field.PcWriteBarcodeScanEnd=0;
+            </ExitNote>
+            <MiddlePisiton>2929,54</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>RBIN_NTC</Name>
+            <SourceSuName>RBIN</SourceSuName>
+            <TargetSuName>NTC</TargetSuName>
+            <ConditionFunction>NDLBPES001.Para.RBin==TRUE&amp;&amp;
+NDLBPES001.Para.NTC==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>NDLBPES001.Para.RBin==TRUE&amp;&amp;
+NDLBPES001.Para.NTC==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4163,947</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>NTC_LB</Name>
+            <SourceSuName>NTC</SourceSuName>
+            <TargetSuName>LB</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3364,1068</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>LB_HB</Name>
+            <SourceSuName>LB</SourceSuName>
+            <TargetSuName>HB</TargetSuName>
+            <ConditionFunction>NDLBPES001.Para.LB电流==TRUE&amp;&amp;
+NDLBPES001.Para.LB电压==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>NDLBPES001.Para.LB电流==TRUE&amp;&amp;
+NDLBPES001.Para.LB电压==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2610,852</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>HB_PES光型检测</Name>
+            <SourceSuName>HB</SourceSuName>
+            <TargetSuName>PES光型检测</TargetSuName>
+            <ConditionFunction>NDLBPES001.Para.LB+HB电流==TRUE&amp;&amp;
+NDLBPES001.Para.LB+HB电压==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>NDLBPES001.Para.LB+HB电流==TRUE&amp;&amp;
+NDLBPES001.Para.LB+HB电压==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2680,1103</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_扫码</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>扫码</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==0&amp;&amp;
+                PLC.Field.PcReadBarcodeScanStart==1&amp;&amp;
+                检测程序.Field.EqualTrue==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==0&amp;&amp;
+                PLC.Field.PcReadBarcodeScanStart==1&amp;&amp;
+                检测程序.Field.EqualTrue==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitFunction>
+            <ExitNote>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitNote>
+            <MiddlePisiton>1671,483</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码_扫码结束</Name>
+            <SourceSuName>扫码</SourceSuName>
+            <TargetSuName>扫码结束</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                PLC.Field.IsReadingBarcode==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                PLC.Field.IsReadingBarcode==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2108,71</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND_测试结束</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>测试结束</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>785,1414</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL_测试结束</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>测试结束</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>547,1086</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>测试结束_PRESTART</Name>
+            <SourceSuName>测试结束</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadCheckStart==0&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadCheckStart==0&amp;&amp;
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PES光型检测.Field.IsInAutoRun=0;
+                PLC.Field.PcWriteCheckEnd=0;
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=0;
+                检测程序.Method.Sleep(200);
+            </ExitFunction>
+            <ExitNote>
+                PES光型检测.Field.IsInAutoRun=0;
+                PLC.Field.PcWriteCheckEnd=0;
+                PLC.Field.PcWriteCheckOk=0;
+                PLC.Field.PcWriteCheckNg=0;
+                检测程序.Method.Sleep(200);
+            </ExitNote>
+            <MiddlePisiton>1278,1023</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_在标定界面</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>在标定界面</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1089,457</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>在标定界面_PRESTART</Name>
+            <SourceSuName>在标定界面</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1500,366</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PES光型检测_是否示教模组</Name>
+            <SourceSuName>PES光型检测</SourceSuName>
+            <TargetSuName>是否示教模组</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3970,1293</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否示教模组_示教模组</Name>
+            <SourceSuName>是否示教模组</SourceSuName>
+            <TargetSuName>示教模组</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInServoCali==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInServoCali==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>5000,1140</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否示教模组_不示教模组</Name>
+            <SourceSuName>是否示教模组</SourceSuName>
+            <TargetSuName>不示教模组</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInServoCali==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInServoCali==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4622,1275</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>示教模组_不示教模组</Name>
+            <SourceSuName>示教模组</SourceSuName>
+            <TargetSuName>不示教模组</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInServoCali==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInServoCali==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PLC.Field.PcWriteServoRun=0;
+                PES光型检测.Method.StopGrab();
+            </ExitFunction>
+            <ExitNote>
+                PLC.Field.PcWriteServoRun=0;
+                PES光型检测.Method.StopGrab();
+            </ExitNote>
+            <MiddlePisiton>5053,1461</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>不示教模组_近光模组位置计算OK</Name>
+            <SourceSuName>不示教模组</SourceSuName>
+            <TargetSuName>近光模组位置计算OK</TargetSuName>
+            <ConditionFunction>NDLBPES001.Para.LB图像分析结果==TRUE&amp;&amp;
+NDLBPES001.Para.HB图像分析结果==TRUE&amp;&amp;
+NDLBPES001.Para.HV==TRUE&amp;&amp;
+NDLBPES001.Para.EMax_At_H==TRUE&amp;&amp;
+NDLBPES001.Para.EMax_At_V==TRUE&amp;&amp;
+NDLBPES001.Para.EMax==TRUE&amp;&amp;
+NDLBPES001.Para.Grad_2.5L==TRUE&amp;&amp;
+NDLBPES001.Para.B50L==TRUE&amp;&amp;
+NDLBPES001.Para.BR==TRUE&amp;&amp;
+NDLBPES001.Para.线段BLL==TRUE&amp;&amp;
+NDLBPES001.Para.P==TRUE&amp;&amp;
+NDLBPES001.Para.Ⅲ区==TRUE&amp;&amp;
+NDLBPES001.Para.S50+S50LL+S50RR==TRUE&amp;&amp;
+NDLBPES001.Para.S100+S100LL+S100RR==TRUE&amp;&amp;
+NDLBPES001.Para.75R==TRUE&amp;&amp;
+NDLBPES001.Para.50R==TRUE&amp;&amp;
+NDLBPES001.Para.50V==TRUE&amp;&amp;
+NDLBPES001.Para.50L==TRUE&amp;&amp;
+NDLBPES001.Para.线段50==TRUE&amp;&amp;
+NDLBPES001.Para.40R==TRUE&amp;&amp;
+NDLBPES001.Para.40L==TRUE&amp;&amp;
+NDLBPES001.Para.线段40RR==TRUE&amp;&amp;
+NDLBPES001.Para.线段40LL==TRUE&amp;&amp;
+NDLBPES001.Para.线段25R==TRUE&amp;&amp;
+NDLBPES001.Para.线段25==TRUE&amp;&amp;
+NDLBPES001.Para.25V==TRUE&amp;&amp;
+NDLBPES001.Para.线段25L==TRUE&amp;&amp;
+NDLBPES001.Para.线段15==TRUE&amp;&amp;
+NDLBPES001.Para.线段10==TRUE&amp;&amp;
+NDLBPES001.Para.线段10及以下==TRUE&amp;&amp;
+NDLBPES001.Para.HB_EMax==TRUE&amp;&amp;
+NDLBPES001.Para.HB_12L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_9L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_6L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_3L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_3R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_6R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_9R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_12R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_V-2U==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>NDLBPES001.Para.LB图像分析结果==TRUE&amp;&amp;
+NDLBPES001.Para.HB图像分析结果==TRUE&amp;&amp;
+NDLBPES001.Para.HV==TRUE&amp;&amp;
+NDLBPES001.Para.EMax_At_H==TRUE&amp;&amp;
+NDLBPES001.Para.EMax_At_V==TRUE&amp;&amp;
+NDLBPES001.Para.EMax==TRUE&amp;&amp;
+NDLBPES001.Para.Grad_2.5L==TRUE&amp;&amp;
+NDLBPES001.Para.B50L==TRUE&amp;&amp;
+NDLBPES001.Para.BR==TRUE&amp;&amp;
+NDLBPES001.Para.线段BLL==TRUE&amp;&amp;
+NDLBPES001.Para.P==TRUE&amp;&amp;
+NDLBPES001.Para.Ⅲ区==TRUE&amp;&amp;
+NDLBPES001.Para.S50+S50LL+S50RR==TRUE&amp;&amp;
+NDLBPES001.Para.S100+S100LL+S100RR==TRUE&amp;&amp;
+NDLBPES001.Para.75R==TRUE&amp;&amp;
+NDLBPES001.Para.50R==TRUE&amp;&amp;
+NDLBPES001.Para.50V==TRUE&amp;&amp;
+NDLBPES001.Para.50L==TRUE&amp;&amp;
+NDLBPES001.Para.线段50==TRUE&amp;&amp;
+NDLBPES001.Para.40R==TRUE&amp;&amp;
+NDLBPES001.Para.40L==TRUE&amp;&amp;
+NDLBPES001.Para.线段40RR==TRUE&amp;&amp;
+NDLBPES001.Para.线段40LL==TRUE&amp;&amp;
+NDLBPES001.Para.线段25R==TRUE&amp;&amp;
+NDLBPES001.Para.线段25==TRUE&amp;&amp;
+NDLBPES001.Para.25V==TRUE&amp;&amp;
+NDLBPES001.Para.线段25L==TRUE&amp;&amp;
+NDLBPES001.Para.线段15==TRUE&amp;&amp;
+NDLBPES001.Para.线段10==TRUE&amp;&amp;
+NDLBPES001.Para.线段10及以下==TRUE&amp;&amp;
+NDLBPES001.Para.HB_EMax==TRUE&amp;&amp;
+NDLBPES001.Para.HB_12L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_9L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_6L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_3L-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_3R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_6R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_9R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_12R-H==TRUE&amp;&amp;
+NDLBPES001.Para.HB_V-2U==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2692,1678</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_开始检测</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>开始检测</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+                检测程序.Field.EqualTrue==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+                检测程序.Field.EqualTrue==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitFunction>
+            <ExitNote>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitNote>
+            <MiddlePisiton>2203,663</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始检测_Start</Name>
+            <SourceSuName>开始检测</SourceSuName>
+            <TargetSuName>Start</TargetSuName>
+            <ConditionFunction>
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+                PLC.Field.PcWriteServoXPos==0&amp;&amp;
+                PLC.Field.PcWriteServoZPos==70&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+                PLC.Field.PcWriteServoXPos==0&amp;&amp;
+                PLC.Field.PcWriteServoZPos==70&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3456,541</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>Start_RBIN</Name>
+            <SourceSuName>Start</SourceSuName>
+            <TargetSuName>RBIN</TargetSuName>
+            <ConditionFunction>
+                NDLBPES001.Para.开始检测==TRUE&amp;&amp;
+                NDLBPES001.Para.二维码==TRUE&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                NDLBPES001.Para.开始检测==TRUE&amp;&amp;
+                NDLBPES001.Para.二维码==TRUE&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4110,692</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待开始检测信号_开始检测</Name>
+            <SourceSuName>等待开始检测信号</SourceSuName>
+            <TargetSuName>开始检测</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                检测程序.Method.Sleep(2200);
+            </ExitFunction>
+            <ExitNote>
+                检测程序.Method.Sleep(2200);
+            </ExitNote>
+            <MiddlePisiton>3347,298</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_等待开始检测信号</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>等待开始检测信号</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadCheckStart==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitFunction>
+            <ExitNote>
+                PES光型检测.Field.IsInAutoRun=1;
+            </ExitNote>
+            <MiddlePisiton>2411,388</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>到LB的HV处测试色温_到HB的HV处测试色温</Name>
+            <SourceSuName>到LB的HV处测试色温</SourceSuName>
+            <TargetSuName>到HB的HV处测试色温</TargetSuName>
+            <ConditionFunction>SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction>检测程序.Method.Sleep(55);
+亮色度计.Method.StartTestByAutoIntegralTime();
+PES光型检测.Field.OutputLb25VColor=亮色度计.Field.Color;
+</ExitFunction>
+            <ExitNote>检测程序.Method.Sleep(55);
+亮色度计.Method.StartTestByAutoIntegralTime();
+PES光型检测.Field.OutputLb25VColor=亮色度计.Field.Color;
+</ExitNote>
+            <MiddlePisiton>-229,2446</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>近光模组位置计算OK_到LB的HV处测试色温</Name>
+            <SourceSuName>近光模组位置计算OK</SourceSuName>
+            <TargetSuName>到LB的HV处测试色温</TargetSuName>
+            <ConditionFunction>PES光型检测.Field.IsTransferHbOk==1&amp;&amp;
+PES光型检测.Field.IsTransferLbOk==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PES光型检测.Field.IsTransferHbOk==1&amp;&amp;
+PES光型检测.Field.IsTransferLbOk==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1216,2089</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>判断色温_CHECKEND</Name>
+            <SourceSuName>判断色温</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>NDLBPES001.Para.近光25V色度==TRUE&amp;&amp;
+NDLBPES001.Para.远光HV色度==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>NDLBPES001.Para.近光25V色度==TRUE&amp;&amp;
+NDLBPES001.Para.远光HV色度==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>-620,1448</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>到HB的HV处测试色温_判断色温</Name>
+            <SourceSuName>到HB的HV处测试色温</SourceSuName>
+            <TargetSuName>判断色温</TargetSuName>
+            <ConditionFunction>SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+SY-G-NDLB-PES.Part.调试变量1==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>SY-G-NDLB-PES.Part.模组运动启动==0&amp;&amp;
+SY-G-NDLB-PES.Part.调试变量1==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction>检测程序.Method.Sleep(100);
+亮色度计.Method.StartTestByAutoIntegralTime();
+PES光型检测.Field.OutputHbHVColor=亮色度计.Field.Color;
+SY-G-NDLB-PES.Part.调试变量1=0;
+</ExitFunction>
+            <ExitNote>检测程序.Method.Sleep(100);
+亮色度计.Method.StartTestByAutoIntegralTime();
+PES光型检测.Field.OutputHbHVColor=亮色度计.Field.Color;
+SY-G-NDLB-PES.Part.调试变量1=0;
+</ExitNote>
+            <MiddlePisiton>-1104,2349</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>近光模组位置计算OK_判断色温</Name>
+            <SourceSuName>近光模组位置计算OK</SourceSuName>
+            <TargetSuName>判断色温</TargetSuName>
+            <ConditionFunction>PES光型检测.Field.IsTransferLbOk==0||
+PES光型检测.Field.IsTransferHbOk==0||
+</ConditionFunction>
+            <ConditionNote>PES光型检测.Field.IsTransferLbOk==0||
+PES光型检测.Field.IsTransferHbOk==0||
+</ConditionNote>
+            <ExitFunction>PES光型检测.Field.OutputLb25VColor=-9999;
+PES光型检测.Field.OutputHbHVColor=-9999;
+</ExitFunction>
+            <ExitNote>PES光型检测.Field.OutputLb25VColor=-9999;
+PES光型检测.Field.OutputHbHVColor=-9999;
+</ExitNote>
+            <MiddlePisiton>-1,1726</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>IDLE_PreStart</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1245,707</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CheckFail_PreStart</Name>
+            <SourceSuName>CheckFail</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1440,1184</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CheckEnd_PreStart</Name>
+            <SourceSuName>CheckEnd</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>972,1012</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PreStart_LB</Name>
+            <SourceSuName>PreStart</SourceSuName>
+            <TargetSuName>LB</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1843,680</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>LB_HB</Name>
+            <SourceSuName>LB</SourceSuName>
+            <TargetSuName>HB</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2388,980</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>LB_PreStart</Name>
+            <SourceSuName>LB</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==0&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==0&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1947,971</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>HB_LB</Name>
+            <SourceSuName>HB</SourceSuName>
+            <TargetSuName>LB</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2896,1163</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>HB_PreStart</Name>
+            <SourceSuName>HB</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==0&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==0&amp;&amp;
+                PES光型检测.Field.IsHbOn==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1838,1376</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PreStart_HB</Name>
+            <SourceSuName>PreStart</SourceSuName>
+            <TargetSuName>HB</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsLbOn==1&amp;&amp;
+                PES光型检测.Field.IsHbOn==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1960,1176</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>CheckFail_PreStart</Name>
+            <SourceSuName>CheckFail</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1367,890</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>CheckEnd_PreStart</Name>
+            <SourceSuName>CheckEnd</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1688,1109</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>IDLE_PreStart</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1434,576</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>PreStart_开始运动模组</Name>
+            <SourceSuName>PreStart</SourceSuName>
+            <TargetSuName>开始运动模组</TargetSuName>
+            <ConditionFunction>
+                SY-G-NDLB-PES.Part.模组运动启动==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                SY-G-NDLB-PES.Part.模组运动启动==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2235,673</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>开始运动模组_模组运动到位</Name>
+            <SourceSuName>开始运动模组</SourceSuName>
+            <TargetSuName>模组运动到位</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadServoRunEnd==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadServoRunEnd==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2859,1178</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站3</WorkStationName>
+            <Name>模组运动到位_PreStart</Name>
+            <SourceSuName>模组运动到位</SourceSuName>
+            <TargetSuName>PreStart</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadServoRunEnd==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadServoRunEnd==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                SY-G-NDLB-PES.Part.模组运动启动=0;
+                检测程序.Method.Sleep(1000);
+            </ExitFunction>
+            <ExitNote>
+                SY-G-NDLB-PES.Part.模组运动启动=0;
+                检测程序.Method.Sleep(1000);
+            </ExitNote>
+            <MiddlePisiton>2133,1212</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>958,1020</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1260,1172</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.IsRun==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1129,584</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>PRESTART_扫码</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>扫码</TargetSuName>
+            <ConditionFunction>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadBarcodeScanStart==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PES光型检测.Field.IsInCali==0&amp;&amp;
+                PLC.Field.PcReadBarcodeScanStart==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1839,691</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>扫码_扫码结束</Name>
+            <SourceSuName>扫码</SourceSuName>
+            <TargetSuName>扫码结束</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.IsReadingBarcode==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.IsReadingBarcode==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2416,983</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站4</WorkStationName>
+            <Name>扫码结束_PRESTART</Name>
+            <SourceSuName>扫码结束</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                PLC.Field.PcReadBarcodeScanStart==0&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                PLC.Field.PcReadBarcodeScanStart==0&amp;&amp;
+            </ConditionNote>
+            <ExitFunction>
+                PLC.Field.PcWriteBarcodeScanEnd=0;
+            </ExitFunction>
+            <ExitNote>
+                PLC.Field.PcWriteBarcodeScanEnd=0;
+            </ExitNote>
+            <MiddlePisiton>1749,1083</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

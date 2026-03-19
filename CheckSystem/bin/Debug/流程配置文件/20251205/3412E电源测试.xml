@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>SY-G-TEST-Matrix-TPS929120TI</DeviceNo>
+        <DeviceName>NSL23924测试刷写</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2021-05-11 9:58:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>PowerNgi3412E</Name>
+            <Type>PowerNgi3412E</Type>
+            <Note>PowerNgi3412E</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>SY-G-TEST-DE1E</ProcessNo>
+            <Name>选择蓝色板子</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool1</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>SY-G-TEST-DE1E</ProcessNo>
+            <Name>选择绿色板子</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool2</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>SY-G-TEST-Matrix-TPS929120TI</ProcessNo>
+            <Name>测试电流</Name>
+            <DataType>Double</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bdouble100</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>VOLT1</Name>
+            <DataType>double</DataType>
+            <Min>3</Min>
+            <Max>5</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PowerNgi3412E.Field.Volt1</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>VOLT2</Name>
+            <DataType>double</DataType>
+            <Min>3</Min>
+            <Max>5</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PowerNgi3412E.Field.Volt2</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>VOLT3</Name>
+            <DataType>double</DataType>
+            <Min>3</Min>
+            <Max>5</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>PowerNgi3412E.Field.Volt3</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1-线圈电阻A结果</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10000</Max>
+            <Unit>Ω</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble8</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1-线圈电阻B结果</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10000</Max>
+            <Unit>Ω</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble8</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1线圈电阻A检测电压</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10000</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble8</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1线圈电阻B检测电压</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10000</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble9</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1线圈电阻A检测电流</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10001</Max>
+            <Unit>mA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble0</ControllerField>
+            <ControllerFieldOffset>0.001*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>产品1线圈电阻B检测电流</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>10001</Max>
+            <Unit>mA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bdouble1</ControllerField>
+            <ControllerFieldOffset>0.001*X+0</ControllerFieldOffset>
+        </Para>
+    </Paras>
+    <Gears />
+    <WorkStations>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>SY-G-TEST-Matrix-TPS929120TI.Part.测试电流=3.451;
+SY-G-TEST-Matrix-TPS929120TI.Part.测试电流*=1000;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>228,350,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>774,646,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>422,980,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>20,798,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>写寄存器</Name>
+            <EnterFunction>PowerNgi3412E.Field.Curr1=101;
+PowerNgi3412E.Field.Curr2=100;
+PowerNgi3412E.Field.Volt1=1.03;
+PowerNgi3412E.Field.Volt1=0.96;
+检测程序.Field.Bdouble0=PowerNgi3412E.Field.Curr1;
+检测程序.Field.Bdouble1=PowerNgi3412E.Field.Curr2;
+检测程序.Field.Bdouble8=PowerNgi3412E.Field.Volt1;
+检测程序.Field.Bdouble9=PowerNgi3412E.Field.Volt1;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1351,774,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>460,574</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_写寄存器</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>写寄存器</TargetSuName>
+            <ConditionFunction>检测程序.Field.Bbool0==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.Bbool0==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction>检测程序.Field.Bbool0=0;
+</ExitFunction>
+            <ExitNote>检测程序.Field.Bbool0=0;
+</ExitNote>
+            <MiddlePisiton>1078,655</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>写寄存器_CHECKEND</Name>
+            <SourceSuName>写寄存器</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>PL823001.Para.产品1-线圈电阻A结果==TRUE&amp;&amp;
+PL823001.Para.产品1-线圈电阻B结果==TRUE&amp;&amp;
+PL823001.Para.VOLT1==TRUE&amp;&amp;
+PL823001.Para.VOLT2==TRUE&amp;&amp;
+PL823001.Para.VOLT3==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PL823001.Para.产品1-线圈电阻A结果==TRUE&amp;&amp;
+PL823001.Para.产品1-线圈电阻B结果==TRUE&amp;&amp;
+PL823001.Para.VOLT1==TRUE&amp;&amp;
+PL823001.Para.VOLT2==TRUE&amp;&amp;
+PL823001.Para.VOLT3==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1024,992</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>380,790</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>608,899</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

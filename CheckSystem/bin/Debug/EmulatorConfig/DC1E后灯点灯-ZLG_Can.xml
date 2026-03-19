@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmulatorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ShowTitle>DC1E后灯点灯-ZLG_Can.xml</ShowTitle>
+  <Init>
+    <EnterFunction>
+      DC1E后灯驱动.Field.Can=ZlgUsbCanFd200U.Field.ZlgCanChannel0;
+      DC1E后灯驱动.Method.LampAwake();
+    </EnterFunction>
+  </Init>
+  <ControllerConfig>
+    <Controller>
+      <ControllerType>ZlgUsbCanFd200U</ControllerType>
+      <ControllerName>ZlgUsbCanFd200U</ControllerName>
+    </Controller>
+    <Controller>
+      <ControllerType>Dc1ERearLamp</ControllerType>
+      <ControllerName>DC1E后灯驱动</ControllerName>
+    </Controller>
+  </ControllerConfig>
+  <Buttons>
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.LampAwake();
+      </Method>
+      <Text>唤醒</Text>
+      <Para></Para>
+    </Button>
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.LampSleep();
+      </Method>
+      <Text>休眠</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.StopOn();
+      </Method>
+      <Text>StopOn</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.StopOff();
+      </Method>
+      <Text>StopOff</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TailOn();
+      </Method>
+      <Text>TailOn-尾门关</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TailHdOn();
+      </Method>
+      <Text>TailOn-尾门开</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TailOff();
+      </Method>
+      <Text>TailOff</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.BulOn();
+      </Method>
+      <Text>BulOn</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.BulOff();
+      </Method>
+      <Text>BulOff</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.LogoOn();
+      </Method>
+      <Text>LogoOn</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.LogoOff();
+      </Method>
+      <Text>LogoOff</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.FogOn();
+      </Method>
+      <Text>FogOn</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.FogOff();
+      </Method>
+      <Text>FogOff</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.WelcomeAnimationOn();
+      </Method>
+      <Text>回家动画ON</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.WelcomeAnimationOff();
+        DC1E后灯驱动.Method.GoodByeAnimationOff();
+      </Method>
+      <Text>回家动画OFF</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.GoodByeAnimationOn();
+      </Method>
+      <Text>离家动画ON</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.WelcomeAnimationOff();
+        DC1E后灯驱动.Method.GoodByeAnimationOff();
+      </Method>
+      <Text>离家动画OFF</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnRunningOn(500);
+      </Method>
+      <Text>转向灯时序点亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnFlickerOn(500);
+      </Method>
+      <Text>转向灯闪烁点亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnRunningHdOn(500);
+      </Method>
+      <Text>转向灯时序高亮点亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnFlickerHdOn(500);
+      </Method>
+      <Text>转向灯闪烁高亮点亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnHoldingOn();
+      </Method>
+      <Text>转向灯时序后常亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnHoldingHdOn();
+      </Method>
+      <Text>转向灯高亮常亮</Text>
+      <Para></Para>
+    </Button>
+
+    <Button>
+      <Method>
+        DC1E后灯驱动.Method.TurnOff();
+      </Method>
+      <Text>转向灯关闭</Text>
+      <Para></Para>
+    </Button>
+
+  </Buttons>
+</EmulatorConfig>

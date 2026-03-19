@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>IN4301888888</DeviceNo>
+        <DeviceName>CCD检测测试文件1ROI</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2021-05-11 9:58:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>VisionTab</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>相机1</Name>
+            <Type>VisionAnalysis</Type>
+            <Note>相机1</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts />
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PR4101004175001</ProcessNo>
+            <Name>开始</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>开始</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bstring0</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101004175001</ProcessNo>
+            <Name>产品1TAIL光型</Name>
+            <DataType>roi</DataType>
+            <OkFormat>产品1TAIL光型</OkFormat>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>相机1.Field.StaticImageBuff</ControllerField>
+            <ControllerFieldOffset>产品1TAIL光型</ControllerFieldOffset>
+        </Para>
+    </Paras>
+    <Gears />
+    <Rois>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>13</RectX>
+            <RectY>1919</RectY>
+            <RectWidth>54</RectWidth>
+            <RectHeight>54</RectHeight>
+            <Min>193.49</Min>
+            <Max>255</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1142</RectX>
+            <RectY>46</RectY>
+            <RectWidth>142</RectWidth>
+            <RectHeight>142</RectHeight>
+            <Min>196.18</Min>
+            <Max>255</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1331</RectX>
+            <RectY>25</RectY>
+            <RectWidth>92</RectWidth>
+            <RectHeight>92</RectHeight>
+            <Min>178.45</Min>
+            <Max>241.43</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1338</RectX>
+            <RectY>28</RectY>
+            <RectWidth>90</RectWidth>
+            <RectHeight>90</RectHeight>
+            <Min>182.18</Min>
+            <Max>246.48</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1341</RectX>
+            <RectY>29</RectY>
+            <RectWidth>90</RectWidth>
+            <RectHeight>90</RectHeight>
+            <Min>182.57</Min>
+            <Max>247.01</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1355</RectX>
+            <RectY>36</RectY>
+            <RectWidth>90</RectWidth>
+            <RectHeight>90</RectHeight>
+            <Min>179.27</Min>
+            <Max>242.55</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1372</RectX>
+            <RectY>93</RectY>
+            <RectWidth>226</RectWidth>
+            <RectHeight>226</RectHeight>
+            <Min>192.7</Min>
+            <Max>255</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1379</RectX>
+            <RectY>97</RectY>
+            <RectWidth>226</RectWidth>
+            <RectHeight>226</RectHeight>
+            <Min>197.73</Min>
+            <Max>255</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1395</RectX>
+            <RectY>105</RectY>
+            <RectWidth>232</RectWidth>
+            <RectHeight>232</RectHeight>
+            <Min>205.6</Min>
+            <Max>255</Max>
+        </Roi>
+        <Roi>
+            <Name>产品1TAIL光型</Name>
+            <Group>0</Group>
+            <RectX>1601</RectX>
+            <RectY>-11</RectY>
+            <RectWidth>62</RectWidth>
+            <RectHeight>62</RectHeight>
+            <Min>136.88</Min>
+            <Max>185.18</Max>
+        </Roi>
+    </Rois>
+    <WorkStations>
+        <WorkStation>
+            <Name>主程序</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站2</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote>相机1.Method.ConnectCamera(DA0174564);
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>相机1.Method.ConnectCamera(DA0174564);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>231,326,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>569,722,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1002,1362,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>256,1206,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>检测程序.Field.Bstring0=开始;
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始</Name>
+            <EnterFunction>检测程序.Field.Bstring0=开始;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1446,453,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>相机1.Method.Capture(产品1TAIL光型);
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TAIL测试</Name>
+            <EnterFunction>相机1.Method.Capture(产品1TAIL光型);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2226,534,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TURN测试</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>2449,1060,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>动画测试</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1796,1343,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>900,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1200,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1500,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1800,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>900,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1200,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1500,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1800,340,180,90</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionFunction>
+            <ConditionNote>
+                检测程序.Field.EqualTrue==1&amp;&amp;
+            </ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>501,593</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1001,1019</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>577,1066</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_启动</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>启动</TargetSuName>
+            <ConditionFunction />
+            <ConditionNote />
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1089,544</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_开始</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>开始</TargetSuName>
+            <ConditionFunction>检测程序.Field.Bbool0==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.Bbool0==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction>检测程序.Field.Bbool0=0;
+</ExitFunction>
+            <ExitNote>检测程序.Field.Bbool0=0;
+</ExitNote>
+            <MiddlePisiton>1054,642</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始_TAIL测试</Name>
+            <SourceSuName>开始</SourceSuName>
+            <TargetSuName>TAIL测试</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1902,578</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TAIL测试_TURN测试</Name>
+            <SourceSuName>TAIL测试</SourceSuName>
+            <TargetSuName>TURN测试</TargetSuName>
+            <ConditionFunction>PR4101004175001.Para.产品1TAIL光型==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101004175001.Para.产品1TAIL光型==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2311,776</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TURN测试_动画测试</Name>
+            <SourceSuName>TURN测试</SourceSuName>
+            <TargetSuName>动画测试</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2173,1221</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>动画测试_CHECKEND</Name>
+            <SourceSuName>动画测试</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1535,1391</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

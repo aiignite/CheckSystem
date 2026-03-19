@@ -1,0 +1,2006 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props" Condition="Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9838924-3007-45B5-8BEC-961D7AF9A071}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CheckSystem</RootNamespace>
+    <AssemblyName>SeeYao</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>G:\CheckSys-Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F54F15987370CE1C6D5976009AFA302D3CE8128D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CheckSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsGo">
+      <HintPath>..\Lib\CsGo.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.30.0.1\lib\net45\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>..\Lib\EmguCV\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL">
+      <HintPath>..\Lib\EmguCV\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\Lib\EmguCV\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="HslCommunication, Version=5.7.1.0, Culture=neutral, PublicKeyToken=cdb2261fa039ed67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="lua51">
+      <HintPath>..\Lib\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface">
+      <HintPath>..\Lib\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.9.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.34.2.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniExcel.1.34.2\lib\net45\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCodeReaderSDK.Net, Version=1.5.0.2, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\MvCodeReaderSDK.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=15.0.40.49154, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.UI, Version=19.0.0.22, Culture=neutral, PublicKeyToken=4febd62461bf11a4" />
+    <Reference Include="NationalInstruments.UI.WindowsForms, Version=19.0.0.22, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.Vision, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Vision.Acquisition.Imaqdx, Version=3.40.35.49153, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Vision.Acquisition.Imaqdx.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Vision.Common, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Vision.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RestSharp">
+      <HintPath>..\Lib\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.0.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlSugar.5.0.3.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="Stateless, Version=4.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Stateless.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=3.6.5.0, Culture=neutral, PublicKeyToken=27d7d2e821d97aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.3.6.5\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common, Version=3.6.5.0, Culture=neutral, PublicKeyToken=5a271fb7ba597231, processorArchitecture=MSIL">
+      <HintPath>..\packages\SunnyUI.Common.3.6.5\lib\net40\SunnyUI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>..\Lib\SqlTableDependency\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.0\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TableDependency.SqlClient">
+      <HintPath>..\Lib\SqlTableDependency\TableDependency.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CAN\CanDataNormalSendCountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDataNormalSendCountForm.Designer.cs">
+      <DependentUpon>CanDataNormalSendCountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDataNormalSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDataNormalSendForm.Designer.cs">
+      <DependentUpon>CanDataNormalSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDataProductFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDataProductFrom.Designer.cs">
+      <DependentUpon>CanDataProductFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDataUdsSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDataUdsSendForm.Designer.cs">
+      <DependentUpon>CanDataUdsSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDbcFormatViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDbcFormatViewer.Designer.cs">
+      <DependentUpon>CanDbcFormatViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDeviceMgrForm.Designer.cs">
+      <DependentUpon>CanDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\CanDataViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAN\CanDataViewForm.Designer.cs">
+      <DependentUpon>CanDataViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAN\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CcdForms\AutoAssembly\FrmMultipleCCDVisionMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\AutoAssembly\FrmMultipleCCDVisionMain.Designer.cs">
+      <DependentUpon>FrmMultipleCCDVisionMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\BarcodeScanReaderLiuXian.cs" />
+    <Compile Include="CcdForms\CcdTrackSiemensPlc.cs" />
+    <Compile Include="CcdForms\FormCcdAddBarcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdAddBarcode.Designer.cs">
+      <DependentUpon>FormCcdAddBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdAddCheckItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdAddCheckItems.Designer.cs">
+      <DependentUpon>FormCcdAddCheckItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdSetup.Designer.cs">
+      <DependentUpon>FormCcdSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormCcdTrack.Designer.cs">
+      <DependentUpon>FormCcdTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugCCD\FormCameraTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugCCD\FormCameraTest.Designer.cs">
+      <DependentUpon>FormCameraTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugCCD\FormCcdSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DebugCCD\FormCcdSetup.Designer.cs">
+      <DependentUpon>FormCcdSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmulatorForms\EmulatorMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmulatorForms\EmulatorMainForm.Designer.cs">
+      <DependentUpon>EmulatorMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmulatorForms\EmulatorProductionSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmulatorForms\EmulatorProductionSelectForm.Designer.cs">
+      <DependentUpon>EmulatorProductionSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBatchStaticVisionCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBatchStaticVisionCali.Designer.cs">
+      <DependentUpon>FormBatchStaticVisionCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCanMsgMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCanMsgMonitor.Designer.cs">
+      <DependentUpon>FormCanMsgMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormControllerDebuger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormControllerDebuger.Designer.cs">
+      <DependentUpon>FormControllerDebuger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDynamicVisionCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDynamicVisionCali.Designer.cs">
+      <DependentUpon>FormDynamicVisionCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGroupSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupSelect.Designer.cs">
+      <DependentUpon>FormGroupSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\FormLedParaSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormLedParaSet.Designer.cs">
+      <DependentUpon>FormLedParaSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CcdForms\FormLedParaXmlList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CcdForms\FormLedParaXmlList.Designer.cs">
+      <DependentUpon>FormLedParaXmlList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLinMsgMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLinMsgMonitor.Designer.cs">
+      <DependentUpon>FormLinMsgMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoadXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoadXml.Designer.cs">
+      <DependentUpon>FormLoadXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPartMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPartMonitor.Designer.cs">
+      <DependentUpon>FormPartMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrSelection.Designer.cs">
+      <DependentUpon>FormPrSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCheck.Designer.cs">
+      <DependentUpon>FormCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPwd.Designer.cs">
+      <DependentUpon>FormPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelection.Designer.cs">
+      <DependentUpon>FormSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStateMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStateMonitor.Designer.cs">
+      <DependentUpon>FormStateMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaticVisionCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaticVisionCali.Designer.cs">
+      <DependentUpon>FormStaticVisionCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTestUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTestUi.Designer.cs">
+      <DependentUpon>FormTestUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormToolPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormToolPage.Designer.cs">
+      <DependentUpon>FormToolPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormXmlPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormXmlPage.Designer.cs">
+      <DependentUpon>FormXmlPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataGridView.Designer.cs">
+      <DependentUpon>FrmDataGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\LoadBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\LoadBox.Designer.cs">
+      <DependentUpon>LoadBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\MyWndLoadBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\MyWndLoadBox.Designer.cs">
+      <DependentUpon>MyWndLoadBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\MyWndManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AirOutlet\MyWndManual.Designer.cs">
+      <DependentUpon>MyWndManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AnalogMax25608\AnalogMax25608DeviceMgrcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AnalogMax25608\AnalogMax25608DeviceMgrcs.Designer.cs">
+      <DependentUpon>AnalogMax25608DeviceMgrcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AnalogMax25608\AnalogMax25608LedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AnalogMax25608\AnalogMax25608LedControl.Designer.cs">
+      <DependentUpon>AnalogMax25608LedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslCanDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslCanDeviceMgrForm.Designer.cs">
+      <DependentUpon>AslCanDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslFormLedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslFormLedControl.Designer.cs">
+      <DependentUpon>AslFormLedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslFormMtp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Asl5115\AslFormMtp.Designer.cs">
+      <DependentUpon>AslFormMtp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AsuvReWrite\FrmAsuvReWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AsuvReWrite\FrmAsuvReWrite.Designer.cs">
+      <DependentUpon>FrmAsuvReWrite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\AUDI427HeadLamp\MyWnd427Ctrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\AUDI427HeadLamp\MyWnd427Ctrl.Designer.cs">
+      <DependentUpon>MyWnd427Ctrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\BD18331\Bd18331FormLedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\BD18331\Bd18331FormLedControl.Designer.cs">
+      <DependentUpon>Bd18331FormLedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\BD18331\Bd18331CanDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\BD18331\Bd18331CanDeviceMgrForm.Designer.cs">
+      <DependentUpon>Bd18331CanDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\BD18333\Bd18333CanDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\BD18333\Bd18333CanDeviceMgrForm.Designer.cs">
+      <DependentUpon>Bd18333CanDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\BD18333\Bd18333FormLedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\BD18333\Bd18333FormLedControl.Designer.cs">
+      <DependentUpon>Bd18333FormLedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\CameraCtrlTest\FrmCameraCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\CameraCtrlTest\FrmCameraCtrl.Designer.cs">
+      <DependentUpon>FrmCameraCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\ChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\F03RearLamp\WndF03RearLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\F03RearLamp\WndF03RearLamp.Designer.cs">
+      <DependentUpon>WndF03RearLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\FrmBaseString64ToBitmap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\FrmBaseString64ToBitmap.Designer.cs">
+      <DependentUpon>FrmBaseString64ToBitmap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmDutMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmDutMain.Designer.cs">
+      <DependentUpon>FrmDutMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmEnvBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmEnvBox.Designer.cs">
+      <DependentUpon>FrmEnvBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmSingleDutPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyCx1e\FrmSingleDutPage.Designer.cs">
+      <DependentUpon>FrmSingleDutPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyDx1h\Dx1hEmcConfig.cs" />
+    <Compile Include="HelperForms\GeeleyDx1h\FrmLoadBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyDx1h\FrmLoadBox.Designer.cs">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyDx1h\FrmParaSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyDx1h\FrmParaSet.Designer.cs">
+      <DependentUpon>FrmParaSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyDx1h\SingleControl.cs" />
+    <Compile Include="HelperForms\GeeleyRgbLampControl\GeeleyRgbLampControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyRgbLampControl\GeeleyRgbLampControlForm.Designer.cs">
+      <DependentUpon>GeeleyRgbLampControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyRgbLampControl\LinDeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GeeleyRgbLampControl\LinDeviceMgr.Designer.cs">
+      <DependentUpon>LinDeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GetElmosE522HeaderFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GetElmosE522HeaderFormat.Designer.cs">
+      <DependentUpon>GetElmosE522HeaderFormat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GetIcons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GetIcons.Designer.cs">
+      <DependentUpon>GetIcons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\GetIpList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\GetIpList.Designer.cs">
+      <DependentUpon>GetIpList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\HalHac3980\FrmProgramming.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\HalHac3980\FrmProgramming.Designer.cs">
+      <DependentUpon>FrmProgramming.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\HelaMdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\HelaMdf.Designer.cs">
+      <DependentUpon>HelaMdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmCycleAllSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmCycleAllSet.Designer.cs">
+      <DependentUpon>FrmCycleAllSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmCycleSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmCycleSet.Designer.cs">
+      <DependentUpon>FrmCycleSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmLoadBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmLoadBox.Designer.cs">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmOffset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmOffset.Designer.cs">
+      <DependentUpon>FrmOffset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmOffsetAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmOffsetAll.Designer.cs">
+      <DependentUpon>FrmOffsetAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmParaSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmParaSet.Designer.cs">
+      <DependentUpon>FrmParaSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmSingleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmSingleControl.Designer.cs">
+      <DependentUpon>FrmSingleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmStandbyParas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmStandbyParas.Designer.cs">
+      <DependentUpon>FrmStandbyParas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmTempMonitorSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\FrmTempMonitorSet.Designer.cs">
+      <DependentUpon>FrmTempMonitorSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\HvsmEmcConfig.cs" />
+    <Compile Include="HelperForms\Hvsm\UcSingleOffset.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Hvsm\UcSingleOffset.Designer.cs">
+      <DependentUpon>UcSingleOffset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\MyWndExcelCheckDataJsonSplit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\MyWndExcelCheckDataJsonSplit.Designer.cs">
+      <DependentUpon>MyWndExcelCheckDataJsonSplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LHighLevelHeadLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LHighLevelHeadLamp.Designer.cs">
+      <DependentUpon>P12LHighLevelHeadLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LHeadLampDeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LHeadLampDeviceMgr.Designer.cs">
+      <DependentUpon>P12LHeadLampDeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LLowLevelHeadLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\P12LHeadLamp\P12LLowLevelHeadLamp.Designer.cs">
+      <DependentUpon>P12LLowLevelHeadLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmHalReWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmHalReWrite.Designer.cs">
+      <DependentUpon>FrmHalReWrite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmPsi5MultipleReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmPsi5MultipleReader.Designer.cs">
+      <DependentUpon>FrmPsi5MultipleReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmSingleChipPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\FrmSingleChipPage.Designer.cs">
+      <DependentUpon>FrmSingleChipPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\UcSingleChannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Psi5Reader\UcSingleChannel.Designer.cs">
+      <DependentUpon>UcSingleChannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\S12LDataTrack\S12LDataViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\S12LDataTrack\S12LDataViewer.Designer.cs">
+      <DependentUpon>S12LDataViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\S12LHeadLamp\S12LHeadLampDeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\S12LHeadLamp\S12LHeadLampDeviceMgr.Designer.cs">
+      <DependentUpon>S12LHeadLampDeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\S12LHeadLamp\S12LHighLevelHeadLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\S12LHeadLamp\S12LHighLevelHeadLamp.Designer.cs">
+      <DependentUpon>S12LHighLevelHeadLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Sgm3582RearLamp\FrmSgm3582RearLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Sgm3582RearLamp\FrmSgm3582RearLamp.Designer.cs">
+      <DependentUpon>FrmSgm3582RearLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Pdm\FrmLoadBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Pdm\FrmLoadBox.Designer.cs">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Pdm\FrmLoadBoxLogData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Pdm\FrmLoadBoxLogData.Designer.cs">
+      <DependentUpon>FrmLoadBoxLogData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Pdm\LoadBoxSqlHelper.cs" />
+    <Compile Include="HelperForms\Sgm458Plg\GetPlgCompareVersionValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Plg\GetPlgCompareVersionValue.Designer.cs">
+      <DependentUpon>GetPlgCompareVersionValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\SgmWirelessCharging\FrmDataRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\SgmWirelessCharging\FrmDataRead.Designer.cs">
+      <DependentUpon>FrmDataRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\SlDisplay\MyWndSlDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\SlDisplay\MyWndSlDisplay.Designer.cs">
+      <DependentUpon>MyWndSlDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Solenoid\FrmSolenoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Solenoid\FrmSolenoid.Designer.cs">
+      <DependentUpon>FrmSolenoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tld7002\Tld7002Config.cs" />
+    <Compile Include="HelperForms\Tld7002\Tld7002DeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tld7002\Tld7002DeviceMgr.Designer.cs">
+      <DependentUpon>Tld7002DeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tld7002\Tld7002OtpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tld7002\Tld7002OtpForm.Designer.cs">
+      <DependentUpon>Tld7002OtpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmMatrixConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmMatrixConfig.Designer.cs">
+      <DependentUpon>FrmMatrixConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmTps92664.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmTps92664.Designer.cs">
+      <DependentUpon>FrmTps92664.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmTps92664Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\FrmTps92664Config.Designer.cs">
+      <DependentUpon>FrmTps92664Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\Tps92664ConfigData.cs" />
+    <Compile Include="HelperForms\TPS92994\Tps92664WidthCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperForms\TPS92994\Tps92664WidthCtrl.Designer.cs">
+      <DependentUpon>Tps92664WidthCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\U557HeadLamp\FrmU557Emc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\U557HeadLamp\FrmU557Emc.Designer.cs">
+      <DependentUpon>FrmU557Emc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\U557HeadLamp\FrmU557Emc2Channels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\U557HeadLamp\FrmU557Emc2Channels.Designer.cs">
+      <DependentUpon>FrmU557Emc2Channels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW336HeadLamp\Vw336HeadLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW336HeadLamp\Vw336HeadLamp.Designer.cs">
+      <DependentUpon>Vw336HeadLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLamp.Designer.cs">
+      <DependentUpon>Vw323RearLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLamp0Cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLamp0Cs.Designer.cs">
+      <DependentUpon>Vw323RearLamp0Cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLampWithRenesasController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW323RearLamp\Vw323RearLampWithRenesasController.Designer.cs">
+      <DependentUpon>Vw323RearLampWithRenesasController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW426RearLamp\Vw426RearLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW426RearLamp\Vw426RearLamp.Designer.cs">
+      <DependentUpon>Vw426RearLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\VW491RearLamp\Vw491RearLamp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\VW491RearLamp\Vw491RearLamp.Designer.cs">
+      <DependentUpon>Vw491RearLamp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\WirelessReadData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\WirelessReadData.Designer.cs">
+      <DependentUpon>WirelessReadData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\XiaoPeng\FrmXiaoPengX3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\XiaoPeng\FrmXiaoPengX3.Designer.cs">
+      <DependentUpon>FrmXiaoPengX3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikDataValidationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikDataValidationForm.Designer.cs">
+      <DependentUpon>HikDataValidationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikPrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikPrintForm.Designer.cs">
+      <DependentUpon>HikPrintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikRobotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikRobotForm.Designer.cs">
+      <DependentUpon>HikRobotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\PB06GUIMT6501.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\PB06GUIMT6501.Designer.cs">
+      <DependentUpon>PB06GUIMT6501.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Plg\SqlDataRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Sgm458Plg\SqlDataRead.Designer.cs">
+      <DependentUpon>SqlDataRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\LedControlWithPwm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\LedControlWithPwm.Designer.cs">
+      <DependentUpon>LedControlWithPwm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\TpsFormDeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\TpsFormDeviceMgr.Designer.cs">
+      <DependentUpon>TpsFormDeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\TpsFormLedControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tps92662\TpsFormLedControl.Designer.cs">
+      <DependentUpon>TpsFormLedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tps929120\TpsFormDataViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tps929120\TpsFormDataViewer.Designer.cs">
+      <DependentUpon>TpsFormDataViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperForms\Tps929120\TpsFormDeviceMgr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelperForms\Tps929120\TpsFormDeviceMgr.Designer.cs">
+      <DependentUpon>TpsFormDeviceMgr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LIN\LinDataNormalSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIN\LinDataNormalSendForm.Designer.cs">
+      <DependentUpon>LinDataNormalSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LIN\LinDataProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIN\LinDataProductForm.Designer.cs">
+      <DependentUpon>LinDataProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LIN\LinDataViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIN\LinDataViewForm.Designer.cs">
+      <DependentUpon>LinDataViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LIN\LinDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LIN\LinDeviceMgrForm.Designer.cs">
+      <DependentUpon>LinDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikSerialPortToSap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikSerialPortToSap.Designer.cs">
+      <DependentUpon>HikSerialPortToSap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\MaterialModels\HikDbHelperSql.cs" />
+    <Compile Include="MaterialHelperForms\HikSapStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikSapStockIn.Designer.cs">
+      <DependentUpon>HikSapStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikSetup.cs" />
+    <Compile Include="MaterialHelperForms\HikManualGeneration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialHelperForms\HikManualGeneration.Designer.cs">
+      <DependentUpon>HikManualGeneration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialHelperForms\MaterialModels\HikMaterialAnalysisHelper.cs" />
+    <Compile Include="MaterialHelperForms\MaterialModels\newMaterialPrintCorrespond.cs" />
+    <Compile Include="MaterialHelperForms\MaterialModels\newMaterialStockInDetail.cs" />
+    <Compile Include="MaterialHelperForms\MaterialModels\newMaterialStockInInfo.cs" />
+    <Compile Include="OpenCvSharp\EnumDevices.cs" />
+    <Compile Include="OpenCvSharp\FrmOsramTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmOsramTest.Designer.cs">
+      <DependentUpon>FrmOsramTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmPicCombine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmPicCombine.Designer.cs">
+      <DependentUpon>FrmPicCombine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmTestCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmTestCamera.Designer.cs">
+      <DependentUpon>FrmTestCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmTestPaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenCvSharp\FrmTestPaint.Designer.cs">
+      <DependentUpon>FrmTestPaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\CurveAnalysisConfig.cs" />
+    <Compile Include="PesVision\CurveAnalyzer.cs" />
+    <Compile Include="PesVision\CurveProcessorDeepSeek.cs" />
+    <Compile Include="PesVision\FrmMdfTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesVision\FrmMdfTest.Designer.cs">
+      <DependentUpon>FrmMdfTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\FrmPesTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesVision\FrmPesTest.Designer.cs">
+      <DependentUpon>FrmPesTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\PesServoCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesVision\PesServoCali.Designer.cs">
+      <DependentUpon>PesServoCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\PesVisionConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesVision\PesVisionConfig.Designer.cs">
+      <DependentUpon>PesVisionConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\PesVisionMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesVision\PesVisionMain.Designer.cs">
+      <DependentUpon>PesVisionMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PesVision\PesVisionUtility.cs" />
+    <Compile Include="PesVision\PolyHelper.cs" />
+    <Compile Include="PesVision\PolynomialAnalyzer.cs" />
+    <Compile Include="PhoneCall.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RobotForms\RobotControllerDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerDeviceMgrForm.Designer.cs">
+      <DependentUpon>RobotControllerDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerInfoTrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerInfoTrace.Designer.cs">
+      <DependentUpon>RobotControllerInfoTrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerMainForm.Designer.cs">
+      <DependentUpon>RobotControllerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerProgramAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerProgramAdd.Designer.cs">
+      <DependentUpon>RobotControllerProgramAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerProgramUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerProgramUpdate.Designer.cs">
+      <DependentUpon>RobotControllerProgramUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerServoControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotControllerServoControl.Designer.cs">
+      <DependentUpon>RobotControllerServoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotForms\RobotFormPalletManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotForms\RobotFormPalletManagement.Designer.cs">
+      <DependentUpon>RobotFormPalletManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmtForms\DataUploader\DataUploaderSqlHelper.cs" />
+    <Compile Include="SmtForms\DataUploader\KouYoungAoi.cs" />
+    <Compile Include="SmtForms\DataUploader\PanaconicNpmDat.cs" />
+    <Compile Include="SmtForms\DataUploader\PanasonicNpm.cs" />
+    <Compile Include="SmtForms\DataUploader\TriAoi.cs" />
+    <Compile Include="SmtForms\DataUploader\FrmDataUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmtForms\DataUploader\FrmDataUpload.Designer.cs">
+      <DependentUpon>FrmDataUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmtForms\DataUploader\MyQueueEvent.cs" />
+    <Compile Include="SmtForms\DataUploader\ParmiSpi.cs" />
+    <Compile Include="SmtForms\DataUploader\UploadPackage.cs" />
+    <Compile Include="SmtForms\FrmKohYoungReUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmtForms\FrmKohYoungReUpload.Designer.cs">
+      <DependentUpon>FrmKohYoungReUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmtForms\LaserCarving\LaserCarvingReqObject.cs" />
+    <Compile Include="SmtForms\LaserCarving\FrmLaserCarving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmtForms\LaserCarving\FrmLaserCarving.Designer.cs">
+      <DependentUpon>FrmLaserCarving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyController\ControllerWith56PinDataViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyController\ControllerWith56PinDataViewForm.Designer.cs">
+      <DependentUpon>ControllerWith56PinDataViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyController\ControllerWith56PinFlashConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyController\ControllerWith56PinFlashConfigForm.Designer.cs">
+      <DependentUpon>ControllerWith56PinFlashConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyController\FlashConfig.cs" />
+    <Compile Include="SyController\SyControllerDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyController\SyControllerDeviceMgrForm.Designer.cs">
+      <DependentUpon>SyControllerDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\FrmRenesasMcnMultipleControllers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\FrmRenesasMcnMultipleControllers.Designer.cs">
+      <DependentUpon>FrmRenesasMcnMultipleControllers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\FrmSingleMcuPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\FrmSingleMcuPage.Designer.cs">
+      <DependentUpon>FrmSingleMcuPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\UcADControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\UcADControl.Designer.cs">
+      <DependentUpon>UcADControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\UcRLControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyRenesasMcuController\UcRLControl.Designer.cs">
+      <DependentUpon>UcRLControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UART\UartDataViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART\UartDataViewForm.Designer.cs">
+      <DependentUpon>UartDataViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UART\UartDeviceMgrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART\UartDeviceMgrForm.Designer.cs">
+      <DependentUpon>UartDeviceMgrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmDynamicVisionCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmDynamicVisionCali.Designer.cs">
+      <DependentUpon>FrmDynamicVisionCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\StaticVision\FrmStaticVisionCali.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\StaticVision\FrmStaticVisionCali.Designer.cs">
+      <DependentUpon>FrmStaticVisionCali.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Control\DynamicImageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Control\DynamicImageViewer.Designer.cs">
+      <DependentUpon>DynamicImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Control\StaticImageViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Control\StaticImageViewer.Designer.cs">
+      <DependentUpon>StaticImageViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmBarcodeScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmBarcodeScan.Designer.cs">
+      <DependentUpon>FrmBarcodeScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDetectionParaConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDetectionParaConfig.Designer.cs">
+      <DependentUpon>FrmDetectionParaConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDeviceConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDeviceConfig.Designer.cs">
+      <DependentUpon>FrmDeviceConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmGroupSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmGroupSelect.Designer.cs">
+      <DependentUpon>FrmGroupSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmMethodConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmMethodConfig.Designer.cs">
+      <DependentUpon>FrmMethodConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmStaticVisionParaConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmStaticVisionParaConfig.Designer.cs">
+      <DependentUpon>FrmStaticVisionParaConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmActionNodeConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmActionNodeConfig.Designer.cs">
+      <DependentUpon>FrmActionNodeConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDetectionMainConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmDetectionMainConfig.Designer.cs">
+      <DependentUpon>FrmDetectionMainConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckDataHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckDataHistory.Designer.cs">
+      <DependentUpon>FrmVisionCheckDataHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckMain.Designer.cs">
+      <DependentUpon>FrmVisionCheckMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckTestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionCheckTestView.Designer.cs">
+      <DependentUpon>FrmVisionCheckTestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionFileSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionFileSelection.Designer.cs">
+      <DependentUpon>FrmVisionFileSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\FrmVisionLogin.Designer.cs">
+      <DependentUpon>FrmVisionLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmDynamicVsionParaConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\Calibration\FrmDynamicVsionParaConfig.Designer.cs">
+      <DependentUpon>FrmDynamicVsionParaConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\UcGroupSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VisionDetection\UcGroupSelect.Designer.cs">
+      <DependentUpon>UcGroupSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisionDetection\Vision\VisionDeviceConfig.cs" />
+    <Compile Include="VisionDetection\Vision\VisionConfig.cs" />
+    <Compile Include="VisionDetection\Vision\ImageProcessing.cs" />
+    <Compile Include="VisionDetection\Vision\NiImaqdx.cs" />
+    <Compile Include="VisionDetection\Vision\VisionCommon.cs" />
+    <EmbeddedResource Include="CAN\CanDataNormalSendCountForm.resx">
+      <DependentUpon>CanDataNormalSendCountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDataNormalSendForm.resx">
+      <DependentUpon>CanDataNormalSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDataProductFrom.resx">
+      <DependentUpon>CanDataProductFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDataUdsSendForm.resx">
+      <DependentUpon>CanDataUdsSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDataViewForm.resx">
+      <DependentUpon>CanDataViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDbcFormatViewer.resx">
+      <DependentUpon>CanDbcFormatViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAN\CanDeviceMgrForm.resx">
+      <DependentUpon>CanDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\AutoAssembly\FrmMultipleCCDVisionMain.resx">
+      <DependentUpon>FrmMultipleCCDVisionMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormCcdAddBarcode.resx">
+      <DependentUpon>FormCcdAddBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormCcdAddCheckItems.resx">
+      <DependentUpon>FormCcdAddCheckItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormCcdSetup.resx">
+      <DependentUpon>FormCcdSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormCcdTrack.resx">
+      <DependentUpon>FormCcdTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugCCD\FormCameraTest.resx">
+      <DependentUpon>FormCameraTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DebugCCD\FormCcdSetup.resx">
+      <DependentUpon>FormCcdSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmulatorForms\EmulatorMainForm.resx">
+      <DependentUpon>EmulatorMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmulatorForms\EmulatorProductionSelectForm.resx">
+      <DependentUpon>EmulatorProductionSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBatchStaticVisionCali.resx">
+      <DependentUpon>FormBatchStaticVisionCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCanMsgMonitor.resx">
+      <DependentUpon>FormCanMsgMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormControllerDebuger.resx">
+      <DependentUpon>FormControllerDebuger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDynamicVisionCali.resx">
+      <DependentUpon>FormDynamicVisionCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupSelect.resx">
+      <DependentUpon>FormGroupSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormLedParaSet.resx">
+      <DependentUpon>FormLedParaSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CcdForms\FormLedParaXmlList.resx">
+      <DependentUpon>FormLedParaXmlList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLinMsgMonitor.resx">
+      <DependentUpon>FormLinMsgMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoadXml.resx">
+      <DependentUpon>FormLoadXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPartMonitor.resx">
+      <DependentUpon>FormPartMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrSelection.resx">
+      <DependentUpon>FormPrSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCheck.resx">
+      <DependentUpon>FormCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPwd.resx">
+      <DependentUpon>FormPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelection.resx">
+      <DependentUpon>FormSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStateMonitor.resx">
+      <DependentUpon>FormStateMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStaticVisionCali.resx">
+      <DependentUpon>FormStaticVisionCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTestUi.resx">
+      <DependentUpon>FormTestUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXmlPage.resx">
+      <DependentUpon>FormXmlPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataGridView.resx">
+      <DependentUpon>FrmDataGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AirOutlet\LoadBox.resx">
+      <DependentUpon>LoadBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AirOutlet\MyWndLoadBox.resx">
+      <DependentUpon>MyWndLoadBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AirOutlet\MyWndManual.resx">
+      <DependentUpon>MyWndManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AnalogMax25608\AnalogMax25608LedControl.resx">
+      <DependentUpon>AnalogMax25608LedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Asl5115\AslFormLedControl.resx">
+      <DependentUpon>AslFormLedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Asl5115\AslFormMtp.resx">
+      <DependentUpon>AslFormMtp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AsuvReWrite\FrmAsuvReWrite.resx">
+      <DependentUpon>FrmAsuvReWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\AUDI427HeadLamp\MyWnd427Ctrl.resx">
+      <DependentUpon>MyWnd427Ctrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\BD18331\Bd18331CanDeviceMgrForm.resx">
+      <DependentUpon>Bd18331CanDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\BD18331\Bd18331FormLedControl.resx">
+      <DependentUpon>Bd18331FormLedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\BD18333\Bd18333CanDeviceMgrForm.resx">
+      <DependentUpon>Bd18333CanDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\BD18333\Bd18333FormLedControl.resx">
+      <DependentUpon>Bd18333FormLedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\CameraCtrlTest\FrmCameraCtrl.resx">
+      <DependentUpon>FrmCameraCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\F03RearLamp\WndF03RearLamp.resx">
+      <DependentUpon>WndF03RearLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\FrmBaseString64ToBitmap.resx">
+      <DependentUpon>FrmBaseString64ToBitmap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyCx1e\FrmDutMain.resx">
+      <DependentUpon>FrmDutMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyCx1e\FrmEnvBox.resx">
+      <DependentUpon>FrmEnvBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyCx1e\FrmSingleDutPage.resx">
+      <DependentUpon>FrmSingleDutPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyDx1h\FrmLoadBox.resx">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyDx1h\FrmParaSet.resx">
+      <DependentUpon>FrmParaSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GeeleyRgbLampControl\GeeleyRgbLampControlForm.resx">
+      <DependentUpon>GeeleyRgbLampControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GetElmosE522HeaderFormat.resx">
+      <DependentUpon>GetElmosE522HeaderFormat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GetIcons.resx">
+      <DependentUpon>GetIcons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\GetIpList.resx">
+      <DependentUpon>GetIpList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\HalHac3980\FrmProgramming.resx">
+      <DependentUpon>FrmProgramming.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\HelaMdf.resx">
+      <DependentUpon>HelaMdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmCycleAllSet.resx">
+      <DependentUpon>FrmCycleAllSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmCycleSet.resx">
+      <DependentUpon>FrmCycleSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmLoadBox.resx">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmOffset.resx">
+      <DependentUpon>FrmOffset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmOffsetAll.resx">
+      <DependentUpon>FrmOffsetAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmParaSet.resx">
+      <DependentUpon>FrmParaSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmSingleControl.resx">
+      <DependentUpon>FrmSingleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmStandbyParas.resx">
+      <DependentUpon>FrmStandbyParas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\FrmTempMonitorSet.resx">
+      <DependentUpon>FrmTempMonitorSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Hvsm\UcSingleOffset.resx">
+      <DependentUpon>UcSingleOffset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\MyWndExcelCheckDataJsonSplit.resx">
+      <DependentUpon>MyWndExcelCheckDataJsonSplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\P12LHeadLamp\P12LHighLevelHeadLamp.resx">
+      <DependentUpon>P12LHighLevelHeadLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\P12LHeadLamp\P12LHeadLampDeviceMgr.resx">
+      <DependentUpon>P12LHeadLampDeviceMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\P12LHeadLamp\P12LLowLevelHeadLamp.resx">
+      <DependentUpon>P12LLowLevelHeadLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Psi5Reader\FrmHalReWrite.resx">
+      <DependentUpon>FrmHalReWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Psi5Reader\FrmPsi5MultipleReader.resx">
+      <DependentUpon>FrmPsi5MultipleReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Psi5Reader\FrmSingleChipPage.resx">
+      <DependentUpon>FrmSingleChipPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Psi5Reader\UcSingleChannel.resx">
+      <DependentUpon>UcSingleChannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\S12LDataTrack\S12LDataViewer.resx">
+      <DependentUpon>S12LDataViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\S12LHeadLamp\S12LHighLevelHeadLamp.resx">
+      <DependentUpon>S12LHighLevelHeadLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Sgm3582RearLamp\FrmSgm3582RearLamp.resx">
+      <DependentUpon>FrmSgm3582RearLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Sgm458Pdm\FrmLoadBox.resx">
+      <DependentUpon>FrmLoadBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Sgm458Pdm\FrmLoadBoxLogData.resx">
+      <DependentUpon>FrmLoadBoxLogData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Sgm458Plg\GetPlgCompareVersionValue.resx">
+      <DependentUpon>GetPlgCompareVersionValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\SgmWirelessCharging\FrmDataRead.resx">
+      <DependentUpon>FrmDataRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\SlDisplay\MyWndSlDisplay.resx">
+      <DependentUpon>MyWndSlDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Solenoid\FrmSolenoid.resx">
+      <DependentUpon>FrmSolenoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tld7002\Tld7002DeviceMgr.resx">
+      <DependentUpon>Tld7002DeviceMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tld7002\Tld7002OtpForm.resx">
+      <DependentUpon>Tld7002OtpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tps92662\TpsFormLedControl.resx">
+      <DependentUpon>TpsFormLedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\TPS92994\FrmMatrixConfig.resx">
+      <DependentUpon>FrmMatrixConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\TPS92994\FrmTps92664.resx">
+      <DependentUpon>FrmTps92664.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\TPS92994\FrmTps92664Config.resx">
+      <DependentUpon>FrmTps92664Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\TPS92994\Tps92664WidthCtrl.resx">
+      <DependentUpon>Tps92664WidthCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\U557HeadLamp\FrmU557Emc.resx">
+      <DependentUpon>FrmU557Emc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\U557HeadLamp\FrmU557Emc2Channels.resx">
+      <DependentUpon>FrmU557Emc2Channels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW336HeadLamp\Vw336HeadLamp.resx">
+      <DependentUpon>Vw336HeadLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW323RearLamp\Vw323RearLamp.resx">
+      <DependentUpon>Vw323RearLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW323RearLamp\Vw323RearLamp0cs.resx">
+      <DependentUpon>Vw323RearLamp0Cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW323RearLamp\Vw323RearLampWithRenesasController.resx">
+      <DependentUpon>Vw323RearLampWithRenesasController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW426RearLamp\Vw426RearLamp.resx">
+      <DependentUpon>Vw426RearLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\VW491RearLamp\Vw491RearLamp.resx">
+      <DependentUpon>Vw491RearLamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\WirelessReadData.resx">
+      <DependentUpon>WirelessReadData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\XiaoPeng\FrmXiaoPengX3.resx">
+      <DependentUpon>FrmXiaoPengX3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikDataValidationForm.resx">
+      <DependentUpon>HikDataValidationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikPrintForm.resx">
+      <DependentUpon>HikPrintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikRobotForm.resx">
+      <DependentUpon>HikRobotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\PB06GUIMT6501.resx">
+      <DependentUpon>PB06GUIMT6501.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Sgm458Plg\SqlDataRead.resx">
+      <DependentUpon>SqlDataRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tps92662\LedControlWithPwm.resx">
+      <DependentUpon>LedControlWithPwm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tps92662\TpsFormDeviceMgr.resx">
+      <DependentUpon>TpsFormDeviceMgr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelperForms\Tps929120\TpsFormDataViewer.resx">
+      <DependentUpon>TpsFormDataViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIN\LinDataNormalSendForm.resx">
+      <DependentUpon>LinDataNormalSendForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIN\LinDataProductForm.resx">
+      <DependentUpon>LinDataProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIN\LinDataViewForm.resx">
+      <DependentUpon>LinDataViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LIN\LinDeviceMgrForm.resx">
+      <DependentUpon>LinDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikSapStockIn.resx">
+      <DependentUpon>HikSapStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikSerialPortToSap.resx">
+      <DependentUpon>HikSerialPortToSap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialHelperForms\HikManualGeneration.resx">
+      <DependentUpon>HikManualGeneration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenCvSharp\FrmOsramTest.resx">
+      <DependentUpon>FrmOsramTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenCvSharp\FrmPicCombine.resx">
+      <DependentUpon>FrmPicCombine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenCvSharp\FrmTestCamera.resx">
+      <DependentUpon>FrmTestCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenCvSharp\FrmTestPaint.resx">
+      <DependentUpon>FrmTestPaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesVision\FrmMdfTest.resx">
+      <DependentUpon>FrmMdfTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesVision\FrmPesTest.resx">
+      <DependentUpon>FrmPesTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesVision\PesServoCali.resx">
+      <DependentUpon>PesServoCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesVision\PesVisionConfig.resx">
+      <DependentUpon>PesVisionConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesVision\PesVisionMain.resx">
+      <DependentUpon>PesVisionMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RobotForms\RobotControllerDeviceMgrForm.resx">
+      <DependentUpon>RobotControllerDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotForms\RobotControllerInfoTrace.resx">
+      <DependentUpon>RobotControllerInfoTrace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotForms\RobotControllerMainForm.resx">
+      <DependentUpon>RobotControllerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotForms\RobotControllerProgramUpdate.resx">
+      <DependentUpon>RobotControllerProgramUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotForms\RobotControllerServoControl.resx">
+      <DependentUpon>RobotControllerServoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotForms\RobotFormPalletManagement.resx">
+      <DependentUpon>RobotFormPalletManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmtForms\DataUploader\FrmDataUpload.resx">
+      <DependentUpon>FrmDataUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmtForms\FrmKohYoungReUpload.resx">
+      <DependentUpon>FrmKohYoungReUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmtForms\LaserCarving\FrmLaserCarving.resx">
+      <DependentUpon>FrmLaserCarving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyController\ControllerWith56PinDataViewForm.resx">
+      <DependentUpon>ControllerWith56PinDataViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyController\ControllerWith56PinFlashConfigForm.resx">
+      <DependentUpon>ControllerWith56PinFlashConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyController\SyControllerDeviceMgrForm.resx">
+      <DependentUpon>SyControllerDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyRenesasMcuController\FrmRenesasMcnMultipleControllers.resx">
+      <DependentUpon>FrmRenesasMcnMultipleControllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyRenesasMcuController\FrmSingleMcuPage.resx">
+      <DependentUpon>FrmSingleMcuPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyRenesasMcuController\UcADControl.resx">
+      <DependentUpon>UcADControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyRenesasMcuController\UcRLControl.resx">
+      <DependentUpon>UcRLControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UART\UartDataViewForm.resx">
+      <DependentUpon>UartDataViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UART\UartDeviceMgrForm.resx">
+      <DependentUpon>UartDeviceMgrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Calibration\FrmDynamicVisionCali.resx">
+      <DependentUpon>FrmDynamicVisionCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Calibration\StaticVision\FrmStaticVisionCali.resx">
+      <DependentUpon>FrmStaticVisionCali.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Control\DynamicImageViewer.resx">
+      <DependentUpon>DynamicImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Control\StaticImageViewer.resx">
+      <DependentUpon>StaticImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmBarcodeScan.resx">
+      <DependentUpon>FrmBarcodeScan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmDetectionMainConfig.resx">
+      <DependentUpon>FrmDetectionMainConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmDetectionParaConfig.resx">
+      <DependentUpon>FrmDetectionParaConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmDeviceConfig.resx">
+      <DependentUpon>FrmDeviceConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Calibration\FrmDynamicVsionParaConfig.resx">
+      <DependentUpon>FrmDynamicVsionParaConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmGroupSelect.resx">
+      <DependentUpon>FrmGroupSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmMethodConfig.resx">
+      <DependentUpon>FrmMethodConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\Calibration\FrmStaticVisionParaConfig.resx">
+      <DependentUpon>FrmStaticVisionParaConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmVisionCheckDataHistory.resx">
+      <DependentUpon>FrmVisionCheckDataHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmVisionCheckMain.resx">
+      <DependentUpon>FrmVisionCheckMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmVisionCheckTestView.resx">
+      <DependentUpon>FrmVisionCheckTestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\FrmVisionFileSelection.resx">
+      <DependentUpon>FrmVisionFileSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisionDetection\UcGroupSelect.resx">
+      <DependentUpon>UcGroupSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{38d7aa58-c95b-449b-86c6-a8073a56e11f}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonUtility\CommonUtility.csproj">
+      <Project>{a6ce27a1-310b-4008-9c6f-deedd8cad5d3}</Project>
+      <Name>CommonUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{b325e541-1f4d-457e-9b45-4da3bf74482a}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988C62E-247F-471F-A183-DB509C7A3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeviceDesign\DeviceDesign.csproj">
+      <Project>{e1609881-b28e-4a0c-921c-1e3a79ff54ef}</Project>
+      <Name>DeviceDesign</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HZH_Controls\HZH_Controls.csproj">
+      <Project>{af32e163-c577-4cbc-a072-0dc1ce0e1da3}</Project>
+      <Name>HZH_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{53995dbb-9836-4647-ad22-865884fdeb9e}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StatusMachine\StateMachine.csproj">
+      <Project>{c217ee4a-c9c0-48ce-a42b-8c54152784d6}</Project>
+      <Name>StateMachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserControls\UserControls.csproj">
+      <Project>{6fc0b246-1f05-4c63-9d50-dc4470c47de0}</Project>
+      <Name>UserControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Alarm.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Btn_GraySet.BackgroundImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Btn_ImageSetClose.BackgroundImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\panel17.BackgroundImage.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_AddPolygon.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_AddRectangle.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_Capture.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_ClearShape.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_DeleteShape.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_Detect.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_ImageFit.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\TSB_Save.Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\SmtDataUploadRecord" />
+    <None Include="Resources\TEST20240426.txt" />
+    <None Include="Resources\WLANProfile.xml.bmp" />
+    <None Include="Resources\WLANProfile.xm%3b.bmp" />
+    <None Include="信耀LOGO.jpg" />
+    <None Include="信耀LOGO1.jpg" />
+    <None Include="信耀LOGO2.jpg" />
+    <None Include="Resources\Red.jpg" />
+    <None Include="Resources\Off.jpg" />
+    <None Include="Resources\Green.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

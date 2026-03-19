@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props" Condition="Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B325E541-1F4D-457E-9B45-4DA3BF74482A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Controller</RootNamespace>
+    <AssemblyName>Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsGo">
+      <HintPath>..\Lib\CsGo.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="HslCommunication">
+      <HintPath>..\Lib\HslCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.COMMUNITLib">
+      <HintPath>..\Lib\Interop.COMMUNITLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.MediaPlayer">
+      <HintPath>..\Lib\Interop.MediaPlayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.MT6501MODULELib">
+      <HintPath>..\Lib\Interop.MT6501MODULELib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.5.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniExcel, Version=1.34.2.0, Culture=neutral, PublicKeyToken=e7310002a53eac39, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniExcel.1.34.2\lib\net45\MiniExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Common, Version=15.0.40.49154, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Vision, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Vision.Common, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NationalInstruments.Vision.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\lib\net40\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SimpleTCP, Version=1.0.24.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleTCP.1.0.24\lib\net45\SimpleTCP.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=5.0.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SqlSugar.5.0.3.2\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="Stateless">
+      <HintPath>..\Lib\Stateless.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="A12FrontLampControlModule.cs" />
+    <Compile Include="A2LlAlsMasterEcu.cs" />
+    <Compile Include="A58RLCMA.cs" />
+    <Compile Include="A88FrontLamp.cs" />
+    <Compile Include="AfsSlaveController.cs" />
+    <Compile Include="Al22FrontLamp.cs" />
+    <Compile Include="AlcmDevice.cs" />
+    <Compile Include="AllLedAutoAssemblyController.cs" />
+    <Compile Include="AllLedAutoAssemblyProcutSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllLedAutoAssemblyProcutSelect.Designer.cs">
+      <DependentUpon>AllLedAutoAssemblyProcutSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalogMax25608.cs" />
+    <Compile Include="As33FrontLamp.cs" />
+    <Compile Include="Audi427CSuvFrontLamp.cs" />
+    <Compile Include="Audi427CSuvGrilleLamp.cs" />
+    <Compile Include="AirOutletAutomotiveActuator.cs" />
+    <Compile Include="BarcodeScanReaderDlpEol.cs" />
+    <Compile Include="Bd18333Euv.cs" />
+    <Compile Include="CcdAutoAssemblyBarcodeScan.cs" />
+    <Compile Include="CcdAutoAssemblyBarcodeScanReader.cs" />
+    <Compile Include="CcdAutoAssemblyController.cs" />
+    <Compile Include="CcdAutoAssemblyJXTRM.cs" />
+    <Compile Include="CcdAutoAssemblyLaserPrinter.cs" />
+    <Compile Include="CcdAutoAssemblyPlateTrack.cs" />
+    <Compile Include="CcdAutoAssemblyPowerNgi3412E.cs" />
+    <Compile Include="CcdAutoAssemblySiemensPlc.cs" />
+    <Compile Include="ChargePortDoorLight.cs" />
+    <Compile Include="DX1H_V3.cs" />
+    <Compile Include="DX1H_V3_EMC.cs" />
+    <Compile Include="F03RearLamp.cs" />
+    <Compile Include="FogControlPlc.cs" />
+    <Compile Include="FogVisionAnalysis.cs" />
+    <Compile Include="GlobalC1UL2HvsmSeatHeatingModule.cs" />
+    <Compile Include="GlobalE2LBHvsmSeatHeatingModule.cs" />
+    <Compile Include="H53BHeadLamp.cs" />
+    <Compile Include="H53B_HCM_HeadLamp.cs" />
+    <Compile Include="HaikangBarcodeHVSM.cs" />
+    <Compile Include="HeadlampAnalysisByGb25911.cs" />
+    <Compile Include="AxisController.cs" />
+    <Compile Include="BarcodeScanReader.cs" />
+    <Compile Include="Bd18331Euv.cs" />
+    <Compile Include="Bx1EEcu.cs" />
+    <Compile Include="AlcmAtmosphereLampModule.cs" />
+    <Compile Include="CanFdWithGateway.cs" />
+    <Compile Include="Cd569AllLedDriver.cs" />
+    <Compile Include="Cd764DpFrontLamp.cs" />
+    <Compile Include="Cd764GpFrontLamp.cs" />
+    <Compile Include="Cd764RearLamp.cs" />
+    <Compile Include="Cdx707FrontLamp.cs" />
+    <Compile Include="Cdx707RearLamp.cs" />
+    <Compile Include="CheckApp.cs" />
+    <Compile Include="Cx1EEmc.cs" />
+    <Compile Include="Dlpc120CheetahSpiReader.cs" />
+    <Compile Include="ControllerBase.cs" />
+    <Compile Include="ControllerWithGateway.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CycloneController.cs" />
+    <Compile Include="D058FrontLampControlModule.cs" />
+    <Compile Include="Dc1ERearLamp.cs" />
+    <Compile Include="E001HeadLamp.cs" />
+    <Compile Include="E001RearLamp.cs" />
+    <Compile Include="E009HeadLamp.cs" />
+    <Compile Include="E2EpMcu.cs" />
+    <Compile Include="E2LbGpFrontLamp.cs" />
+    <Compile Include="EcuAutoAssemblyController.cs" />
+    <Compile Include="ElmosAppDownload.cs" />
+    <Compile Include="ElmosE522.cs" />
+    <Compile Include="ElmosE52294.cs" />
+    <Compile Include="Ep33AdmFrontLamp.cs" />
+    <Compile Include="Ep33DpFrontLamp.cs" />
+    <Compile Include="Ep33DpRearLamp.cs" />
+    <Compile Include="Ep33IscFrontLamp.cs" />
+    <Compile Include="Ep33IscRearLamp.cs" />
+    <Compile Include="Ep33LHeatPumpController.cs" />
+    <Compile Include="Ep33LightingMaster.cs" />
+    <Compile Include="Es33DpFrontLamp.cs" />
+    <Compile Include="Es33MotorController.cs" />
+    <Compile Include="Firewall.cs" />
+    <Compile Include="FlashRunner.cs" />
+    <Compile Include="GeeleyAutoRgbLamp.cs" />
+    <Compile Include="GmwB07.cs" />
+    <Compile Include="H77RearLamp.cs" />
+    <Compile Include="Ha1Camera.cs" />
+    <Compile Include="Ha1IsdFrontLamp.cs" />
+    <Compile Include="Ha1LightingMaster.cs" />
+    <Compile Include="HaikangBarcode.cs" />
+    <Compile Include="Hal3980Psi5ReaderByE52141DemoBoard.cs" />
+    <Compile Include="HalHac3980Programmer.cs" />
+    <Compile Include="HardwareController\ICcdIoController.cs" />
+    <Compile Include="HardwareController\ICcdPower.cs" />
+    <Compile Include="HeadlampAnalysisByGb4599.cs" />
+    <Compile Include="HelaASuvRearLamp.cs" />
+    <Compile Include="HelaASuvReWrite.cs" />
+    <Compile Include="HighSensorCaliServo.cs" />
+    <Compile Include="HikBarcodeScaner.cs" />
+    <Compile Include="HikMultipleBarcodeScanner.cs" />
+    <Compile Include="HopooColorOhs350XUsb.cs" />
+    <Compile Include="HvsmEmcModule.cs" />
+    <Compile Include="GlobalHvsmSeatHeatingModule.cs" />
+    <Compile Include="InfineonTld7002.cs" />
+    <Compile Include="JK2516S.cs" />
+    <Compile Include="JXTRMRegTestingInstrument.cs" />
+    <Compile Include="LDLL16ENTR.cs" />
+    <Compile Include="MatrixTps92663With3Q1.cs" />
+    <Compile Include="MatrixTps92664.cs" />
+    <Compile Include="MdfHeadlampAnalysis.cs" />
+    <Compile Include="MultipleCCDVisionController.cs" />
+    <Compile Include="Ncv78343.cs" />
+    <Compile Include="NDLB19200.cs" />
+    <Compile Include="Nsl21916.cs" />
+    <Compile Include="Nsl23716x.cs" />
+    <Compile Include="Nsl23924.cs" />
+    <Compile Include="OsramEviyosPowerNgi3412E.cs" />
+    <Compile Include="OsramEviyosSiemensPlc.cs" />
+    <Compile Include="OsramEviyosSiemensPlcAddHoldingRegs.cs" />
+    <Compile Include="OsramEviyosVisionAnalysis.cs" />
+    <Compile Include="P12LHeadLamp.cs" />
+    <Compile Include="P12LM1HeadLamp.cs" />
+    <Compile Include="PesControlPlc.cs" />
+    <Compile Include="PesVisionAnalysis.cs" />
+    <Compile Include="PesVisionAnalysisNDLB.cs" />
+    <Compile Include="AirConditionerAktuator.cs" />
+    <Compile Include="PowerIt8500.cs" />
+    <Compile Include="L234LoadBox.cs" />
+    <Compile Include="L234Mld.cs" />
+    <Compile Include="L246LinLoadBox.cs" />
+    <Compile Include="Ldm12BCanFdBusSimulation.cs" />
+    <Compile Include="LedAppDownload.cs" />
+    <Compile Include="LedVisionAnalysisByDaHengCamera.cs" />
+    <Compile Include="LinCommunication.cs" />
+    <Compile Include="LinMotorController.cs" />
+    <Compile Include="MatrixChipAsl5115.cs" />
+    <Compile Include="MatrixTps92662With3Q1.cs" />
+    <Compile Include="As33LedAppDownload.cs" />
+    <Compile Include="MifaEpMcu.cs" />
+    <Compile Include="ModbusTcpClient.cs" />
+    <Compile Include="MotorCheckApp.cs" />
+    <Compile Include="MotorCheckCustomPlc.cs" />
+    <Compile Include="Nsl21912.cs" />
+    <Compile Include="O1SlRearLamp.cs" />
+    <Compile Include="OsramEviyos.cs" />
+    <Compile Include="P12LHighLevelHeadLamp.cs" />
+    <Compile Include="P12LLowLevelHeadLamp.cs" />
+    <Compile Include="Pb006Mt6501.cs" />
+    <Compile Include="PowerIt39120.cs" />
+    <Compile Include="PowerIt6302.cs" />
+    <Compile Include="PowerIt6932As.cs" />
+    <Compile Include="PowerIt8800.cs" />
+    <Compile Include="PowerNgi.cs" />
+    <Compile Include="PowerNgi3412E.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Psi5TransferWithElmosE52140.cs" />
+    <Compile Include="RenesasFgFp6.cs" />
+    <Compile Include="RobotController.cs" />
+    <Compile Include="RobotControllerPpMode.cs" />
+    <Compile Include="RtexControllerBase.cs" />
+    <Compile Include="S11LIscRearLamp.cs" />
+    <Compile Include="S11LIscRearLampVave.cs" />
+    <Compile Include="S11LLightingMaster.cs" />
+    <Compile Include="S11Lm2IscRearLamp.cs" />
+    <Compile Include="S12LHeatPumpController.cs" />
+    <Compile Include="S12LHighLevelHeadLamp.cs" />
+    <Compile Include="S12LLightingMasterIscUpload.cs" />
+    <Compile Include="S12LLowLevelHeadLamp.cs" />
+    <Compile Include="S12Lm1HeadLamp.cs" />
+    <Compile Include="S59HeadLamp.cs" />
+    <Compile Include="S59HeadLampBox.cs" />
+    <Compile Include="Sgm3582GrlleLamp.cs" />
+    <Compile Include="Sgm3582RearLamp.cs" />
+    <Compile Include="Sgm358Ecu.cs" />
+    <Compile Include="Sgm358FrontLedDriverModule.cs" />
+    <Compile Include="Sgm358RearLamp.cs.cs" />
+    <Compile Include="Sgm458Msm.cs" />
+    <Compile Include="Sgm458Pdm.cs" />
+    <Compile Include="Sgm458Plg.cs" />
+    <Compile Include="Sgm458PlgGetRandNum.cs" />
+    <Compile Include="SgmModuleDebug.cs" />
+    <Compile Include="SHB_HUD.cs" />
+    <Compile Include="SiemensPlc.cs" />
+    <Compile Include="SiemensPlcDlpEol.cs" />
+    <Compile Include="SiemensPlcHVSM.cs" />
+    <Compile Include="SmartGlassDisplay.cs" />
+    <Compile Include="SolenoidValueAppDownload.cs" />
+    <Compile Include="Stanleygz33Wa.cs" />
+    <Compile Include="SyControllerMaster.cs" />
+    <Compile Include="SyControllerSlaveWith10R.cs" />
+    <Compile Include="SyControllerSlaveWith14Ad.cs" />
+    <Compile Include="SyControllerSlaveWith16Di.cs" />
+    <Compile Include="SyControllerSlaveWith20Do.cs" />
+    <Compile Include="SyControllerWith56Pin.cs" />
+    <Compile Include="SyPsi5InterfaceWithE52140.cs" />
+    <Compile Include="SyRenesasMcuControllerMaster.cs" />
+    <Compile Include="SyRenesasMcuControllerSlaveWith12ADs.cs" />
+    <Compile Include="SyRenesasMcuControllerSlaveWith19PhotoSensor.cs" />
+    <Compile Include="SyRenesasMcuControllerSlaveWith8RLs.cs" />
+    <Compile Include="SySerialPortController.cs" />
+    <Compile Include="T9M.cs" />
+    <Compile Include="TestDc1ERearLamp.cs" />
+    <Compile Include="KebodaLdmSeries.cs" />
+    <Compile Include="ToomossUsb2xxxCanLin.cs" />
+    <Compile Include="ToomossUsb2XxxPwm.cs" />
+    <Compile Include="ToomossUsb2XxxSlaveLin.cs" />
+    <Compile Include="Tps92664Box.cs" />
+    <Compile Include="Tps929120Ti.cs" />
+    <Compile Include="U458FrontLamp.cs" />
+    <Compile Include="U557FrontLamp.cs" />
+    <Compile Include="U557HeadLamp.cs" />
+    <Compile Include="UTL8211.cs" />
+    <Compile Include="V174.cs" />
+    <Compile Include="VisionAnalysis.cs" />
+    <Compile Include="VoyahH53B.cs" />
+    <Compile Include="DongFengH77RearLamp.cs" />
+    <Compile Include="Vw316RearLamp.cs" />
+    <Compile Include="Vw323RearLamp.cs" />
+    <Compile Include="Vw413RearLamp.cs" />
+    <Compile Include="Vw416RearLamp.cs" />
+    <Compile Include="Vw491RearLamp.cs" />
+    <Compile Include="Vx1DlpLedDriver.cs" />
+    <Compile Include="Vx1IsdLamp.cs" />
+    <Compile Include="Vx1LedDriver.cs" />
+    <Compile Include="Vx1LightingMaster.cs" />
+    <Compile Include="WarningLamp.cs" />
+    <Compile Include="WirelessAllLedAutoAssemblyController.cs" />
+    <Compile Include="WirelessBarcodeScanReader.cs" />
+    <Compile Include="WirelessChargingModule.cs" />
+    <Compile Include="WirelessModbusTcpClient.cs" />
+    <Compile Include="WirelessPowerNgi3412E.cs" />
+    <Compile Include="WirelessSiemensPlc.cs" />
+    <Compile Include="WriteNow.cs" />
+    <Compile Include="WriteNowApi.cs" />
+    <Compile Include="WuLingController.cs" />
+    <Compile Include="XiaoPengE29RearLamp.cs" />
+    <Compile Include="XiaoPengX3FrontLamp.cs" />
+    <Compile Include="XiaoPengX3RearLamp.cs" />
+    <Compile Include="XwWriter-X4.cs" />
+    <Compile Include="YfasLogoDevice.cs" />
+    <Compile Include="ZlgUsbCanFd200U.cs" />
+    <Compile Include="ZlgUsbCanFd200UWithBaudRate1M.cs" />
+    <Compile Include="ZlgUsbCanFd400U.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonUtility\CommonUtility.csproj">
+      <Project>{a6ce27a1-310b-4008-9c6f-deedd8cad5d3}</Project>
+      <Name>CommonUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{0988c62e-247f-471f-a183-db509c7a3839}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductController\" />
+    <Folder Include="SoftwareController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AllLedAutoAssemblyProcutSelect.resx">
+      <DependentUpon>AllLedAutoAssemblyProcutSelect.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sgm458RearLamp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp3-AnyCPU.4.0.0.20181129\build\OpenCvSharp3-AnyCPU.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

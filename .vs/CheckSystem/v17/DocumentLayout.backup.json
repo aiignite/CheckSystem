@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\CheckSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|d:\\projects\\checksystem\\checksystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|solutionrelative:checksystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B325E541-1F4D-457E-9B45-4DA3BF74482A}|Controller\\Controller.csproj|d:\\projects\\checksystem\\controller\\nsl21912.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B325E541-1F4D-457E-9B45-4DA3BF74482A}|Controller\\Controller.csproj|solutionrelative:controller\\nsl21912.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\CheckSystem\\CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 234,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "H77_RCLB_LOGO_TAIL_STOP.xml",
+              "DocumentMoniker": "D:\\Projects\\CheckSystem\\CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml",
+              "RelativeDocumentMoniker": "CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml",
+              "ToolTip": "D:\\Projects\\CheckSystem\\CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml",
+              "RelativeToolTip": "CheckSystem\\bin\\Debug\\\u6D41\u7A0B\u914D\u7F6E\u6587\u4EF6\\H77_RCLB_LOGO_TAIL_STOP.xml",
+              "ViewState": "AgIAADIaAAAAAAAAAAAIwIUaAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-02-12T07:35:32.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Nsl21912.cs",
+              "DocumentMoniker": "D:\\Projects\\CheckSystem\\Controller\\Nsl21912.cs",
+              "RelativeDocumentMoniker": "Controller\\Nsl21912.cs",
+              "ToolTip": "D:\\Projects\\CheckSystem\\Controller\\Nsl21912.cs",
+              "RelativeToolTip": "Controller\\Nsl21912.cs",
+              "ViewState": "AgIAAMwJAAAAAAAAAAAQwC0ZAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:46:12.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\CheckSystem\\CheckSystem\\Program.cs",
+              "RelativeDocumentMoniker": "CheckSystem\\Program.cs",
+              "ToolTip": "D:\\Projects\\CheckSystem\\CheckSystem\\Program.cs",
+              "RelativeToolTip": "CheckSystem\\Program.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAH0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T03:38:14.817Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 109,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

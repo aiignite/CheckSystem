@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Systemconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <systeminfo>
+    <deviceno>DE20180002</deviceno>
+    <deviceversion>2019/1/9 22:06:08</deviceversion>
+  </systeminfo>
+  <formdesigner>
+    <col>4</col>
+    <row>30</row>
+    <colpercent>25,25,25,25</colpercent>
+    <rowpix>40</rowpix>
+    <controls>
+      <control>
+        <name>检测数据</name>
+        <type>DataGrid</type>
+        <col>0</col>
+        <row>1</row>
+        <colspan>1</colspan>
+        <rowspan>18</rowspan>
+      </control>
+      <control>
+        <name>视觉图像</name>
+        <type>NiImageViewer</type>
+        <col>1</col>
+        <row>1</row>
+        <colspan>3</colspan>
+        <rowspan>21</rowspan>
+      </control>
+    </controls>
+  </formdesigner>
+  <controllers>
+    <controller>
+      <name>It6803</name>
+      <type>It6803</type>
+      <initparas>COM1,9600,8,1</initparas>
+    </controller>
+    <controller>
+      <name>Datalogic4500</name>
+      <type>DataLogic4430</type>
+      <initparas>COM1,9600,8,1</initparas>
+    </controller>
+    <controller>
+      <name>Siemens</name>
+      <type>Siemens</type>
+      <initparas>192.168.0.10:4300</initparas>
+    </controller>
+    <controller>
+      <name>APP</name>
+      <type>ThisApp</type>
+      <initparas />
+    </controller>
+    <controller>
+      <name>sirmens2</name>
+      <type>Siemens</type>
+      <initparas />
+    </controller>
+  </controllers>
+  <sensoractuators>
+    <sensoractuator>
+      <name>进板传感器</name>
+      <datatype>bool</datatype>
+      <controller>Siemens</controller>
+      <field>Siemens.Field.I10001</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>进板滚筒电机</name>
+      <datatype>bool</datatype>
+      <controller>Siemens</controller>
+      <field>Siemens.Field.I10002</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>板厚检测传感器</name>
+      <datatype>int</datatype>
+      <controller>Siemens</controller>
+      <field>Siemens.Field.R30001</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>DRL继电器</name>
+      <datatype>bool</datatype>
+      <controller>sirmens2</controller>
+      <field>sirmens2.Field.I10002</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>PL继电器</name>
+      <datatype>bool</datatype>
+      <controller>sirmens2</controller>
+      <field>sirmens2.Field.I10003</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>合格指示灯</name>
+      <datatype>bool</datatype>
+      <controller>sirmens2</controller>
+      <field>sirmens2.Field.I10004</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>不合格指示灯</name>
+      <datatype>bool</datatype>
+      <controller>sirmens2</controller>
+      <field>sirmens2.Field.R30005</field>
+    </sensoractuator>
+    <sensoractuator>
+      <name>开始检测按钮</name>
+      <datatype>bool</datatype>
+      <controller>sirmens2</controller>
+      <field>sirmens2.Field.R30006</field>
+    </sensoractuator>
+  </sensoractuators>
+  <processparas>
+    <name>"PPP"</name>
+    <processno>1</processno>
+    <parasversion>V01</parasversion>
+    <paras>
+      <para>
+        <name>version</name>
+        <datatype>string</datatype>
+        <okformat>=</okformat>
+        <value>V01</value>
+        <min />
+        <max />
+        <unit />
+        <displaycontrol>检测数据</displaycontrol>
+        <controllerfield>It6803.Field.Voltage</controllerfield>
+        <controllerfieldoffset>1,0</controllerfieldoffset>
+      </para>
+      <para>
+        <name>Iin9V</name>
+        <datatype>double</datatype>
+        <okformat />
+        <value />
+        <min>120</min>
+        <max>180</max>
+        <unit>mA</unit>
+        <displaycontrol>检测数据</displaycontrol>
+        <controllerfield>It6803.Field.Current</controllerfield>
+        <controllerfieldoffset>1,0</controllerfieldoffset>
+      </para>
+    </paras>
+  </processparas>
+  <workstations>
+    <workstation>
+      <name>进板</name>
+      <initstatusunit />
+      <currentstatusunit />
+      <statusunits>
+        <statusunit>
+          <name>Init</name>
+          <no>Init</no>
+          <enterfunction>
+            Siemens.Method.Init(192.168.0.1:4300);
+            Siemens.Method.CycleUpdate(50);
+          </enterfunction>
+          <duringfunction />
+          <positionsize>302,96,180,80</positionsize>
+          <enternote />
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>Idle</name>
+          <no>Idle</no>
+          <enterfunction />
+          <duringfunction />
+          <positionsize>300,289,180,80</positionsize>
+          <enternote />
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>进板</name>
+          <no>进板</no>
+          <enterfunction>
+            Siemens.Field.I10002=1;
+          </enterfunction>
+          <duringfunction />
+          <positionsize>295,492,180,80</positionsize>
+          <enternote />
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>到位</name>
+          <no>到位</no>
+          <enterfunction>
+            Siemens.Field.I10002=0;
+          </enterfunction>
+          <duringfunction />
+          <positionsize>291,657,180,80</positionsize>
+          <enternote />
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>放置</name>
+          <no>放置</no>
+          <enterfunction>
+            Siemens.Field.I10002=1;
+          </enterfunction>
+          <duringfunction />
+          <positionsize>287,838,247,80</positionsize>
+          <enternote>
+            进板滚筒电机=1;
+          </enternote>
+          <duringnote />
+        </statusunit>
+      </statusunits>
+      <conditions>
+        <condition>
+          <name>Init_Idle</name>
+          <sourcestatusname>Init</sourcestatusname>
+          <targetstatusname>Idle</targetstatusname>
+          <conditionfunction>
+            APP.Field.EqualTrue==1&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>390,223</middleposition>
+          <conditionnote />
+          <exitnote />
+        </condition>
+        <condition>
+          <name>Idle_进板</name>
+          <sourcestatusname>Idle</sourcestatusname>
+          <targetstatusname>进板</targetstatusname>
+          <conditionfunction>
+            Siemens.Field.I10002==1&amp;&amp;
+            Siemens.Field.I10003==0&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>390,412</middleposition>
+          <conditionnote />
+          <exitnote />
+        </condition>
+        <condition>
+          <name>进板_到位</name>
+          <sourcestatusname>进板</sourcestatusname>
+          <targetstatusname>到位</targetstatusname>
+          <conditionfunction>
+            Siemens.Field.I10006==1
+
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>383,610</middleposition>
+          <conditionnote />
+          <exitnote />
+        </condition>
+        <condition>
+          <name>到位_放置</name>
+          <sourcestatusname>到位</sourcestatusname>
+          <targetstatusname>放置</targetstatusname>
+          <conditionfunction>
+            Siemens.Field.I10001==1&amp;&amp;
+          </conditionfunction>
+          <exitfunction>
+            Siemens.Field.I10002=1;
+          </exitfunction>
+          <middleposition>386,787</middleposition>
+          <conditionnote>
+            进板传感器==1&amp;&amp;
+          </conditionnote>
+          <exitnote>
+            进板滚筒电机=1;
+          </exitnote>
+        </condition>
+      </conditions>
+    </workstation>
+    <workstation>
+      <name>翻板</name>
+      <initstatusunit />
+      <currentstatusunit />
+      <statusunits />
+      <conditions />
+    </workstation>
+    <workstation>
+      <name>下板</name>
+      <initstatusunit />
+      <currentstatusunit />
+      <statusunits />
+      <conditions />
+    </workstation>
+    <workstation>
+      <name>功能检测</name>
+      <initstatusunit />
+      <currentstatusunit />
+      <statusunits>
+        <statusunit>
+          <name>初始化电源</name>
+          <no>初始化电源</no>
+          <enterfunction>
+            It6803.Method.Init(COM1,9600,8,N,1);
+            APP.Method.Sleep(500);
+            It6803.Method.SetVoltage(9);
+            APP.Method.Sleep(100);
+            It6803.Method.ReadVoltage();
+            APP.Method.Sleep(100);
+          </enterfunction>
+          <duringfunction />
+          <positionsize>369,98,180,80</positionsize>
+          <enternote>
+            It6803.Method.Init(COM1,9600,8,N,1);
+            APP.Method.Sleep(500);
+            It6803.Method.SetVoltage(9);
+            APP.Method.Sleep(500);
+            It6803.Method.ReadVoltage();
+          </enternote>
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>空闲</name>
+          <no>空闲</no>
+          <enterfunction />
+          <duringfunction />
+          <positionsize>371,263,180,80</positionsize>
+          <enternote />
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>DRL检测</name>
+          <no>DRL检测</no>
+          <enterfunction>
+            sirmens2.Field.I10002=1;
+            sirmens2.Field.I10004=0;
+            sirmens2.Field.R30005=0;
+            APP.Method.Sleep(1500);
+          </enterfunction>
+          <duringfunction />
+          <positionsize>372,437,180,80</positionsize>
+          <enternote>
+            sirmens2.Field.I10002=1;
+            sirmens2.Field.I10004=0;
+            sirmens2.Field.R30005=0;
+
+            APP.Method.Sleep(1500);
+          </enternote>
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>PL检测</name>
+          <no>PL检测</no>
+          <enterfunction>
+            sirmens2.Field.I10002=0;
+            sirmens2.Field.I10003=1;
+            APP.Method.Sleep(1500);
+          </enterfunction>
+          <duringfunction />
+          <positionsize>372,602,180,80</positionsize>
+          <enternote>
+            sirmens2.Field.I10002=0;
+            sirmens2.Field.I10003=1;
+            APP.Method.Sleep(1500);
+          </enternote>
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>检测OK</name>
+          <no>检测OK</no>
+          <enterfunction>
+            sirmens2.Field.I10003=0;
+            sirmens2.Field.I10004=1;
+          </enterfunction>
+          <duringfunction />
+          <positionsize>371,761,180,80</positionsize>
+          <enternote>
+            PL继电器=0;
+            合格指示灯=1;
+          </enternote>
+          <duringnote />
+        </statusunit>
+        <statusunit>
+          <name>检测不合格</name>
+          <no>检测不合格</no>
+          <enterfunction>
+            sirmens2.Field.R30005=1;
+          </enterfunction>
+          <duringfunction />
+          <positionsize>836,508,180,80</positionsize>
+          <enternote>
+            不合格指示灯=1;
+          </enternote>
+          <duringnote />
+        </statusunit>
+      </statusunits>
+      <conditions>
+        <condition>
+          <name>初始化电源_空闲</name>
+          <sourcestatusname>初始化电源</sourcestatusname>
+          <targetstatusname>空闲</targetstatusname>
+          <conditionfunction>
+            Field.Voltage&gt;8.5&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>463,213</middleposition>
+          <conditionnote>
+            Field.Voltage&gt;8.5&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>空闲_DRL检测</name>
+          <sourcestatusname>空闲</sourcestatusname>
+          <targetstatusname>DRL检测</targetstatusname>
+          <conditionfunction>
+            sirmens2.Field.R30006==1&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>465,389</middleposition>
+          <conditionnote>
+            开始检测按钮==1&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>DRL检测_PL检测</name>
+          <sourcestatusname>DRL检测</sourcestatusname>
+          <targetstatusname>PL检测</targetstatusname>
+          <conditionfunction>
+            App.Para.Iin9V&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>502,560</middleposition>
+          <conditionnote>
+            App.Para.Iin9V&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>PL检测_检测OK</name>
+          <sourcestatusname>PL检测</sourcestatusname>
+          <targetstatusname>检测OK</targetstatusname>
+          <conditionfunction>
+            App.Para.Iin9V&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>460,719</middleposition>
+          <conditionnote>
+            App.Para.Iin9V&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>DRL检测_检测不合格</name>
+          <sourcestatusname>DRL检测</sourcestatusname>
+          <targetstatusname>检测不合格</targetstatusname>
+          <conditionfunction>
+            !App.Para.Iin9V&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>668,481</middleposition>
+          <conditionnote>
+            App.Para.Iin9V&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>PL检测_检测不合格</name>
+          <sourcestatusname>PL检测</sourcestatusname>
+          <targetstatusname>检测不合格</targetstatusname>
+          <conditionfunction>
+            App.Para.Iin9V&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>673,642</middleposition>
+          <conditionnote>
+            App.Para.Iin9V&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>检测不合格_空闲</name>
+          <sourcestatusname>检测不合格</sourcestatusname>
+          <targetstatusname>空闲</targetstatusname>
+          <conditionfunction>
+            Field.EqualTrue==1&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>776,380</middleposition>
+          <conditionnote>
+            ==1&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+        <condition>
+          <name>检测OK_空闲</name>
+          <sourcestatusname>检测OK</sourcestatusname>
+          <targetstatusname>空闲</targetstatusname>
+          <conditionfunction>
+            Field.EqualTrue==1&amp;&amp;
+          </conditionfunction>
+          <exitfunction />
+          <middleposition>224,546</middleposition>
+          <conditionnote>
+            ==1&amp;&amp;
+          </conditionnote>
+          <exitnote />
+        </condition>
+      </conditions>
+    </workstation>
+  </workstations>
+</Systemconfig>

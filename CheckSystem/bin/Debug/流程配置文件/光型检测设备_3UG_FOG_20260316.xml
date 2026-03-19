@@ -1,0 +1,982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>IN4301000239</DeviceNo>
+        <DeviceName>光型检测设备_3UG_FOG</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2026-03-16 11:22:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>10</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>4</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+        <Control>
+            <Name>图像显示</Name>
+            <Type>PictureBox</Type>
+            <RowPosition>4</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>6</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器主站</Name>
+            <Type>SyRenesasMcuControllerMaster</Type>
+            <Note>Renesas控制器主站</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器ad从站_0x101</Name>
+            <Type>SyRenesasMcuControllerSlaveWith12ADs</Type>
+            <Note>Renesas控制器ad从站_0x101</Note>
+        </Controller>
+        <Controller>
+            <Name>Renesas控制器RL从站_0x201</Name>
+            <Type>SyRenesasMcuControllerSlaveWith8RLs</Type>
+            <Note>Renesas控制器RL从站_0x201</Note>
+        </Controller>
+        <Controller>
+            <Name>FOG光型检测</Name>
+            <Type>FogVisionAnalysis</Type>
+            <Note>FOG光型检测</Note>
+        </Controller>
+        <Controller>
+            <Name>PLC</Name>
+            <Type>FogControlPlc</Type>
+            <Note>PLC</Note>
+        </Controller>
+        <Controller>
+            <Name>亮色度计</Name>
+            <Type>HopooColorOhs350XUsb</Type>
+            <Note>亮色度计</Note>
+        </Controller>
+        <Controller>
+            <Name>扫码</Name>
+            <Type>BarcodeScanReader</Type>
+            <Note>扫码</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>IN4301000239</ProcessNo>
+            <Name>FOG点亮</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>Renesas控制器RL从站_0x201</ControllerName>
+            <ControllerField>Renesas控制器RL从站_0x201.Field.Relay2</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>IN4301000239</ProcessNo>
+            <Name>启动照度计检测</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool21</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>图像分析结果</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>Finish</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.AnalysisResultFog</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>图像显示</Name>
+            <DataType>bitmap</DataType>
+            <ControlName>图像显示</ControlName>
+            <ControllerField>FOG光型检测.Field.AnalysisResultBase64String</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>中心</Name>
+            <DataType>double</DataType>
+            <Min>230</Min>
+            <Max>255</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.EMax</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>上5度</Name>
+            <DataType>double</DataType>
+            <Min>95</Min>
+            <Max>160</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.V_5U</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>下5度</Name>
+            <DataType>double</DataType>
+            <Min>95</Min>
+            <Max>160</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.V_5B</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>左10度</Name>
+            <DataType>double</DataType>
+            <Min>55</Min>
+            <Max>110</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.H_10L</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>右10度</Name>
+            <DataType>double</DataType>
+            <Min>55</Min>
+            <Max>110</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>FOG光型检测.Field.H_10R</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>开始检测</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>开始检测</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bstring0</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>色度</Name>
+            <DataType>double</DataType>
+            <Min>800</Min>
+            <Max>1500</Max>
+            <Unit>K</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>亮色度计.Field.Color</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>色坐标X</Name>
+            <DataType>double</DataType>
+            <OkFormat />
+            <Value />
+            <Min>0.6</Min>
+            <Max>0.8</Max>
+            <Unit />
+            <ControlName>检测数据</ControlName>
+            <ControllerField>亮色度计.Field.CoordinateX</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>色坐标Y</Name>
+            <DataType>double</DataType>
+            <Min>0.25</Min>
+            <Max>0.4</Max>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>亮色度计.Field.CoordinateY</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>照度</Name>
+            <DataType>double</DataType>
+            <Min>735</Min>
+            <Max>1200</Max>
+            <Unit>lx</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>亮色度计.Field.Lux</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>条码</Name>
+            <DataType>barcodeGroup</DataType>
+            <Value>?????????????</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>扫码.Field.GetBarcodeStr</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007967001</ProcessNo>
+            <Name>输入电流</Name>
+            <DataType>double</DataType>
+            <Min>56</Min>
+            <Max>76</Max>
+            <Unit>mA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>Renesas控制器ad从站_0x101.Field.Current2</ControllerField>
+            <ControllerFieldOffset>1*X+3</ControllerFieldOffset>
+        </Para>
+    </Paras>
+    <Gears>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KPF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KPJ3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KPM3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KQF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KQJ3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KQM3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KRF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KRJ3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KRM3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KSF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KSJ3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KSM3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KTF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KTJ3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KTME</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+        <Gear>
+            <Name>条码</Name>
+            <MatchingCodeContent>KUF3</MatchingCodeContent>
+            <MatchingCodeIndex>1</MatchingCodeIndex>
+        </Gear>
+    </Gears>
+    <Rois />
+    <WorkStations>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+        <WorkStation>
+            <Name>测试工作站2</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote>FOG光型检测.Field.CameraSn=GW0170070604;
+FOG光型检测.Field.Ratio=6000;
+FOG光型检测.Field.PixelScale=2.2;
+FOG光型检测.Field.CameraDistanceCm=41;
+FOG光型检测.Field.FresnelLensDistanceCm=55;
+Renesas控制器主站.Method.InitRemoteIpAddress(192.168.1.28:8088);
+Renesas控制器ad从站_0x101.Method.ConnectMaster(192.168.1.28,0x101);
+Renesas控制器RL从站_0x201.Method.ConnectMaster(192.168.1.28,0x201);
+Renesas控制器主站.Method.SetSlavesRLs();
+PLC.Method.InitRemoteIpAddress(192.168.1.88:502);
+PLC.Method.CycleUpdate();
+扫码.Method.ConnectBarcodeScanner(COM4:9600);
+亮色度计.Method.ConnectSerialPort(COM6);
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>FOG光型检测.Field.CameraSn=GW0170070604;
+FOG光型检测.Field.Ratio=6000;
+FOG光型检测.Field.PixelScale=2.2;
+FOG光型检测.Field.CameraDistanceCm=41;
+FOG光型检测.Field.FresnelLensDistanceCm=55;
+Renesas控制器主站.Method.InitRemoteIpAddress(192.168.1.28:8088);
+Renesas控制器ad从站_0x101.Method.ConnectMaster(192.168.1.28,0x101);
+Renesas控制器RL从站_0x201.Method.ConnectMaster(192.168.1.28,0x201);
+Renesas控制器主站.Method.SetSlavesRLs();
+PLC.Method.InitRemoteIpAddress(192.168.1.88:502);
+PLC.Method.CycleUpdate();
+扫码.Method.ConnectBarcodeScanner(COM4:9600);
+亮色度计.Method.ConnectSerialPort(COM6);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>-55,196,180,78</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction>PLC.Field.PcWriteCheckOk=0;
+PLC.Field.PcWriteCheckNg=0;
+扫码.Method.ClearBuffer();
+</EnterFunction>
+            <DuringFunction>扫码.Method.ReadBarcode(1);
+</DuringFunction>
+            <PositionSize>1311,718,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>128,1796,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction>PLC.Field.PcWriteCheckOk=0;
+PLC.Field.PcWriteCheckNg=1;
+检测程序.Method.Sleep(1000);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>-724,754,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待开始检测信号</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>3579,19,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>RBIN</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>4592,933,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PLC.Field.PcWriteCheckEnd=1;
+Renesas控制器RL从站_0x201.Method.ResetOutPuts();
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>测试结束</Name>
+            <EnterFunction>PLC.Field.PcWriteCheckEnd=1;
+Renesas控制器RL从站_0x201.Method.ResetOutPuts();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>707,1105,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始检测</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>2682,677,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>Start</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>3767,454,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否反复测试</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>-44,1257,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>光型检测</Name>
+            <EnterFunction>FOG光型检测.Method.CaptureImage(FOG原图,12000,1);
+FOG光型检测.Method.AnalyzeFog(FOG原图);
+FOG光型检测.Method.CloseCamera();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3198,1768,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>模组运动到色度位置</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>2655,2212,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>模组运动到色度位置结束</Name>
+            <EnterFunction>IN4301000239.Part.启动照度计检测=1;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1687,2097,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>PLC.Field.PcWriteCheckEnd=1;
+Renesas控制器ad从站_0x101.Method.SlaveReadADs();
+Renesas控制器RL从站_0x201.Method.ResetOutPuts();
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取色度值</Name>
+            <EnterFunction>PLC.Field.PcWriteCheckEnd=1;
+Renesas控制器ad从站_0x101.Method.SlaveReadADs();
+Renesas控制器RL从站_0x201.Method.ResetOutPuts();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1169,1643,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>检测程序.Field.Bbool67=0;
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>debug1</Name>
+            <EnterFunction>检测程序.Field.Bbool67=0;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2750,1093,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>FOG光型检测.Method.ClearAllImage();
+FOG光型检测.Method.ClearAnalysisResult();
+检测程序.Field.Bstring0=开始检测;
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码2</Name>
+            <EnterFunction>FOG光型检测.Method.ClearAllImage();
+FOG光型检测.Method.ClearAnalysisResult();
+检测程序.Field.Bstring0=开始检测;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2213,387,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>二维码判断</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>2221,-115,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote>IN4301000239.Part.FOG点亮=1;
+Renesas控制器RL从站_0x201.Method.SlaveSetRLs();
+FOG光型检测.Method.OpenCamera(12000);
+</EnterNote>
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待到位启动信号</Name>
+            <EnterFunction>IN4301000239.Part.FOG点亮=1;
+Renesas控制器RL从站_0x201.Method.SlaveSetRLs();
+FOG光型检测.Method.OpenCamera(12000);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3769,1309,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>900,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1346,792,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>682,1038,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1292,1236,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>启动照度计检测</Name>
+            <EnterFunction>亮色度计.Method.StartTestByAutoIntegralTime();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2456,1053,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction>检测程序.Field.IsRun=1;
+</ExitFunction>
+            <ExitNote>检测程序.Field.IsRun=1;
+</ExitNote>
+            <MiddlePisiton>747,538</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>测试结束_PRESTART</Name>
+            <SourceSuName>测试结束</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>PLC.Field.PcReadCheckStart==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PLC.Field.PcReadCheckStart==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction>PLC.Field.PcWriteCheckEnd=0;
+PLC.Field.PcWriteCheckOk=0;
+PLC.Field.PcWriteCheckNg=0;
+检测程序.Method.Sleep(200);
+</ExitFunction>
+            <ExitNote>PLC.Field.PcWriteCheckEnd=0;
+PLC.Field.PcWriteCheckOk=0;
+PLC.Field.PcWriteCheckNg=0;
+检测程序.Method.Sleep(200);
+</ExitNote>
+            <MiddlePisiton>1120,888</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_开始检测</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>开始检测</TargetSuName>
+            <ConditionFunction>PLC.Field.PcReadCheckStart==1&amp;&amp;
+检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PLC.Field.PcReadCheckStart==1&amp;&amp;
+检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2201,682</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>开始检测_Start</Name>
+            <SourceSuName>开始检测</SourceSuName>
+            <TargetSuName>Start</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3295,442</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>Start_RBIN</Name>
+            <SourceSuName>Start</SourceSuName>
+            <TargetSuName>RBIN</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4115,688</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待开始检测信号_开始检测</Name>
+            <SourceSuName>等待开始检测信号</SourceSuName>
+            <TargetSuName>开始检测</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3306,268</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND_是否反复测试</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>是否反复测试</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>188,1519</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL_是否反复测试</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>是否反复测试</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>-139,891</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否反复测试_测试结束</Name>
+            <SourceSuName>是否反复测试</SourceSuName>
+            <TargetSuName>测试结束</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>360,962</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>光型检测_模组运动到色度位置</Name>
+            <SourceSuName>光型检测</SourceSuName>
+            <TargetSuName>模组运动到色度位置</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3041,2157</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>模组运动到色度位置_模组运动到色度位置结束</Name>
+            <SourceSuName>模组运动到色度位置</SourceSuName>
+            <TargetSuName>模组运动到色度位置结束</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2390,1968</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>模组运动到色度位置结束_读取色度值</Name>
+            <SourceSuName>模组运动到色度位置结束</SourceSuName>
+            <TargetSuName>读取色度值</TargetSuName>
+            <ConditionFunction>IN4301000239.Part.启动照度计检测==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>IN4301000239.Part.启动照度计检测==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1589,1925</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取色度值_CHECKEND</Name>
+            <SourceSuName>读取色度值</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>PR4102007967001.Para.输入电流==TRUE&amp;&amp;
+PR4102007967001.Para.图像分析结果==TRUE&amp;&amp;
+PR4102007967001.Para.图像显示==TRUE&amp;&amp;
+PR4102007967001.Para.中心==TRUE&amp;&amp;
+PR4102007967001.Para.上5度==TRUE&amp;&amp;
+PR4102007967001.Para.下5度==TRUE&amp;&amp;
+PR4102007967001.Para.左10度==TRUE&amp;&amp;
+PR4102007967001.Para.右10度==TRUE&amp;&amp;
+PR4102007967001.Para.色度==TRUE&amp;&amp;
+PR4102007967001.Para.色坐标X==TRUE&amp;&amp;
+PR4102007967001.Para.色坐标Y==TRUE&amp;&amp;
+PR4102007967001.Para.照度==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007967001.Para.输入电流==TRUE&amp;&amp;
+PR4102007967001.Para.图像分析结果==TRUE&amp;&amp;
+PR4102007967001.Para.图像显示==TRUE&amp;&amp;
+PR4102007967001.Para.中心==TRUE&amp;&amp;
+PR4102007967001.Para.上5度==TRUE&amp;&amp;
+PR4102007967001.Para.下5度==TRUE&amp;&amp;
+PR4102007967001.Para.左10度==TRUE&amp;&amp;
+PR4102007967001.Para.右10度==TRUE&amp;&amp;
+PR4102007967001.Para.色度==TRUE&amp;&amp;
+PR4102007967001.Para.色坐标X==TRUE&amp;&amp;
+PR4102007967001.Para.色坐标Y==TRUE&amp;&amp;
+PR4102007967001.Para.照度==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>689,1700</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_debug1</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>debug1</TargetSuName>
+            <ConditionFunction>检测程序.Field.Bbool67==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.Bbool67==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2116,1035</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>debug1_Start</Name>
+            <SourceSuName>debug1</SourceSuName>
+            <TargetSuName>Start</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3412,830</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_扫码2</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>扫码2</TargetSuName>
+            <ConditionFunction>扫码.Field.GetBarcodeLength&gt;1||&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>扫码.Field.GetBarcodeLength&gt;1||&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1788,548</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>扫码2_二维码判断</Name>
+            <SourceSuName>扫码2</SourceSuName>
+            <TargetSuName>二维码判断</TargetSuName>
+            <ConditionFunction>PR4102007967001.Para.条码==TRUE&amp;&amp;
+PR4102007967001.Para.开始检测==TRUE&amp;&amp;
+PR4102007967001.Para.图像显示==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007967001.Para.条码==TRUE&amp;&amp;
+PR4102007967001.Para.开始检测==TRUE&amp;&amp;
+PR4102007967001.Para.图像显示==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2429,231</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>二维码判断_等待开始检测信号</Name>
+            <SourceSuName>二维码判断</SourceSuName>
+            <TargetSuName>等待开始检测信号</TargetSuName>
+            <ConditionFunction>PLC.Field.PreStart==1||
+PLC.Field.PcReadCheckStart==1||
+</ConditionFunction>
+            <ConditionNote>PLC.Field.PreStart==1||
+PLC.Field.PcReadCheckStart==1||
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3074,84</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>等待到位启动信号_光型检测</Name>
+            <SourceSuName>等待到位启动信号</SourceSuName>
+            <TargetSuName>光型检测</TargetSuName>
+            <ConditionFunction>PLC.Field.PcReadCheckStart==1&amp;&amp;
+检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PLC.Field.PcReadCheckStart==1&amp;&amp;
+检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3654,1543</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>RBIN_等待到位启动信号</Name>
+            <SourceSuName>RBIN</SourceSuName>
+            <TargetSuName>等待到位启动信号</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4315,1180</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_二维码判断</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>二维码判断</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1831,366</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1139,624</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1000,1008</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1353,1116</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>PRESTART_启动照度计检测</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>启动照度计检测</TargetSuName>
+            <ConditionFunction>IN4301000239.Part.启动照度计检测==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>IN4301000239.Part.启动照度计检测==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2074,734</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站2</WorkStationName>
+            <Name>启动照度计检测_PRESTART</Name>
+            <SourceSuName>启动照度计检测</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction>IN4301000239.Part.启动照度计检测=0;
+</ExitFunction>
+            <ExitNote>IN4301000239.Part.启动照度计检测=0;
+</ExitNote>
+            <MiddlePisiton>1890,1088</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

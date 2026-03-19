@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>IN4304000162</DeviceNo>
+        <DeviceName>P12LM1返工刷APP</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2025-12-03 19:35:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>工位1检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>PowerIt6932As</Name>
+            <Type>PowerIt6932As</Type>
+            <Note>PowerIt6932As</Note>
+        </Controller>
+        <Controller>
+            <Name>扫码枪</Name>
+            <Type>BarcodeScanReader</Type>
+            <Note>扫码枪</Note>
+        </Controller>
+        <Controller>
+            <Name>SyControllerMaster</Name>
+            <Type>SyControllerMaster</Type>
+            <Note>SyControllerMaster</Note>
+        </Controller>
+        <Controller>
+            <Name>ZLG</Name>
+            <Type>ZlgUsbCanFd200U</Type>
+            <Note>ZLG</Note>
+        </Controller>
+        <Controller>
+            <Name>P12LM1</Name>
+            <Type>P12LM1HeadLamp</Type>
+            <Note>P12LM1</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>IN4304000162</ProcessNo>
+            <Name>是否未样件模式启动</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool0</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>IN4304000162</ProcessNo>
+            <Name>Debug变量</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool1</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>条码</Name>
+            <DataType>barcode</DataType>
+            <Value>[)&gt;?06?Y7360300000000N?P26620892?12V547656863?T???????A00AD??????</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>扫码枪.Field.GetBarcodeStr</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>扫码提示</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>请扫码</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bstring0</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>检测提示</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>开始检测</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>检测程序.Field.Bstring0</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>刷新APP</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>OK</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>P12LM1.Field.DownloadResult</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>版本号F194</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>SW00.01???</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>P12LM1.Field.SwVer1</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>版本号FCF1</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>V0.0.03</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>P12LM1.Field.SwVer2</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4101000997001</ProcessNo>
+            <Name>版本号FCF2</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>V0.0.05</Value>
+            <ControlName>工位1检测数据</ControlName>
+            <ControllerField>P12LM1.Field.SwVer3</ControllerField>
+        </Para>
+    </Paras>
+    <Gears />
+    <WorkStations>
+        <WorkStation>
+            <Name>主程序</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>ZLG.Field.CustomMaxLen=15;
+P12LM1.Field.Can=ZLG.Field.ZlgCanChannel0;
+P12LM1.Field.AppFilePath=E:\Projects\P12L_M1\刷新文件\20251203\P12L_M1_APP_V0.0.03_20251127_Test.s19;
+PowerIt6932As.Method.ConnectPower(COM6:9600);
+扫码枪.Method.ConnectBarcodeScanner(COM7:9600);
+SyControllerMaster.Method.InitRemoteIpAddr(192.168.1.28:8088);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>300,208,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction>PowerIt6932As.Method.PowerOff();
+扫码枪.Field.GetBarcodeStr=NULL;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>832,766,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>622,1140,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>131,879,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>读启动按钮</Name>
+            <EnterFunction />
+            <DuringFunction>SyControllerMaster.Method.GetMasterDi();
+检测程序.Method.Sleep(10);
+</DuringFunction>
+            <PositionSize>1120,442,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>读扫码枪</Name>
+            <EnterFunction>扫码枪.Method.ReadBarcode(1);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1627,-288,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>二维码赋值</Name>
+            <EnterFunction>检测程序.Field.Bstring0=开始检测;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2364,-38,180,69</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>样件模式启动</Name>
+            <EnterFunction>IN4304000162.Part.是否未样件模式启动=检测程序.Field.IsByPass;
+检测程序.Field.Bstring0=开始检测;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1649,168,180,62</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>非样件模式启动</Name>
+            <EnterFunction>IN4304000162.Part.是否未样件模式启动=检测程序.Field.IsByPass;
+检测程序.Field.Bstring0=请扫码;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>902,-8,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>系统上电</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(13);
+PowerIt6932As.Method.SetCurrent1(3);
+PowerIt6932As.Method.PowerOn();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2073,579,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>刷写APP</Name>
+            <EnterFunction>P12LM1.Method.StartCanLinMsg();
+检测程序.Method.Sleep(850);
+P12LM1.Method.StopCanLinMsg();
+P12LM1.Method.DownLoadFile();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2102,1071,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>主程序</WorkStationName>
+            <Name>重新上电读版本号</Name>
+            <EnterFunction>P12LM1.Method.StartCanLinMsg();
+检测程序.Method.Sleep(555);
+P12LM1.Method.StopCanLinMsg();
+检测程序.Method.Sleep(55);
+P12LM1.Method.ReadSwVer();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1420,992,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>796,470</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>793,1015</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>458,792</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>PRESTART_读启动按钮</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>读启动按钮</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1174,662</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>读扫码枪_二维码赋值</Name>
+            <SourceSuName>读扫码枪</SourceSuName>
+            <TargetSuName>二维码赋值</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2000,-89</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>读启动按钮_非样件模式启动</Name>
+            <SourceSuName>读启动按钮</SourceSuName>
+            <TargetSuName>非样件模式启动</TargetSuName>
+            <ConditionFunction>检测程序.Field.IsByPass==0&amp;&amp;
+SyControllerMaster.Field.Di1==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.IsByPass==0&amp;&amp;
+SyControllerMaster.Field.Di1==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction>IN4304000162.Part.Debug变量=0;
+</ExitFunction>
+            <ExitNote>IN4304000162.Part.Debug变量=0;
+</ExitNote>
+            <MiddlePisiton>1119,197</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>读启动按钮_样件模式启动</Name>
+            <SourceSuName>读启动按钮</SourceSuName>
+            <TargetSuName>样件模式启动</TargetSuName>
+            <ConditionFunction>检测程序.Field.IsByPass==1&amp;&amp;
+SyControllerMaster.Field.Di1==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.IsByPass==1&amp;&amp;
+SyControllerMaster.Field.Di1==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction>IN4304000162.Part.Debug变量=0;
+</ExitFunction>
+            <ExitNote>IN4304000162.Part.Debug变量=0;
+</ExitNote>
+            <MiddlePisiton>1366,362</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>非样件模式启动_读扫码枪</Name>
+            <SourceSuName>非样件模式启动</SourceSuName>
+            <TargetSuName>读扫码枪</TargetSuName>
+            <ConditionFunction>PR4101000997001.Para.扫码提示==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101000997001.Para.扫码提示==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1300,-165</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>样件模式启动_系统上电</Name>
+            <SourceSuName>样件模式启动</SourceSuName>
+            <TargetSuName>系统上电</TargetSuName>
+            <ConditionFunction>PR4101000997001.Para.检测提示==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101000997001.Para.检测提示==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1908,427</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>二维码赋值_系统上电</Name>
+            <SourceSuName>二维码赋值</SourceSuName>
+            <TargetSuName>系统上电</TargetSuName>
+            <ConditionFunction>PR4101000997001.Para.条码==TRUE&amp;&amp;
+PR4101000997001.Para.检测提示==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101000997001.Para.条码==TRUE&amp;&amp;
+PR4101000997001.Para.检测提示==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2316,271</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>系统上电_刷写APP</Name>
+            <SourceSuName>系统上电</SourceSuName>
+            <TargetSuName>刷写APP</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1841,824</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>刷写APP_重新上电读版本号</Name>
+            <SourceSuName>刷写APP</SourceSuName>
+            <TargetSuName>重新上电读版本号</TargetSuName>
+            <ConditionFunction>PR4101000997001.Para.刷新APP==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101000997001.Para.刷新APP==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1875,1245</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>主程序</WorkStationName>
+            <Name>重新上电读版本号_CHECKEND</Name>
+            <SourceSuName>重新上电读版本号</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>PR4101000997001.Para.版本号F194==TRUE&amp;&amp;
+PR4101000997001.Para.版本号FCF1==TRUE&amp;&amp;
+PR4101000997001.Para.版本号FCF2==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4101000997001.Para.版本号F194==TRUE&amp;&amp;
+PR4101000997001.Para.版本号FCF1==TRUE&amp;&amp;
+PR4101000997001.Para.版本号FCF2==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1178,1394</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

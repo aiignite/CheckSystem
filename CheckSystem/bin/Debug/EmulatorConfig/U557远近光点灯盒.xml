@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmulatorConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ShowTitle>U557远近光-点灯盒</ShowTitle>
+    <Init>
+        <EnterFunction>
+            SyRenesasMcuControllerMaster.Method.InitRemoteIpAddress(192.168.1.28:8088);
+            U557FrontLamp.Field.Can=SyRenesasMcuControllerMaster.Field.GatewayCan1;
+            U557FrontLamp.Method.LampAwake();
+        </EnterFunction>
+    </Init>
+    <ControllerConfig>
+        <Controller>
+            <ControllerType>U557FrontLamp</ControllerType>
+            <ControllerName>U557FrontLamp</ControllerName>
+        </Controller>
+        <Controller>
+            <ControllerType>SyRenesasMcuControllerMaster</ControllerType>
+            <ControllerName>SyRenesasMcuControllerMaster</ControllerName>
+        </Controller>
+    </ControllerConfig>
+    <Buttons>
+
+        <Button>
+            <Method>
+                U557FrontLamp.Method.LbOn();
+            </Method>
+            <Text>近光灯亮</Text>
+            <Para></Para>
+        </Button>
+        <Button>
+            <Method>
+                U557FrontLamp.Method.LbOff();
+            </Method>
+            <Text>近光灯灭</Text>
+            <Para></Para>
+        </Button>
+
+        <Button>
+            <Method>
+                U557FrontLamp.Method.HbOn();
+            </Method>
+            <Text>远光灯亮</Text>
+            <Para></Para>
+        </Button>
+        <Button>
+            <Method>
+                U557FrontLamp.Method.HbOff();
+            </Method>
+            <Text>远光灯灭</Text>
+            <Para></Para>
+        </Button>
+            </Buttons>
+    <GridDatas>
+    </GridDatas>
+</EmulatorConfig>

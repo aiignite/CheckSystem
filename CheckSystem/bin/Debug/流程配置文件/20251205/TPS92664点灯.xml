@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>SY-G-TEST-Matrix-TPS929120TI</DeviceNo>
+        <DeviceName>TPS92664点灯</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2021-05-11 9:58:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>SyControllerWith56Pin</Name>
+            <Type>SyControllerWith56Pin</Type>
+            <Note>SyControllerWith56Pin</Note>
+        </Controller>
+        <Controller>
+            <Name>MatrixTps92664</Name>
+            <Type>MatrixTps92664</Type>
+            <Note>MatrixTps92664</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>SY-G-TEST-DE1E</ProcessNo>
+            <Name>选择蓝色板子</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool1</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>SY-G-TEST-DE1E</ProcessNo>
+            <Name>选择绿色板子</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bbool2</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>SY-G-TEST-Matrix-TPS929120TI</ProcessNo>
+            <Name>测试累加</Name>
+            <DataType>Int32</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bint0</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>EcuDeliveryAssemblyPartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>8891906357202041</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.EcuDeliveryAssemblyPartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>EcuCoreAssemblyPartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>8892470015202041</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.EcuCoreAssemblyPartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>PblPrimaryBootloaderSoftwarePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>8892470045202041</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.PblPrimaryBootloaderSoftwarePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>PrimaryBootloaderDiagnosticDatabasePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>8889594018202041</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.PrimaryBootloaderDiagnosticDatabasePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>LoadModule</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>018892399360202042</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.LoadModule</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>ApplicationDiagnosticDatabasePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>8889589442202045</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.ApplicationDiagnosticDatabasePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoApplicationSoftwareVersionNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>41303643</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoApplicationSoftwareVersionNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoPrimaryBootloaderSoftwareVersionNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>50303242</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoPrimaryBootloaderSoftwareVersionNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoSecondaryBootloaderSoftwareVersionNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>42303342</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoSecondaryBootloaderSoftwareVersionNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoApplicationSoftwarePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>535730303030363838</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoApplicationSoftwarePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoPrimaryBootloaderSoftwarePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>535730303030373134</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoPrimaryBootloaderSoftwarePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoSupplierSecondaryBootloaderSoftwarePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>535730303030383636</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoSupplierSecondaryBootloaderSoftwarePartNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoHardwareVersionNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>48303032</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoHardwareVersionNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PL823001</ProcessNo>
+            <Name>HascoHardwarePartNumber</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>503030313233313933</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>DC1E后灯驱动.Field.HascoHardwarePartNumber</ControllerField>
+        </Para>
+    </Paras>
+    <Gears />
+    <WorkStations>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>SyControllerWith56Pin.Method.InitRemoteIpAddress(192.168.1.28:8088);
+MatrixTps92664.Field.MySerialPort=SyControllerWith56Pin.Field.GatewaySci2;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>271,352,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction />
+            <DuringFunction>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加+=1;
+</DuringFunction>
+            <PositionSize>764,792,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1200,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1500,340,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>归零</Name>
+            <EnterFunction>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加=0;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1633,854,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>591,572</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_归零</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>归零</TargetSuName>
+            <ConditionFunction>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加&gt;50000&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加&gt;50000&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1255,682</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>归零_PRESTART</Name>
+            <SourceSuName>归零</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加==0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>SY-G-TEST-Matrix-TPS929120TI.Part.测试累加==0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1287,1087</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

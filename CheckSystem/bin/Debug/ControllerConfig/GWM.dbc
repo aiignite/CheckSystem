@@ -1,0 +1,713 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Tester GW HCM_R HCM_L CEM
+VAL_TABLE_ TGS_LEVER 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Select lever in position M" 7 "Select lever in position R" 6 "Select lever in position N" 5 "Select lever in position D" 4 "Reserved" 3 "Reserved" 2 "Reserved" 1 "Reserved" 0 "Select lever in position P" ;
+VAL_TABLE_ EngState 3 "Stalling" 2 "Running" 1 "Cranking" 0 "Stopped" ;
+VAL_TABLE_ EngSpdVldty 3 "Reserved" 2 "Initial value" 1 "Valid" 0 "Invalid" ;
+VAL_TABLE_ TranPMode_Sts 1 "Transport Mode" 0 "Normal Mode" ;
+VAL_TABLE_ Stat_PwrSv_Lvl 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Level 2" 1 "Level 1" 0 "Normal" ;
+VAL_TABLE_ AutoLmpSwtSts_HUT 1 "Auto" 0 "Non-Auto" ;
+VAL_TABLE_ TimeIndcn 1 "pm" 0 "am" ;
+VAL_TABLE_ TimeMod 1 "12" 0 "24" ;
+VAL_TABLE_ SteerWheelAngSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_TABLE_ FrntWiprSwtSts 7 "Error" 6 "reserved" 5 "reserved" 4 "reserved" 3 "High Speed" 2 "Low Speed" 1 "Wiper Auto Or Intermittent" 0 "Wiper Off" ;
+VAL_TABLE_ CameraSts 3 "reserved" 2 "Camera Fault" 1 "Available for ADB" 0 "Not Available for ADB" ;
+VAL_TABLE_ TrafficStyle 3 "Not available" 2 "LeftHandTraffic" 1 "RightHandTraffic" 0 "Unknow" ;
+VAL_TABLE_ RoadIllumDetd 1 "Road illumination detected" 0 "Road illumination Not detected" ;
+VAL_TABLE_ AmbLight 1 "Active for HighBeam" 0 "Not Active for HighBeam" ;
+VAL_TABLE_ Spots1VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_TABLE_ Spots1TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_TABLE_ Spots1Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_TABLE_ LeftLightShowSts 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Light show Animation Failure" 11 "Light show Animation Successful" 10 "Light show Animation In Process" 9 "Lock light Animation Failure" 8 "Lock light Animation Successful" 7 "Lock light Animation In Process" 6 "Unlock light Animation Failure" 5 "Unlock light Animation Success" 4 "Unlock light Animation In Pro" 3 "Approach light Animation Failure" 2 "Approach light Animation Success" 1 "Approach light Animation In Pro" 0 "Animation OFF" ;
+VAL_TABLE_ LDBLstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_TABLE_ LHiBeamFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_TABLE_ SysPowerModVld 1 "Valid" 0 "Invalid" ;
+VAL_TABLE_ SysPowerMod 3 "Crank" 2 "ON" 1 "ACC (reserved)" 0 "OFF" ;
+VAL_TABLE_ VehStartReq 3 "Reserved" 2 "Remote Start Vehicle Request" 1 "Local Start Vehicle Request" 0 "No Action" ;
+VAL_TABLE_ LightShowAnimationType 15 "Animation mode14" 14 "Animation mode13" 13 "Animation mode12" 12 "Animation mode11" 11 "Animation mode10" 10 "Animation mode9" 9 "Animation mode8" 8 "Animation mode7" 7 "Animation mode6" 6 "Animation mode5" 5 "Animation mode4" 4 "Animation mode3" 3 "Animation mode2" 2 "Animation mode1(on)" 1 "OFF" 0 "No action" ;
+VAL_TABLE_ AnimationReq 3 "Reserved" 2 "Animation Close" 1 "Animation Start" 0 "No active" ;
+VAL_TABLE_ WiprReq_F_PBox 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Speed2 (Hi)" 2 "Speed1 (Lo)" 1 "Wiper action once" 0 "Wiper Off" ;
+VAL_TABLE_ RFPosnLmpWorkCmd 1 "On" 0 "Off" ;
+
+
+BO_ 1768 HCM_R_Phy_Resp: 8 HCM_R
+ SG_ HCM_R_Phy_Response : 7|64@0+ (1,0) [0|0] ""  Tester,GW
+
+BO_ 1752 HCM_L_Phy_Resp: 8 HCM_L
+ SG_ HCM_L_Phy_Response : 7|64@0+ (1,0) [0|0] ""  Tester,GW
+
+BO_ 1953 GW_Phy_Resp: 8 GW
+ SG_ GW_Phy_Response : 7|64@0+ (1,0) [0|0] ""  Tester
+
+BO_ 1760 HCM_R_Phy_Req: 8 Tester
+ SG_ HCM_R_Phy_Request : 7|64@0+ (1,0) [0|0] ""  HCM_R,GW
+
+BO_ 1744 HCM_L_Phy_Req: 8 Tester
+ SG_ HCM_L_Phy_Request : 7|64@0+ (1,0) [0|0] ""  HCM_L,GW
+
+BO_ 1889 GW_Phy_Req: 8 Tester
+ SG_ GW_Phy_Request : 7|64@0+ (1,0) [0|0] ""  GW
+
+BO_ 1888 DiagFuncReq: 8 Tester
+ SG_ DiagFuncResponse : 7|64@0+ (1,0) [0|0] ""  HCM_R,HCM_L,CEM,GW
+
+BO_ 1326 HCM_R_NM: 8 HCM_R
+ SG_ NMData_HCM_R : 7|64@0+ (1,0) [0|1.84467440737096E+019] ""  CEM,HCM_L
+
+BO_ 1325 HCM_L_NM: 8 HCM_L
+ SG_ NMData_HCM_L : 7|64@0+ (1,0) [0|1.84467440737096E+019] ""  CEM,HCM_R
+
+BO_ 1281 CEM_NM: 8 CEM
+ SG_ NMData_CEM : 7|64@0+ (1,0) [0|1.84467440737096E+019] ""  HCM_R,HCM_L
+
+BO_ 661 PEPS2: 8 CEM
+ SG_ SysPowerModVld : 13|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ SysPowerMod : 15|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ RollingCounter_PEPS2 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_PEPS2 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 165 PEPS1: 8 CEM
+ SG_ VehStartReq : 17|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+
+BO_ 639 IP2: 8 GW
+ SG_ IP_VehTotDistanceValid : 46|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ IP_VehTotDistance : 15|24@0+ (0.1,0) [0|999999.9] "km"  HCM_R,HCM_L
+
+BO_ 575 IFC_HCM9: 8 GW
+ SG_ AmbLight : 15|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ CameraSts : 11|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ RoadIllumDetd : 14|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ TrafficStyle : 13|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM9 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM9 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 559 IFC_HCM8: 8 GW
+ SG_ Spots8VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots8Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots8Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots8TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots8HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots8HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots8HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots8Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot8VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM8 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM8 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 558 IFC_HCM7: 8 GW
+ SG_ Spots7VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots7Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots7Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots7TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots7HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots7HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots7HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots7Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot7VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM7 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM7 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 557 IFC_HCM6: 8 GW
+ SG_ Spots6VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots6Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots6Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots6TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots6HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots6HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots6HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots6Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot6VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM6 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM6 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 554 IFC_HCM5: 8 GW
+ SG_ Spots5VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots5Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots5Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots5TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots5HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots5HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots5HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots5Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot5VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM5 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM5 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 541 IFC_HCM4: 8 GW
+ SG_ Spots4VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots4Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots4Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots4TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots4HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots4HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots4HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots4Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot4VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM4 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM4 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 540 IFC_HCM3: 8 GW
+ SG_ Spots3VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots3TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots3Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots3Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM3 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Spots3HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots3Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot3VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ Spots3HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots3HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM3 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 539 IFC_HCM2: 8 GW
+ SG_ Spots2VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots2TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots2Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots2Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ RollingCounter_IFC_HCM2 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Spots2HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots2Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spot2VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ Spots2HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots2HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM2 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 538 IFC_HCM1: 8 GW
+ SG_ RollingCounter_IFC_HCM1 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Spots1VehObjClassn : 62|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Spots1TrackingInfo : 63|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spot1VertAng : 55|8@0+ (0.125,-5) [-5|26.875] ""  HCM_R,HCM_L
+ SG_ Spots1HozLeAngSpd : 47|8@0+ (0.125,-16) [-16|15.875] "DegPerSec"  HCM_R,HCM_L
+ SG_ Spots1Distance : 24|9@0+ (1,0) [0|510] "m"  HCM_R,HCM_L
+ SG_ Spots1Valid : 27|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Spots1Typ : 26|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+ SG_ Spots1HozlPosnRiAng : 21|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ Spots1HozlPosnLeAng : 15|10@0+ (0.08,-40) [-40|40] "degree"  HCM_R,HCM_L
+ SG_ CheckSum_IFC_HCM1 : 7|8@0+ (1,0) [0|255] ""  HCM_L,HCM_R
+
+BO_ 295 HUT44: 8 GW
+ SG_ AutoLmpSwtSts_HUT : 23|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+
+BO_ 880 HUT34: 8 GW
+ SG_ TimeMod : 16|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ TimeIndcn : 17|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ Time_Year_Right : 35|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Time_Year_Left : 39|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Time_Second : 31|6@0+ (1,0) [0|63] ""  HCM_R,HCM_L
+ SG_ Time_Month : 47|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ Time_Minutes : 23|6@0+ (1,0) [0|63] ""  HCM_R,HCM_L
+ SG_ Time_Hour : 15|5@0+ (1,0) [0|31] ""  HCM_R,HCM_L
+ SG_ Time_Day : 55|5@0+ (1,0) [0|31] ""  HCM_R,HCM_L
+
+BO_ 816 HCM_R2: 8 HCM_R
+ SG_ RollingCounter_HCM_R2 : 59|4@0+ (1,0) [0|15] ""  GW,CEM
+ SG_ RightLightShowSts : 15|5@0+ (1,0) [0|31] ""  GW,CEM
+ SG_ Checksum_HCM_R2 : 7|8@0+ (1,0) [0|255] ""  GW,CEM
+
+BO_ 781 HCM_R1: 8 HCM_R
+ SG_ RollingCounter_HCM_R1 : 59|4@0+ (1,0) [0|15] ""  CEM
+ SG_ SyncInfoHCMR1 : 27|32@0+ (1,0) [0|4294967295] ""  HCM_L
+ SG_ RAFSstatus : 29|2@0+ (1,0) [0|3] ""  GW,CEM
+ SG_ RADBstatus : 31|2@0+ (1,0) [0|3] ""  GW,CEM
+ SG_ RDBLstatus : 21|2@0+ (1,0) [0|3] ""  CEM
+ SG_ RTurnLmpFailSts_HCM : 18|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RTurnLmpSts : 19|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RDayRunngLmpFailSts : 17|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RDayRunngLmpSts : 16|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RFPosnLmpFailSts_HCM : 15|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RFPosnLmpSts_HCM : 14|1@0+ (1,0) [0|1] ""  CEM
+ SG_ RLasHdLmpFailSts : 13|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ RLasHdLmpSts : 12|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ RLowBeamFailSts_HCM : 11|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ RLowBeamSts : 10|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ RHiBeamFailSts_HCM : 9|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ RHiBeamSts : 8|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ Checksum_HCM_R1 : 7|8@0+ (1,0) [0|255] ""  CEM
+
+BO_ 772 HCM_L2: 8 HCM_L
+ SG_ RollingCounter_HCM_L2 : 59|4@0+ (1,0) [0|15] ""  GW,CEM
+ SG_ LeftLightShowSts : 15|5@0+ (1,0) [0|31] ""  GW,CEM
+ SG_ Checksum_HCM_L2 : 7|8@0+ (1,0) [0|255] ""  GW,CEM
+
+BO_ 776 HCM_L1: 8 HCM_L
+ SG_ RollingCounter_HCM_L1 : 59|4@0+ (1,0) [0|15] ""  CEM
+ SG_ SyncInfoHCML1 : 27|32@0+ (1,0) [0|4294967295] ""  HCM_R
+ SG_ LAFSstatus : 29|2@0+ (1,0) [0|3] ""  GW,CEM
+ SG_ LADBstatus : 31|2@0+ (1,0) [0|3] ""  GW,CEM
+ SG_ LDBLstatus : 21|2@0+ (1,0) [0|3] ""  CEM
+ SG_ LTurnLmpSts : 19|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LTurnLmpFailSts_HCM : 18|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LDayRunngLmpFailSts : 17|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LDayRunngLmpSts : 16|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LFPosnLmpFailSts_HCM : 15|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LFPosnLmpSts_HCM : 14|1@0+ (1,0) [0|1] ""  CEM
+ SG_ LLasHdLmpFailSts : 13|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ LLasHdLmpSts : 12|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ LLowBeamFailSts_HCM : 11|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ LLowBeamSts : 10|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ LHiBeamFailSts_HCM : 9|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ LHiBeamSts : 8|1@0+ (1,0) [0|1] ""  GW,CEM
+ SG_ Checksum_HCM_L1 : 7|8@0+ (1,0) [0|255] ""  CEM
+
+BO_ 680 EEM1: 8 CEM
+ SG_ TranPMode_Sts : 7|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ Stat_PwrSv_Lvl : 6|3@0+ (1,0) [0|7] ""  HCM_L,HCM_R
+
+BO_ 625 ECM2: 8 GW
+ SG_ EngState : 62|2@0+ (1,0) [0|3] ""  HCM_L,HCM_R
+
+BO_ 273 ECM1: 8 GW
+ SG_ EngSpdVldty : 63|2@0+ (1,0) [0|2] ""  HCM_L,HCM_R
+ SG_ EngSpd : 47|16@0+ (0.125,0) [0|8191.875] "rpm"  HCM_L,HCM_R
+
+BO_ 545 DCT5: 8 GW
+ SG_ TGS_LEVER : 51|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+
+BO_ 161 CSA2: 8 GW
+ SG_ Rollingcounter_CSA2 : 59|4@0+ (1,0) [0|15] ""  HCM_L,HCM_R
+ SG_ SteerWheelAngSign : 16|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ SteerWheelAng : 15|15@0+ (0.1,0) [0|780] "deg"  HCM_L,HCM_R
+ SG_ Checksum_CSA2 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 357 CSA1: 8 GW
+ SG_ Rollingcounter_CSA1 : 59|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ OverVehBeamSwtSts : 26|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ HiBeamSwtSts : 25|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ FrntWiprSwtSts : 10|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Checksum_CSA1 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 574 BCM17: 8 CEM
+ SG_ WelcomeAnimationType : 15|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ ApproachLightAnimationType : 19|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ LightShowAnimationType : 23|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ GoodbyeAnimationType : 31|4@0+ (1,0) [0|15] ""  HCM_R,HCM_L
+ SG_ AnimationReq : 11|2@0+ (1,0) [0|3] ""  HCM_R,HCM_L
+
+BO_ 743 BCM10: 8 CEM
+ SG_ Rollingcounter_BCM10 : 59|4@0+ (1,0) [0|15] ""  HCM_L,HCM_R
+ SG_ BrkLmpWorkCmd : 25|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ LicPlateLmpWorkCmd : 27|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ LRPosnLmpWorkCmd : 46|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ RRPosnLmpWorkCmd : 47|1@0+ (1,0) [0|1] "" Vector__XXX
+ SG_ LHorseRaceLmpWorkCmd : 33|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ RHorseRaceLmpWorkCmd : 34|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ LasHdLmpWorkCmd : 37|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ LDayRunngLmpWorkCmd : 20|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ RDayRunngLmpWorkCmd : 21|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ LTurnLampWorkCmd : 8|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ RTurnLmpWorkCmd : 9|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ LowBeamWorkCmd : 10|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ HiBeamWorkCmd : 11|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ LFPosnLmpWorkCmd : 12|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ RFPosnLmpWorkCmd : 15|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+ SG_ Checksum_BCM10 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+BO_ 613 ABS3: 8 GW
+ SG_ CheckSum_ABS3 : 7|8@0+ (1,0) [0|255] ""  HCM_L,HCM_R
+ SG_ RollingCounter_ABS3 : 59|4@0+ (1,0) [0|15] ""  HCM_L,HCM_R
+ SG_ VehSpd : 12|13@0+ (0.05625,0) [0|299.98125] "kph"  HCM_L,HCM_R
+ SG_ VehSpdVld : 13|1@0+ (1,0) [0|1] ""  HCM_L,HCM_R
+
+BO_ 581 ABM2: 8 GW
+ SG_ VehDynYawRateVld : 61|1@0+ (1,0) [0|1] ""  HCM_R,HCM_L
+ SG_ VehYawRate : 47|16@0+ (0.00024,-2.093) [-2.093|2.093] "rad/s"  HCM_R,HCM_L
+
+BO_ 671 BCM8: 8 CEM
+ SG_ Rollingcounter_BCM8 : 59|4@0+ (1,0) [0|15] ""  HCM_L,HCM_R
+ SG_ WiprReq_F_PBox : 51|3@0+ (1,0) [0|7] ""  HCM_R,HCM_L
+ SG_ Checksum_BCM8 : 7|8@0+ (1,0) [0|255] ""  HCM_R,HCM_L
+
+
+
+BA_DEF_ SG_  "GenSigCycleTimeActive" INT 0 0;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 65535;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ SG_  "PacketOrder" INT 0 65535;
+BA_DEF_ SG_  "SignalLongName" STRING ;
+BA_DEF_ SG_  "SignalType" STRING ;
+BA_DEF_ SG_  "GenSigDeltaValue" INT 0 65535;
+BA_DEF_ SG_  "GenSigSendTopBottom" ENUM  "None","SendAtTop","SendAtBottom","SendAtTopBottom";
+BA_DEF_ SG_  "GenSigSendOnInit" ENUM  "Not Initialized","Application","Handler";
+BA_DEF_ SG_  "VNSigDiagnostic" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigSLHS_VNHVEM" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigSLHSSharedDiagnostic" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigAllNodes" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigInfotainment" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigIntermediate" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigParkedVehicle" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigPrimaryTriggering" ENUM  "No","Yes";
+BA_DEF_ SG_  "VNSigSLHS_VNReq" ENUM  "No","Yes";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "NotUsed","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepeition","NoSigSendType";
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_  "DiagConnection" INT 0 65535;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 100000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 100000;
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "MessageSubnet" ENUM  "BB","PB","CB","Body","HS","Powertrain","Chassis","Spare","PE","CC";
+BA_DEF_ BO_  "TpTxIndex" INT 0 99;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NoMsgSendType";
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagUudtResponse" ENUM  "No","Yes";
+BA_DEF_ BU_  "ECU_Id" HEX 0 255;
+BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
+BA_DEF_ BU_  "SourceId" HEX 0 255;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" HEX 0 159;
+BA_DEF_ BU_  "NmAsrCanMsgCycleOffset" INT 0 65535;
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 0 65535;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "IlTxTimeout" INT 0 65535;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "BusOffRecoveryTime" INT 0 65535;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "VersionNumber" INT 0 65535;
+BA_DEF_  "SamplePointMin" FLOAT 0 100;
+BA_DEF_  "SamplePointMax" FLOAT 0 100;
+BA_DEF_  "SyncJumpWidthMin" INT 0 255;
+BA_DEF_  "SyncJumpWidthMax" INT 0 255;
+BA_DEF_  "NmAsrMessageCount" INT 0 256;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 2032;
+BA_DEF_  "NmAsrTimeoutTime" INT 0 65535;
+BA_DEF_  "NmAsrWaitBusSleepTime" INT 0 65535;
+BA_DEF_  "NmAsrRepeatMessageTime" INT 0 65525;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 65535;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_REL_ BU_SG_REL_  "GenSigTimeoutMsg" HEX 0 65535;
+BA_DEF_REL_ BU_SG_REL_  "GenSigTimeoutTime" INT 0 15000;
+BA_DEF_REL_ BU_SG_REL_  "GenSigSuprvResp" ENUM  "None","Notify App","Substitute Default";
+BA_DEF_REL_ BU_SG_REL_  "GenSigSuprvRespSubValue" INT 0 65535;
+BA_DEF_REL_ BU_SG_REL_  "GenSigVBitResp" ENUM  "No","Yes";
+BA_DEF_REL_ BU_SG_REL_  "GenSigVBitRespComment" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigVDAFailResp" ENUM  "No","Yes";
+BA_DEF_REL_ BU_SG_REL_  "GenSigRxStartValue" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigSuprvRespComment" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigVDAFailComment" STRING ;
+BA_DEF_DEF_  "GenSigCycleTimeActive" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "PacketOrder" 0;
+BA_DEF_DEF_  "SignalLongName" "";
+BA_DEF_DEF_  "SignalType" "";
+BA_DEF_DEF_  "GenSigDeltaValue" 0;
+BA_DEF_DEF_  "GenSigSendTopBottom" "None";
+BA_DEF_DEF_  "GenSigSendOnInit" "Not Initialized";
+BA_DEF_DEF_  "VNSigDiagnostic" "No";
+BA_DEF_DEF_  "VNSigSLHS_VNHVEM" "No";
+BA_DEF_DEF_  "VNSigSLHSSharedDiagnostic" "No";
+BA_DEF_DEF_  "VNSigAllNodes" "No";
+BA_DEF_DEF_  "VNSigInfotainment" "No";
+BA_DEF_DEF_  "VNSigIntermediate" "No";
+BA_DEF_DEF_  "VNSigParkedVehicle" "No";
+BA_DEF_DEF_  "VNSigPrimaryTriggering" "No";
+BA_DEF_DEF_  "VNSigSLHS_VNReq" "No";
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "DiagConnection" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "MessageSubnet" "Body";
+BA_DEF_DEF_  "TpTxIndex" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NmAsrMessage" "No";
+BA_DEF_DEF_  "DiagUudtResponse" "No";
+BA_DEF_DEF_  "ECU_Id" 0;
+BA_DEF_DEF_  "ILUsed" "Yes";
+BA_DEF_DEF_  "SourceId" 0;
+BA_DEF_DEF_  "NmAsrNode" "Yes";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 0;
+BA_DEF_DEF_  "DBName" "SubCAN";
+BA_DEF_DEF_  "IlTxTimeout" 0;
+BA_DEF_DEF_  "NmType" "NmAsr";
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "BusOffRecoveryTime" 160;
+BA_DEF_DEF_  "Manufacturer" "GM";
+BA_DEF_DEF_  "VersionNumber" 0;
+BA_DEF_DEF_  "SamplePointMin" 81.25;
+BA_DEF_DEF_  "SamplePointMax" 80;
+BA_DEF_DEF_  "SyncJumpWidthMin" 4;
+BA_DEF_DEF_  "SyncJumpWidthMax" 3;
+BA_DEF_DEF_  "NmAsrMessageCount" 16;
+BA_DEF_DEF_  "NmAsrBaseAddress" 0;
+BA_DEF_DEF_  "NmAsrTimeoutTime" 1500;
+BA_DEF_DEF_  "NmAsrWaitBusSleepTime" 750;
+BA_DEF_DEF_  "NmAsrRepeatMessageTime" 400;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 1000;
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_DEF_DEF_REL_ "GenSigTimeoutMsg" 0;
+BA_DEF_DEF_REL_ "GenSigTimeoutTime" 0;
+BA_DEF_DEF_REL_ "GenSigSuprvResp" "None";
+BA_DEF_DEF_REL_ "GenSigSuprvRespSubValue" 0;
+BA_DEF_DEF_REL_ "GenSigVBitResp" "No";
+BA_DEF_DEF_REL_ "GenSigVBitRespComment" "";
+BA_DEF_DEF_REL_ "GenSigVDAFailResp" "No";
+BA_DEF_DEF_REL_ "GenSigRxStartValue" "";
+BA_DEF_DEF_REL_ "GenSigSuprvRespComment" "";
+BA_DEF_DEF_REL_ "GenSigVDAFailComment" "";
+BA_ "DBName" "GWM";
+BA_ "NmAsrMessage" BO_ 1281 1;
+BA_ "GenMsgCycleTime" BO_ 661 50;
+BA_ "GenMsgSendType" BO_ 661 0;
+BA_ "GenMsgCycleTime" BO_ 639 50;
+BA_ "GenMsgSendType" BO_ 639 0;
+BA_ "GenMsgCycleTime" BO_ 575 50;
+BA_ "GenMsgSendType" BO_ 575 0;
+BA_ "GenMsgCycleTime" BO_ 559 50;
+BA_ "GenMsgSendType" BO_ 559 0;
+BA_ "GenMsgCycleTime" BO_ 558 50;
+BA_ "GenMsgSendType" BO_ 558 0;
+BA_ "GenMsgCycleTime" BO_ 557 50;
+BA_ "GenMsgSendType" BO_ 557 0;
+BA_ "GenMsgCycleTime" BO_ 554 50;
+BA_ "GenMsgSendType" BO_ 554 0;
+BA_ "GenMsgCycleTime" BO_ 541 50;
+BA_ "GenMsgSendType" BO_ 541 0;
+BA_ "GenMsgCycleTime" BO_ 540 50;
+BA_ "GenMsgSendType" BO_ 540 0;
+BA_ "GenMsgCycleTime" BO_ 539 50;
+BA_ "GenMsgSendType" BO_ 539 0;
+BA_ "GenMsgCycleTime" BO_ 538 50;
+BA_ "GenMsgSendType" BO_ 538 0;
+BA_ "GenMsgCycleTime" BO_ 295 20;
+BA_ "GenMsgSendType" BO_ 295 0;
+BA_ "GenMsgCycleTime" BO_ 880 1000;
+BA_ "GenMsgSendType" BO_ 880 0;
+BA_ "GenMsgCycleTime" BO_ 816 200;
+BA_ "GenMsgSendType" BO_ 816 0;
+BA_ "GenMsgCycleTime" BO_ 781 200;
+BA_ "GenMsgSendType" BO_ 781 0;
+BA_ "GenMsgCycleTime" BO_ 772 200;
+BA_ "GenMsgSendType" BO_ 772 0;
+BA_ "GenMsgCycleTime" BO_ 776 200;
+BA_ "GenMsgSendType" BO_ 776 0;
+BA_ "GenMsgCycleTime" BO_ 680 100;
+BA_ "GenMsgSendType" BO_ 680 0;
+BA_ "GenMsgCycleTime" BO_ 625 20;
+BA_ "GenMsgSendType" BO_ 625 0;
+BA_ "GenMsgCycleTime" BO_ 273 10;
+BA_ "GenMsgSendType" BO_ 273 0;
+BA_ "GenMsgCycleTime" BO_ 545 20;
+BA_ "GenMsgSendType" BO_ 545 0;
+BA_ "GenMsgCycleTime" BO_ 161 10;
+BA_ "GenMsgSendType" BO_ 161 0;
+BA_ "GenMsgCycleTime" BO_ 357 20;
+BA_ "GenMsgSendType" BO_ 357 0;
+BA_ "GenMsgCycleTime" BO_ 574 50;
+BA_ "GenMsgSendType" BO_ 574 0;
+BA_ "GenMsgCycleTime" BO_ 743 5000;
+BA_ "GenMsgSendType" BO_ 743 0;
+BA_ "GenMsgCycleTime" BO_ 613 20;
+BA_ "GenMsgSendType" BO_ 613 0;
+BA_ "GenMsgCycleTime" BO_ 581 20;
+BA_ "GenMsgSendType" BO_ 581 0;
+BA_ "GenMsgCycleTime" BO_ 671 100;
+BA_ "GenMsgSendType" BO_ 671 0;
+BA_ "SignalType" SG_ 165 VehStartReq "E";
+BA_ "GenSigStartValue" SG_ 559 Spots8HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 559 Spots8HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 559 Spots8HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 559 Spot8VertAng 40;
+BA_ "GenSigStartValue" SG_ 558 Spots7HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 558 Spots7HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 558 Spots7HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 558 Spot7VertAng 40;
+BA_ "GenSigStartValue" SG_ 557 Spots6HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 557 Spots6HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 557 Spots6HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 557 Spot6VertAng 40;
+BA_ "GenSigStartValue" SG_ 554 Spots5HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 554 Spots5HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 554 Spots5HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 554 Spot5VertAng 40;
+BA_ "GenSigStartValue" SG_ 541 Spots4HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 541 Spots4HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 541 Spots4HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 541 Spot4VertAng 40;
+BA_ "GenSigStartValue" SG_ 540 Spots3HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 540 Spot3VertAng 40;
+BA_ "GenSigStartValue" SG_ 540 Spots3HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 540 Spots3HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 539 Spots2HozlPosnLeAng 500;
+BA_ "GenSigStartValue" SG_ 539 Spot2VertAng 40;
+BA_ "GenSigStartValue" SG_ 539 Spots2HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 539 Spots2HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 538 Spot1VertAng 40;
+BA_ "GenSigStartValue" SG_ 538 Spots1HozLeAngSpd 128;
+BA_ "GenSigStartValue" SG_ 538 Spots1HozlPosnRiAng 500;
+BA_ "GenSigStartValue" SG_ 538 Spots1HozlPosnLeAng 500;
+BA_ "SignalType" SG_ 743 LTurnLampWorkCmd "P";
+BA_ "SignalType" SG_ 743 RTurnLmpWorkCmd "P";
+BA_ "SignalType" SG_ 743 Checksum_BCM10 "P";
+BA_ "SignalType" SG_ 613 CheckSum_ABS3 "P";
+BA_ "SignalType" SG_ 613 RollingCounter_ABS3 "P";
+BA_ "SignalType" SG_ 613 VehSpd "P";
+BA_ "SignalType" SG_ 613 VehSpdVld "P";
+BA_ "SignalType" SG_ 581 VehDynYawRateVld "P";
+BA_ "GenSigStartValue" SG_ 581 VehYawRate 8721;
+BA_ "SignalType" SG_ 581 VehYawRate "P";
+VAL_ 661 SysPowerModVld 1 "Valid" 0 "Invalid" ;
+VAL_ 661 SysPowerMod 3 "Crank" 2 "ON" 1 "ACC (reserved)" 0 "OFF" ;
+VAL_ 165 VehStartReq 3 "Reserved" 2 "Remote Start Vehicle Request" 1 "Local Start Vehicle Request" 0 "No Action" ;
+VAL_ 639 IP_VehTotDistanceValid 1 "Valid" 0 "Invalid" ;
+VAL_ 575 AmbLight 1 "Active for HighBeam" 0 "Not Active for HighBeam" ;
+VAL_ 575 CameraSts 3 "reserved" 2 "Camera Fault" 1 "Available for ADB" 0 "Not Available for ADB" ;
+VAL_ 575 RoadIllumDetd 1 "Road illumination detected" 0 "Road illumination Not detected" ;
+VAL_ 575 TrafficStyle 3 "Not available" 2 "LeftHandTraffic" 1 "RightHandTraffic" 0 "Unknow" ;
+VAL_ 559 Spots8VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 559 Spots8Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 559 Spots8Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 559 Spots8TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 558 Spots7VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 558 Spots7Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 558 Spots7Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 558 Spots7TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 557 Spots6VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 557 Spots6Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 557 Spots6Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 557 Spots6TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 554 Spots5VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 554 Spots5Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 554 Spots5Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 554 Spots5TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 541 Spots4VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 541 Spots4Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 541 Spots4Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 541 Spots4TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 540 Spots3VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 540 Spots3TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 540 Spots3Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 540 Spots3Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 539 Spots2VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 539 Spots2TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 539 Spots2Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 539 Spots2Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 538 Spots1VehObjClassn 7 "Unknow" 6 "Mixed" 5 "Pedestrain" 4 "BikeOrMotoBike" 3 "Bus" 2 "Truck" 1 "Car" 0 "No Vehicle" ;
+VAL_ 538 Spots1TrackingInfo 1 "Tracking" 0 "Not Tracking" ;
+VAL_ 538 Spots1Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 538 Spots1Typ 3 "Reflective object" 2 "Preceding object" 1 "Oncoming object" 0 "Unknown " ;
+VAL_ 295 AutoLmpSwtSts_HUT 1 "Auto" 0 "Non-Auto" ;
+VAL_ 880 TimeMod 1 "12" 0 "24" ;
+VAL_ 880 TimeIndcn 1 "pm" 0 "am" ;
+VAL_ 816 RightLightShowSts 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Light show Animation Failure" 11 "Light show Animation Successful" 10 "Light show Animation In Process" 9 "Lock light Animation Failure" 8 "Lock light Animation Successful" 7 "Lock light Animation In Process" 6 "Unlock light Animation Failure" 5 "Unlock light Animation Success" 4 "Unlock light Animation In Pro" 3 "Approach light Animation Failure" 2 "Approach light Animation Success" 1 "Approach light Animation In Pro" 0 "Animation OFF" ;
+VAL_ 781 RAFSstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 781 RADBstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 781 RDBLstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 781 RTurnLmpFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 781 RTurnLmpSts 1 "On" 0 "Off" ;
+VAL_ 781 RDayRunngLmpFailSts 1 "failure" 0 "No failure" ;
+VAL_ 781 RDayRunngLmpSts 1 "On" 0 "Off" ;
+VAL_ 781 RFPosnLmpFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 781 RFPosnLmpSts_HCM 1 "On" 0 "Off" ;
+VAL_ 781 RLasHdLmpFailSts 1 "failure" 0 "No failure" ;
+VAL_ 781 RLasHdLmpSts 1 "On" 0 "Off" ;
+VAL_ 781 RLowBeamFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 781 RLowBeamSts 1 "On" 0 "Off" ;
+VAL_ 781 RHiBeamFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 781 RHiBeamSts 1 "On" 0 "Off" ;
+VAL_ 772 LeftLightShowSts 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Light show Animation Failure" 11 "Light show Animation Successful" 10 "Light show Animation In Process" 9 "Lock light Animation Failure" 8 "Lock light Animation Successful" 7 "Lock light Animation In Process" 6 "Unlock light Animation Failure" 5 "Unlock light Animation Success" 4 "Unlock light Animation In Pro" 3 "Approach light Animation Failure" 2 "Approach light Animation Success" 1 "Approach light Animation In Pro" 0 "Animation OFF" ;
+VAL_ 776 LAFSstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 776 LADBstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 776 LDBLstatus 3 "Res" 2 "Error" 1 "ON" 0 "Off" ;
+VAL_ 776 LTurnLmpSts 1 "On" 0 "Off" ;
+VAL_ 776 LTurnLmpFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 776 LDayRunngLmpFailSts 1 "failure" 0 "No failure" ;
+VAL_ 776 LDayRunngLmpSts 1 "On" 0 "Off" ;
+VAL_ 776 LFPosnLmpFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 776 LFPosnLmpSts_HCM 1 "On" 0 "Off" ;
+VAL_ 776 LLasHdLmpFailSts 1 "failure" 0 "No failure" ;
+VAL_ 776 LLasHdLmpSts 1 "On" 0 "Off" ;
+VAL_ 776 LLowBeamFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 776 LLowBeamSts 1 "On" 0 "Off" ;
+VAL_ 776 LHiBeamFailSts_HCM 1 "failure" 0 "No failure" ;
+VAL_ 776 LHiBeamSts 1 "On" 0 "Off" ;
+VAL_ 680 TranPMode_Sts 1 "Transport Mode" 0 "Normal Mode" ;
+VAL_ 680 Stat_PwrSv_Lvl 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Level 2" 1 "Level 1" 0 "Normal" ;
+VAL_ 625 EngState 3 "Stalling" 2 "Running" 1 "Cranking" 0 "Stopped" ;
+VAL_ 273 EngSpdVldty 3 "Reserved" 2 "Initial value" 1 "Valid" 0 "Invalid" ;
+VAL_ 545 TGS_LEVER 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Select lever in position M" 7 "Select lever in position R" 6 "Select lever in position N" 5 "Select lever in position D" 4 "Reserved" 3 "Reserved" 2 "Reserved" 1 "Reserved" 0 "Select lever in position P" ;
+VAL_ 161 SteerWheelAngSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 357 OverVehBeamSwtSts 1 "On" 0 "Off" ;
+VAL_ 357 HiBeamSwtSts 1 "On" 0 "Off" ;
+VAL_ 357 FrntWiprSwtSts 7 "Error" 6 "reserved" 5 "reserved" 4 "reserved" 3 "High Speed" 2 "Low Speed" 1 "Wiper Auto Or Intermittent" 0 "Wiper Off" ;
+VAL_ 574 WelcomeAnimationType 15 "Animation mode14" 14 "Animation mode13" 13 "Animation mode12" 12 "Animation mode11" 11 "Animation mode10" 10 "Animation mode9" 9 "Animation mode8" 8 "Animation mode7" 7 "Animation mode6" 6 "Animation mode5" 5 "Animation mode4" 4 "Animation mode3" 3 "Animation mode2" 2 "Animation mode1(on)" 1 "OFF" 0 "No action" ;
+VAL_ 574 ApproachLightAnimationType 15 "Animation mode14" 14 "Animation mode13" 13 "Animation mode12" 12 "Animation mode11" 11 "Animation mode10" 10 "Animation mode9" 9 "Animation mode8" 8 "Animation mode7" 7 "Animation mode6" 6 "Animation mode5" 5 "Animation mode4" 4 "Animation mode3" 3 "Animation mode2" 2 "Animation mode1(on)" 1 "OFF" 0 "No action" ;
+VAL_ 574 LightShowAnimationType 15 "Animation mode14" 14 "Animation mode13" 13 "Animation mode12" 12 "Animation mode11" 11 "Animation mode10" 10 "Animation mode9" 9 "Animation mode8" 8 "Animation mode7" 7 "Animation mode6" 6 "Animation mode5" 5 "Animation mode4" 4 "Animation mode3" 3 "Animation mode2" 2 "Animation mode1(on)" 1 "OFF" 0 "No action" ;
+VAL_ 574 GoodbyeAnimationType 15 "Animation mode14" 14 "Animation mode13" 13 "Animation mode12" 12 "Animation mode11" 11 "Animation mode10" 10 "Animation mode9" 9 "Animation mode8" 8 "Animation mode7" 7 "Animation mode6" 6 "Animation mode5" 5 "Animation mode4" 4 "Animation mode3" 3 "Animation mode2" 2 "Animation mode1(on)" 1 "OFF" 0 "No action" ;
+VAL_ 574 AnimationReq 3 "Reserved" 2 "Animation Close" 1 "Animation Start" 0 "No active" ;
+VAL_ 743 BrkLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LicPlateLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LRPosnLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 RRPosnLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LHorseRaceLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 RHorseRaceLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LasHdLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LDayRunngLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 RDayRunngLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LTurnLampWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 RTurnLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LowBeamWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 HiBeamWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 LFPosnLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 743 RFPosnLmpWorkCmd 1 "On" 0 "Off" ;
+VAL_ 613 VehSpdVld 1 "Valid" 0 "Invalid" ;
+VAL_ 581 VehDynYawRateVld 1 "Valid" 0 "Invalid" ;
+VAL_ 671 WiprReq_F_PBox 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Speed2 (Hi)" 2 "Speed1 (Lo)" 1 "Wiper action once" 0 "Wiper Off" ;
+

@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\checksystem\\helperforms\\bd18333\\bd18333candevicemgrform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|solutionrelative:checksystem\\helperforms\\bd18333\\bd18333candevicemgrform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B325E541-1F4D-457E-9B45-4DA3BF74482A}|Controller\\Controller.csproj|C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\controller\\bd18333euv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B325E541-1F4D-457E-9B45-4DA3BF74482A}|Controller\\Controller.csproj|solutionrelative:controller\\bd18333euv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|c:\\\u7A0B\u5E8F\u5F00\u53D1\\projects\\checksystem\\checksystem\\helperforms\\bd18333\\bd18333candevicemgrform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A9838924-3007-45B5-8BEC-961D7AF9A071}|CheckSystem\\CheckSystem.csproj|solutionrelative:checksystem\\helperforms\\bd18333\\bd18333candevicemgrform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Bd18333CanDeviceMgrForm.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "RelativeDocumentMoniker": "CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "ToolTip": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:29:41.093Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Bd18333CanDeviceMgrForm.cs",
+              "DocumentMoniker": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "RelativeDocumentMoniker": "CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "ToolTip": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "RelativeToolTip": "CheckSystem\\HelperForms\\BD18333\\Bd18333CanDeviceMgrForm.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAIwAUBAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:22:41.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bd18333Euv.cs",
+              "DocumentMoniker": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\Controller\\Bd18333Euv.cs",
+              "RelativeDocumentMoniker": "Controller\\Bd18333Euv.cs",
+              "ToolTip": "C:\\\u7A0B\u5E8F\u5F00\u53D1\\Projects\\CheckSystem\\Controller\\Bd18333Euv.cs",
+              "RelativeToolTip": "Controller\\Bd18333Euv.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAywIMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:21:53.082Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

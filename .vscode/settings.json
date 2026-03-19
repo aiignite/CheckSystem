@@ -1,0 +1,4 @@
+{
+    "dotnet.preferCSharpExtension": true,
+    "svn.ignoreMissingSvnWarning": true
+}

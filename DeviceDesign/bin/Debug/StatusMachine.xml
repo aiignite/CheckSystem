@@ -1,0 +1,635 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StatusMachine</name>
+    </assembly>
+    <members>
+        <member name="T:StatusMachine.DeviceConfig">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.DeviceInfo">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.FormLayout">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Controls">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Controllers">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.ControllerProperties">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Parts">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Processes">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Paras">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.WorkStations">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.StatusUnits">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfig.Conditions">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigDeviceInfo">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigFormLayout">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigFormLayout.ColumnCount">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigFormLayout.RowCount">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigFormLayout.RowPixCount">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigControl">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.Type">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.RowPosition">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.ColumnPosition">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.RowSpan">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigControl.ColumnSpan">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigController">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigController.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigController.Type">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigController.Note">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigProperty">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProperty.ControllerName">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProperty.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProperty.Value">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProperty.Note">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigPart">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPart.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPart.DataType">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigProcess">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProcess.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProcess.No">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProcess.ProductName">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigProcess.ProductNo">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigPara">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.ProcessNo">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.DataType">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.OkFormat">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.Value">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.Min">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.Max">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.Unit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigPara.ControlName">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigWorkStation">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigWorkStation.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigWorkStation.InitStatusUnit">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigStatusUnit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigStatusUnit.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigStatusUnit.EnterFunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigStatusUnit.DuringFunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigStatusUnit.EnterNote">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigStatusUnit.DuringNote">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.DeviceConfigCondition">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.WorkStationName">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.Name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.SourceSuName">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.TargetSuName">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.ConditionFunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.ConditionNote">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.ExitFunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.DeviceConfigCondition.ExitNote">
+            <remarks/>
+        </member>
+        <member name="M:StatusMachine.ExecutableCodeLine.#ctor(System.String,System.Collections.Generic.List{System.Object},System.Collections.Generic.IEnumerable{StatusMachine.DeviceConfigPart})">
+            <summary>
+            
+            </summary>
+            <param name="codeLineValue"></param>
+            <param name="controllersList"></param>
+            <param name="sensoractuators"></param>
+        </member>
+        <member name="M:StatusMachine.ExecutableCodeLine.Analyze">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StatusMachine.ConditionalCodeLine.ComparedWithField(System.String,System.Boolean)">
+            <summary>
+            和参数作比较
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StatusMachine.ConditionalCodeLine.ComparedWithVariable(System.String,System.String,System.String)">
+            <summary>
+            和变量做比较
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:LedCheckPara">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckPara.VisionFuncs">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncs">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncs.ProductName">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncs.VisionFunc">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFunc">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.FuncType">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.FuncIndex">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.FuncName">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.FuncImgPath">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.CameraPara">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFunc.VisionPara">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncCameraPara">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncCameraPara.CameraSn">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncCameraPara.Shutter">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncCameraPara.DelayTime">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncCameraPara.FrameRate">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncCameraPara.FrameCount">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncVisionPara">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionPara.ColorPlaneExtraction">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionPara.LookupTable">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionPara.ShapesGroups">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionPara.TemplatePara">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroup">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroup.Shapes">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroup.GroupIndex">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape.Index">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape.Contour">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape.Min">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape.Max">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShape.Value">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShapeContour">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShapeContour.Type">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaShapesGroupShapeContour.Rect">
+            <remarks/>
+        </member>
+        <member name="T:LedCheckParaVisionFuncsVisionFuncVisionParaTemplatePara">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaTemplatePara.TemplateImgPath">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaTemplatePara.TemplateRoiRectangle">
+            <remarks/>
+        </member>
+        <member name="P:LedCheckParaVisionFuncsVisionFuncVisionParaTemplatePara.TemplateCanterPoint">
+            <remarks/>
+        </member>
+        <member name="M:StatusMachine.Status.InitSysConfig(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="P:StatusMachine.Status.Systemconfig">
+            <summary>
+            System Configuration.
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.LstControllers">
+            <summary>
+            Controllers List.
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.LstWorkstations">
+            <summary>
+            Workstations List.
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.StrDeviceNo">
+            <summary>
+            设备号
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.StrDeviceVersion">
+            <summary>
+            设备版本
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.StrProcessNo">
+            <summary>
+            工序号
+            </summary>
+        </member>
+        <member name="P:StatusMachine.Status.StrProcessVersion">
+            <summary>
+            工序版本
+            </summary>
+        </member>
+        <member name="M:StatusMachine.StatusMachineHelper.StrTrim(System.String)">
+            <summary>
+            整理字符串,移除空格、回车换行、换行
+            </summary>
+            <param name="str">待整理的字符串</param>
+            <returns>整理后的字符串,移除空格、回车换行、换行</returns>
+        </member>
+        <member name="M:StatusMachine.StatusMachineHelper.GetControllerByName(System.String,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            根据控制器名，在控制器列表中找到控制器
+            </summary>
+            <param name="controllerName">控制器名</param>
+            <param name="controllersList">控制器列表</param>
+            <returns>符合的控制器</returns>
+        </member>
+        <member name="T:StatusMachine.Systemconfig">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.systeminfo">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.formdesigner">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.controllers">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.sensoractuators">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.processparas">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.Systemconfig.workstations">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigSysteminfo">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSysteminfo.deviceno">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSysteminfo.deviceversion">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigFormdesigner">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesigner.col">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesigner.row">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesigner.colpercent">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesigner.rowpix">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesigner.controls">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigFormdesignerControl">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.type">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.col">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.row">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.colspan">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigFormdesignerControl.rowspan">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigController">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigController.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigController.type">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigController.initparas">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigSensoractuator">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSensoractuator.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSensoractuator.datatype">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSensoractuator.controller">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigSensoractuator.field">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigProcessparas">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparas.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparas.processno">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparas.parasversion">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparas.paras">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigProcessparasPara">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.datatype">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.okformat">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.value">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.min">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.max">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.unit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.displaycontrol">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.controllerfield">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigProcessparasPara.controllerfieldoffset">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigWorkstation">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstation.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstation.initstatusunit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstation.currentstatusunit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstation.statusunits">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstation.conditions">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigWorkstationStatusunit">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.no">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.enterfunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.duringfunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.positionsize">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.enternote">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationStatusunit.duringnote">
+            <remarks/>
+        </member>
+        <member name="T:StatusMachine.SystemconfigWorkstationCondition">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.name">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.sourcestatusname">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.targetstatusname">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.conditionfunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.exitfunction">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.middleposition">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.conditionnote">
+            <remarks/>
+        </member>
+        <member name="P:StatusMachine.SystemconfigWorkstationCondition.exitnote">
+            <remarks/>
+        </member>
+        <member name="M:StatusMachine.XmlHelper.SerializeToFile(System.Object,System.String,System.Text.Encoding)">
+            <summary>
+            将一个对象按XML序列化的方式写入到一个文件
+            </summary>
+            <param name="o">要序列化的对象</param>
+            <param name="path">保存文件路径</param>
+            <param name="encoding">编码方式 Encoding.UTF8</param>
+        </member>
+    </members>
+</doc>

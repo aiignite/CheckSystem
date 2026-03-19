@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VisionConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceGuid>3e98dd3c-47c0-4cbc-a1e4-ae1664fc2905</DeviceGuid>
+        <DeviceNo>PR410123456L</DeviceNo>
+        <DeviceNo2>PR410123456R</DeviceNo2>
+        <DeviceName>TESTAABB</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2025/12/04 18:09:44</DeviceUpdateTime>
+        <DeviceLeftOrRight>区分</DeviceLeftOrRight>
+        <Actions>
+            <Start>
+                <Type>扫码后按键启动</Type>
+            </Start>
+            <Bang>
+                <IsBang>True</IsBang>
+                <Delay>850</Delay>
+            </Bang>
+            <PropulsionCylinder>
+                <IsPropulsionCylinder>False</IsPropulsionCylinder>
+                <Binding>继电器12;</Binding>
+                <Delay>1000</Delay>
+            </PropulsionCylinder>
+        </Actions>
+    </DeviceInfo>
+    <ParaInfo>
+        <Para>
+            <ParaName>图像1</ParaName>
+            <ParaType>静态图像</ParaType>
+            <ParaLeftOrRight>L&amp;R</ParaLeftOrRight>
+            <ParaReleysList>
+                <ParaReleysOnList>继电器1; </ParaReleysOnList>
+                <ParaReleysOffList />
+            </ParaReleysList>
+            <ParaDelayMs>5000</ParaDelayMs>
+            <ParaMethods>
+                <ParaMethodsBefore />
+                <ParaMethodsAfter />
+            </ParaMethods>
+            <ParaBinding>/</ParaBinding>
+            <ParaUnit>/</ParaUnit>
+            <ParaGroups>
+                <ParaGroup>
+                    <ParaGroupName>/</ParaGroupName>
+                    <ParaGroupMin>/</ParaGroupMin>
+                    <ParaGroupMax>/</ParaGroupMax>
+                    <ParaGroupValue>/</ParaGroupValue>
+                    <ParaGroupK>/</ParaGroupK>
+                    <ParaGroupB>/</ParaGroupB>
+                </ParaGroup>
+            </ParaGroups>
+            <PowerPara>电压1=13.5V，电流1=10A，电压2=0V，电流2=0A，电压3=5V，电流3=1A，串并联模式=无</PowerPara>
+        </Para>
+    </ParaInfo>
+    <TestFlowInfo />
+    <VisionInfo>
+        <VisionFunc>
+            <VisionFuncName>图像1</VisionFuncName>
+            <VisionFuncDetailL>
+                <Camera>
+                    <UserId>GZ0200090004</UserId>
+                    <Shutter>10000</Shutter>
+                    <Analysis>
+                        <LookupTable>ImageSource</LookupTable>
+                        <CaliRegion />
+                        <ShapesGroups>
+                            <Shapes>
+                                <Shape>
+                                    <Type>RectangleContour</Type>
+                                    <Rect>17,111,200,200</Rect>
+                                    <Min>0%</Min>
+                                    <Max>21%</Max>
+                                    <Value>1%</Value>
+                                </Shape>
+                            </Shapes>
+                        </ShapesGroups>
+                    </Analysis>
+                </Camera>
+            </VisionFuncDetailL>
+        </VisionFunc>
+    </VisionInfo>
+    <BarcodeInfo>
+        <Barcode>
+            <Name>AA</Name>
+            <Length>9</Length>
+            <KeyWord>
+                <Value>
+                    <L>P12</L>
+                    <R>P12</R>
+                </Value>
+                <Index>0</Index>
+            </KeyWord>
+            <Groups>
+                <Group>
+                    <Value>7，AA</Value>
+                </Group>
+            </Groups>
+        </Barcode>
+    </BarcodeInfo>
+</VisionConfig>

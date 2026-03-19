@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DeviceInfo>
+        <DeviceNo>PR4102007808</DeviceNo>
+        <DeviceName>T9M照地灯终检</DeviceName>
+        <DeviceVersion>V01</DeviceVersion>
+        <DeviceUpdateTime>2025-09-24 15:58:15</DeviceUpdateTime>
+    </DeviceInfo>
+    <FormLayout>
+        <ColumnCount>1</ColumnCount>
+        <RowCount>1</RowCount>
+        <ColumnPercent>25,25,25,25,25</ColumnPercent>
+        <RowPixCount>30</RowPixCount>
+    </FormLayout>
+    <Controls>
+        <Control>
+            <Name>检测数据</Name>
+            <Type>DataGrid</Type>
+            <RowPosition>0</RowPosition>
+            <ColumnPosition>0</ColumnPosition>
+            <RowSpan>1</RowSpan>
+            <ColumnSpan>1</ColumnSpan>
+        </Control>
+    </Controls>
+    <Controllers>
+        <Controller>
+            <Name>检测程序</Name>
+            <Type>CheckApp</Type>
+            <Note>检测程序</Note>
+        </Controller>
+        <Controller>
+            <Name>T9M</Name>
+            <Type>T9M</Type>
+            <Note>T9M</Note>
+        </Controller>
+        <Controller>
+            <Name>瑞萨主板IP41</Name>
+            <Type>SyRenesasMcuControllerMaster</Type>
+            <Note>瑞萨主板IP41</Note>
+        </Controller>
+        <Controller>
+            <Name>瑞萨AD板0x101</Name>
+            <Type>SyRenesasMcuControllerSlaveWith12ADs</Type>
+            <Note>瑞萨AD板0x101</Note>
+        </Controller>
+        <Controller>
+            <Name>瑞萨RL板0x201</Name>
+            <Type>SyRenesasMcuControllerSlaveWith8RLs</Type>
+            <Note>瑞萨RL板0x201</Note>
+        </Controller>
+        <Controller>
+            <Name>PowerIt6932As</Name>
+            <Type>PowerIt6932As</Type>
+            <Note>PowerIt6932As</Note>
+        </Controller>
+        <Controller>
+            <Name>绿板子主站IP28</Name>
+            <Type>SyControllerMaster</Type>
+            <Note>绿板子主站IP28</Note>
+        </Controller>
+        <Controller>
+            <Name>扫码枪</Name>
+            <Type>BarcodeScanReader</Type>
+            <Note>扫码枪</Note>
+        </Controller>
+    </Controllers>
+    <ControllerProperties />
+    <Parts>
+        <Part>
+            <ProcessNo>PR4102007808</ProcessNo>
+            <Name>工位1工作电流上电</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>瑞萨RL板0x201</ControllerName>
+            <ControllerField>瑞萨RL板0x201.Field.Relay1</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>PR4102007808</ProcessNo>
+            <Name>工位1休眠电流上电</Name>
+            <DataType>Boolean</DataType>
+            <ControllerName>瑞萨RL板0x201</ControllerName>
+            <ControllerField>瑞萨RL板0x201.Field.Relay2</ControllerField>
+        </Part>
+        <Part>
+            <ProcessNo>PR4102007808</ProcessNo>
+            <Name>工位1静态电流</Name>
+            <DataType>Double</DataType>
+            <ControllerName>检测程序</ControllerName>
+            <ControllerField>检测程序.Field.Bdouble0</ControllerField>
+        </Part>
+    </Parts>
+    <Processes />
+    <Paras>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>漏电流测试</Name>
+            <DataType>double</DataType>
+            <Min>0</Min>
+            <Max>100</Max>
+            <Unit>uA</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Current1</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>九伏开机电流</Name>
+            <DataType>double</DataType>
+            <Min>0.212</Min>
+            <Max>0.287</Max>
+            <Unit>A</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Current2</ControllerField>
+            <ControllerFieldOffset>0.001*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>十三点五伏开机电流</Name>
+            <DataType>double</DataType>
+            <Min>0.145</Min>
+            <Max>0.198</Max>
+            <Unit>A</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Current2</ControllerField>
+            <ControllerFieldOffset>0.001*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>十六伏开机电流</Name>
+            <DataType>double</DataType>
+            <Min>0.124</Min>
+            <Max>0.169</Max>
+            <Unit>A</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Current2</ControllerField>
+            <ControllerFieldOffset>0.001*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP1</Name>
+            <DataType>double</DataType>
+            <Min>13</Min>
+            <Max>14</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage2</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP2</Name>
+            <DataType>double</DataType>
+            <Min>7.5</Min>
+            <Max>8.5</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage3</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP3325</Name>
+            <DataType>double</DataType>
+            <Min>1.3</Min>
+            <Max>2.3</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage4</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP3448</Name>
+            <DataType>double</DataType>
+            <Min>3</Min>
+            <Max>3.8</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage5</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP3462</Name>
+            <DataType>double</DataType>
+            <Min>0.7</Min>
+            <Max>1.7</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage6</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>测量测试点电压TP3472</Name>
+            <DataType>double</DataType>
+            <Min>4</Min>
+            <Max>5</Max>
+            <Unit>V</Unit>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>瑞萨AD板0x101.Field.Voltage7</ControllerField>
+            <ControllerFieldOffset>1*X+0</ControllerFieldOffset>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>系统上电测试</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>OK</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.ReadMsg269Result</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>BOOT版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>7710002CMV02B.000</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.BootVer</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>APP版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>7710002CMV02A.000</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.AppVer</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>硬件版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>87DKCMV010  H.000</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.HwVer</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>软件版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>874KCMV010  S.000</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.SwVer</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>零件号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>7710002CMV0200</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.PartNo</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>素材版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>S002</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.MaterialVersionNumber</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>工厂模式</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>FF</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.FactoryMode</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>软件子版本号</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>S140</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.SwChildVer</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>高压测试</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>1</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.HighVoltError</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>低压测试</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>1</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.LowVoltError</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>以太网测试</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>OK</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.EthernetTestResult</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>清除DTC</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>OK</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.ClearDTCResult</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>读取DTC</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>[0x993C,B193C,45,0B];</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.ReadDTCResult</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>二维码</Name>
+            <DataType>barcode</DataType>
+            <Value>P00217906H012?S104????????????????</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>扫码枪.Field.GetBarcodeStr</ControllerField>
+        </Para>
+        <Para>
+            <ProcessNo>PR4102007808001</ProcessNo>
+            <Name>正常电压测试</Name>
+            <DataType>string</DataType>
+            <OkFormat>=</OkFormat>
+            <Value>00</Value>
+            <ControlName>检测数据</ControlName>
+            <ControllerField>T9M.Field.NormalVoltNoError</ControllerField>
+        </Para>
+    </Paras>
+    <Gears />
+    <WorkStations>
+        <WorkStation>
+            <Name>测试工作站1</Name>
+        </WorkStation>
+    </WorkStations>
+    <StatusUnits>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE</Name>
+            <EnterFunction>瑞萨主板IP41.Method.InitRemoteIpAddress(192.168.1.41:8088);
+瑞萨AD板0x101.Method.ConnectMaster(192.168.1.41,0x101);
+瑞萨RL板0x201.Method.ConnectMaster(192.168.1.41,0x201);
+瑞萨主板IP41.Method.SetSlavesRLs();
+T9M.Field.CanFd=瑞萨主板IP41.Field.GatewayCan1;
+T9M.Method.AddDtcCodeIntoDTCWhiteList(U018687);
+PowerIt6932As.Method.ConnectPower(COM6:9600);
+绿板子主站IP28.Method.InitRemoteIpAddr(192.168.1.28:8088);
+扫码枪.Method.ConnectBarcodeScanner(COM3:9600);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>199,316,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART</Name>
+            <EnterFunction>T9M.Method.StopCan();
+瑞萨RL板0x201.Method.ResetOutPuts();
+PowerIt6932As.Method.SetVoltage1(0);
+PowerIt6932As.Method.SetCurrent1(0);
+PowerIt6932As.Method.PowerOff();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>964,743,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>572,1207,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>20,798,180,90</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取启动按钮</Name>
+            <EnterFunction />
+            <DuringFunction>扫码枪.Method.ReadBarcode(1);
+</DuringFunction>
+            <PositionSize>1104,297,180,75</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>提示扫码</Name>
+            <EnterFunction>检测程序.Field.Bstring0=请扫码;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1749,206,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读码</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>2559,448,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>关机漏电流测试</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(13.5);
+PowerIt6932As.Method.SetCurrent1(5);
+PowerIt6932As.Method.PowerOn();
+PR4102007808.Part.工位1工作电流上电=1;
+瑞萨主板IP41.Method.SetSlavesRLs();
+检测程序.Method.Sleep(10500);
+瑞萨AD板0x101.Method.SlaveReadADs();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3268,469,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>漏电使用大量程测试</Name>
+            <EnterFunction>PR4102007808.Part.工位1静态电流=瑞萨AD板0x101.Field.Current2;
+PR4102007808.Part.工位1静态电流*=1000;
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3511,1041,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>静态电流测试</Name>
+            <EnterFunction>PR4102007808.Part.工位1休眠电流上电=1;
+瑞萨RL板0x201.Method.SlaveSetRLs();
+检测程序.Method.Sleep(200);
+PR4102007808.Part.工位1工作电流上电=0;
+瑞萨RL板0x201.Method.SlaveSetRLs();
+检测程序.Method.Sleep(200);
+瑞萨AD板0x101.Method.SlaveReadADs();
+PR4102007808.Part.工位1静态电流=瑞萨AD板0x101.Field.Current1;
+PR4102007808.Part.工位1休眠电流上电=0;
+瑞萨RL板0x201.Method.SlaveSetRLs();
+检测程序.Method.Sleep(200);
+PR4102007808.Part.工位1工作电流上电=1;
+瑞萨RL板0x201.Method.SlaveSetRLs();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>4170,587,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否短路故障</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>4784,1354,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>9V开机电流</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(9);
+T9M.Method.StartCan();
+T9M.Method.ReadMsg269(3000);
+瑞萨AD板0x101.Method.SlaveReadADs();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>3790,1673,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>十三点五伏开机电流</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(13.5);
+T9M.Method.ReadMsg269(1000);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2345,1122,200,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>十六伏开机电流</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(16);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>2940,1429,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TP点电压</Name>
+            <EnterFunction />
+            <DuringFunction />
+            <PositionSize>1462,1053,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取版本信息</Name>
+            <EnterFunction>T9M.Method.ClearReadResult();
+T9M.Method.ReadBootVer();
+T9M.Method.ReadAppVer();
+T9M.Method.ReadHwVer();
+T9M.Method.ReadSwVer();
+T9M.Method.ReadPartNo();
+T9M.Method.ReadMaterialVersionNumber();
+T9M.Method.ReadFactoryMode();
+T9M.Method.ReadSwChildVer();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1361,1390,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>高压测试</Name>
+            <EnterFunction>PowerIt6932As.Method.PowerOff();
+检测程序.Method.Sleep(500);
+PowerIt6932As.Method.PowerOn();
+检测程序.Method.Sleep(1500);
+PowerIt6932As.Method.SetVoltage1(17);
+T9M.Method.ReadMsg269(2000);
+PowerIt6932As.Method.SetVoltage1(13.5);
+检测程序.Method.Sleep(1000);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1832,1845,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>低压测试</Name>
+            <EnterFunction>PowerIt6932As.Method.SetVoltage1(8);
+T9M.Method.ReadMsg269(2000);
+PowerIt6932As.Method.SetVoltage1(13.5);
+检测程序.Method.Sleep(1000);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>1325,2044,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>以太网测试</Name>
+            <EnterFunction>T9M.Method.EthernetTest(172.16.0.185);
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>613,2164,180,80</PositionSize>
+        </StatusUnit>
+        <StatusUnit>
+            <EnterNote />
+            <DuringNote />
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>清除DTC及读取DTC</Name>
+            <EnterFunction>T9M.Method.ClearDTC();
+检测程序.Method.Sleep(3000);
+T9M.Method.ReadDtc();
+</EnterFunction>
+            <DuringFunction />
+            <PositionSize>623,1656,180,80</PositionSize>
+        </StatusUnit>
+    </StatusUnits>
+    <Conditions>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>IDLE_PRESTART</Name>
+            <SourceSuName>IDLE</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>533,596</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKFAIL_PRESTART</Name>
+            <SourceSuName>CHECKFAIL</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>380,790</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>CHECKEND_PRESTART</Name>
+            <SourceSuName>CHECKEND</SourceSuName>
+            <TargetSuName>PRESTART</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>652,1023</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>PRESTART_读取启动按钮</Name>
+            <SourceSuName>PRESTART</SourceSuName>
+            <TargetSuName>读取启动按钮</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1016,526</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取启动按钮_提示扫码</Name>
+            <SourceSuName>读取启动按钮</SourceSuName>
+            <TargetSuName>提示扫码</TargetSuName>
+            <ConditionFunction>扫码枪.Field.GetBarcodeLength&gt;0&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>扫码枪.Field.GetBarcodeLength&gt;0&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1554,481</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>提示扫码_读码</Name>
+            <SourceSuName>提示扫码</SourceSuName>
+            <TargetSuName>读码</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.二维码==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.二维码==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2051,539</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读码_关机漏电流测试</Name>
+            <SourceSuName>读码</SourceSuName>
+            <TargetSuName>关机漏电流测试</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2951,520</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>关机漏电流测试_漏电使用大量程测试</Name>
+            <SourceSuName>关机漏电流测试</SourceSuName>
+            <TargetSuName>漏电使用大量程测试</TargetSuName>
+            <ConditionFunction>瑞萨AD板0x101.Field.Current1&gt;=5&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>瑞萨AD板0x101.Field.Current1&gt;=5&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3649,816</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>关机漏电流测试_静态电流测试</Name>
+            <SourceSuName>关机漏电流测试</SourceSuName>
+            <TargetSuName>静态电流测试</TargetSuName>
+            <ConditionFunction>瑞萨AD板0x101.Field.Current1&lt;5&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>瑞萨AD板0x101.Field.Current1&lt;5&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3964,455</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>漏电使用大量程测试_是否短路故障</Name>
+            <SourceSuName>漏电使用大量程测试</SourceSuName>
+            <TargetSuName>是否短路故障</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4339,1263</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>静态电流测试_是否短路故障</Name>
+            <SourceSuName>静态电流测试</SourceSuName>
+            <TargetSuName>是否短路故障</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4575,992</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>是否短路故障_9V开机电流</Name>
+            <SourceSuName>是否短路故障</SourceSuName>
+            <TargetSuName>9V开机电流</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.漏电流测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.漏电流测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>4335,1548</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>9V开机电流_十六伏开机电流</Name>
+            <SourceSuName>9V开机电流</SourceSuName>
+            <TargetSuName>十六伏开机电流</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.九伏开机电流==TRUE&amp;&amp;
+PR4102007808001.Para.系统上电测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.九伏开机电流==TRUE&amp;&amp;
+PR4102007808001.Para.系统上电测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>3477,1478</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>十六伏开机电流_十三点五伏开机电流</Name>
+            <SourceSuName>十六伏开机电流</SourceSuName>
+            <TargetSuName>十三点五伏开机电流</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2832,1159</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>十三点五伏开机电流_TP点电压</Name>
+            <SourceSuName>十三点五伏开机电流</SourceSuName>
+            <TargetSuName>TP点电压</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.正常电压测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.正常电压测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1981,970</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>TP点电压_读取版本信息</Name>
+            <SourceSuName>TP点电压</SourceSuName>
+            <TargetSuName>读取版本信息</TargetSuName>
+            <ConditionFunction>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>检测程序.Field.EqualTrue==1&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1929,1259</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>读取版本信息_高压测试</Name>
+            <SourceSuName>读取版本信息</SourceSuName>
+            <TargetSuName>高压测试</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.BOOT版本号==TRUE&amp;&amp;
+PR4102007808001.Para.APP版本号==TRUE&amp;&amp;
+PR4102007808001.Para.硬件版本号==TRUE&amp;&amp;
+PR4102007808001.Para.软件版本号==TRUE&amp;&amp;
+PR4102007808001.Para.零件号==TRUE&amp;&amp;
+PR4102007808001.Para.素材版本号==TRUE&amp;&amp;
+PR4102007808001.Para.工厂模式==TRUE&amp;&amp;
+PR4102007808001.Para.软件子版本号==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.BOOT版本号==TRUE&amp;&amp;
+PR4102007808001.Para.APP版本号==TRUE&amp;&amp;
+PR4102007808001.Para.硬件版本号==TRUE&amp;&amp;
+PR4102007808001.Para.软件版本号==TRUE&amp;&amp;
+PR4102007808001.Para.零件号==TRUE&amp;&amp;
+PR4102007808001.Para.素材版本号==TRUE&amp;&amp;
+PR4102007808001.Para.工厂模式==TRUE&amp;&amp;
+PR4102007808001.Para.软件子版本号==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>2008,1575</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>高压测试_低压测试</Name>
+            <SourceSuName>高压测试</SourceSuName>
+            <TargetSuName>低压测试</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.高压测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.高压测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1810,2072</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>低压测试_以太网测试</Name>
+            <SourceSuName>低压测试</SourceSuName>
+            <TargetSuName>以太网测试</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.低压测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.低压测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>1234,2216</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>以太网测试_清除DTC及读取DTC</Name>
+            <SourceSuName>以太网测试</SourceSuName>
+            <TargetSuName>清除DTC及读取DTC</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.以太网测试==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.以太网测试==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>902,2007</MiddlePisiton>
+        </Condition>
+        <Condition>
+            <WorkStationName>测试工作站1</WorkStationName>
+            <Name>清除DTC及读取DTC_CHECKEND</Name>
+            <SourceSuName>清除DTC及读取DTC</SourceSuName>
+            <TargetSuName>CHECKEND</TargetSuName>
+            <ConditionFunction>PR4102007808001.Para.清除DTC==TRUE&amp;&amp;
+PR4102007808001.Para.读取DTC==TRUE&amp;&amp;
+</ConditionFunction>
+            <ConditionNote>PR4102007808001.Para.清除DTC==TRUE&amp;&amp;
+PR4102007808001.Para.读取DTC==TRUE&amp;&amp;
+</ConditionNote>
+            <ExitFunction />
+            <ExitNote />
+            <MiddlePisiton>766,1480</MiddlePisiton>
+        </Condition>
+    </Conditions>
+</DeviceConfig>

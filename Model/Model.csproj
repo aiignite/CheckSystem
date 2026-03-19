@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53995DBB-9836-4647-AD22-865884FDEB9E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Model</AssemblyName>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/Maticsoft.Model/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysNode.cs" />
+    <Compile Include="agvCar.cs" />
+    <Compile Include="agvCarTask.cs" />
+    <Compile Include="agvData.cs" />
+    <Compile Include="agvInfo.cs" />
+    <Compile Include="agvRfidData.cs" />
+    <Compile Include="agvRfidInfo.cs" />
+    <Compile Include="agvRfidPathDetail.cs" />
+    <Compile Include="agvStation.cs" />
+    <Compile Include="agvTask.cs" />
+    <Compile Include="agvTaskClient.cs" />
+    <Compile Include="agvTaskDetail.cs" />
+    <Compile Include="bomPaster.cs" />
+    <Compile Include="bomPasterBackup.cs" />
+    <Compile Include="bomPasterMark.cs" />
+    <Compile Include="bomPasterMaterial.cs" />
+    <Compile Include="commDic.cs" />
+    <Compile Include="commDocumentsInfo.cs" />
+    <Compile Include="commFlow.cs" />
+    <Compile Include="commFlowEntity.cs" />
+    <Compile Include="commFlowEntityStep.cs" />
+    <Compile Include="commFlowLog.cs" />
+    <Compile Include="commFlowStep.cs" />
+    <Compile Include="commLogsData.cs" />
+    <Compile Include="commMobileVersion.cs" />
+    <Compile Include="commRightsInfo.cs" />
+    <Compile Include="commRoleInfo.cs" />
+    <Compile Include="commTypeCode.cs" />
+    <Compile Include="commUserInfo.cs" />
+    <Compile Include="corpDepartmentInfo.cs" />
+    <Compile Include="deviceDocData.cs" />
+    <Compile Include="deviceInfo.cs" />
+    <Compile Include="deviceMaintainData.cs" />
+    <Compile Include="deviceMaintainInfo.cs" />
+    <Compile Include="devicePartData.cs" />
+    <Compile Include="devicePartDocData.cs" />
+    <Compile Include="devicePartInfo.cs" />
+    <Compile Include="deviceRepairData.cs" />
+    <Compile Include="deviceResumeData.cs" />
+    <Compile Include="deviceSampleData.cs" />
+    <Compile Include="deviceSMSInfo.cs" />
+    <Compile Include="deviceVersionData.cs" />
+    <Compile Include="docInfo.cs" />
+    <Compile Include="docTypeInfo.cs" />
+    <Compile Include="equipAndon.cs" />
+    <Compile Include="exam.cs" />
+    <Compile Include="examKnowledgebase.cs" />
+    <Compile Include="ExamPaper.cs" />
+    <Compile Include="ExamPaperDetail.cs" />
+    <Compile Include="examQuestions.cs" />
+    <Compile Include="financeInvoiceCheckData.cs" />
+    <Compile Include="labelCheckDetail.cs" />
+    <Compile Include="labelCheckinfo.cs" />
+    <Compile Include="labelPrint.cs" />
+    <Compile Include="ledBase.cs" />
+    <Compile Include="ledFile.cs" />
+    <Compile Include="ledPbom.cs" />
+    <Compile Include="ledTemp.cs" />
+    <Compile Include="ledTempDetail.cs" />
+    <Compile Include="LogisticsAndon.cs" />
+    <Compile Include="manuCheckDataStat.cs" />
+    <Compile Include="manufactureAssLineDeviceData.cs" />
+    <Compile Include="manufactureAssLineInfo.cs" />
+    <Compile Include="manufactureAssLineProductData.cs" />
+    <Compile Include="manufactureBasicData.cs" />
+    <Compile Include="manufactureCheckData.cs" />
+    <Compile Include="manufactureCheckDataHistory.cs" />
+    <Compile Include="manufactureCheckTemp.cs" />
+    <Compile Include="manufactureEquipData.cs" />
+    <Compile Include="manufactureExceptionData.cs" />
+    <Compile Include="manufactureFinishedProductQRCodePrint.cs" />
+    <Compile Include="manufactureFinishedProductTableLabelPrint.cs" />
+    <Compile Include="manufactureFinishedProductTableLabelPrintHistory.cs" />
+    <Compile Include="manufacturePostInfo.cs" />
+    <Compile Include="manufacturePostProcessData.cs" />
+    <Compile Include="manufactureSampleTableLabelPrint.cs" />
+    <Compile Include="manufactureShopInfo.cs" />
+    <Compile Include="manufactureShowData.cs" />
+    <Compile Include="manufactureSMTLineMaterialCheck.cs" />
+    <Compile Include="manufactureSolutionInfo.cs" />
+    <Compile Include="manufactureSolutionPostData.cs" />
+    <Compile Include="manufactureSpotCheckData.cs" />
+    <Compile Include="manufactureTaskData.cs" />
+    <Compile Include="materialFromSAPData.cs" />
+    <Compile Include="meBarcodeInfo.cs" />
+    <Compile Include="meInventoryFlow.cs" />
+    <Compile Include="meMaterial.cs" />
+    <Compile Include="meMaterialBasic.cs" />
+    <Compile Include="meMaterialIn.cs" />
+    <Compile Include="meProduct.cs" />
+    <Compile Include="meProductDetail.cs" />
+    <Compile Include="mesDeviceCheckData.cs" />
+    <Compile Include="mesDeviceCheckInfo.cs" />
+    <Compile Include="meStorage.cs" />
+    <Compile Include="pdCP.cs" />
+    <Compile Include="pdCPDetail.cs" />
+    <Compile Include="pdModifyRecord.cs" />
+    <Compile Include="pdPFD.cs" />
+    <Compile Include="pdPFDDetail.cs" />
+    <Compile Include="pdPFMEA.cs" />
+    <Compile Include="pdPFMEADetail.cs" />
+    <Compile Include="pdProcessBase.cs" />
+    <Compile Include="pdProcessBaseDetail.cs" />
+    <Compile Include="pdProductProcess.cs" />
+    <Compile Include="pdProductProcessDetail.cs" />
+    <Compile Include="pdSOP.cs" />
+    <Compile Include="pdSOPDetail.cs" />
+    <Compile Include="processCheckInfo.cs" />
+    <Compile Include="processDocData.cs" />
+    <Compile Include="processInfo.cs" />
+    <Compile Include="processParaData.cs" />
+    <Compile Include="processParaInfo.cs" />
+    <Compile Include="productCheckData.cs" />
+    <Compile Include="productDocData.cs" />
+    <Compile Include="productErrorInfo.cs" />
+    <Compile Include="productInfo.cs" />
+    <Compile Include="productParaInfo.cs" />
+    <Compile Include="productPcbaInfo.cs" />
+    <Compile Include="productQualityData.cs" />
+    <Compile Include="productQualityInfo.cs" />
+    <Compile Include="productSampleInfo.cs" />
+    <Compile Include="qaProductSmsInfo.cs" />
+    <Compile Include="qsFinishedProductTableLabelPrint.cs" />
+    <Compile Include="qsProductInfo.cs" />
+    <Compile Include="salaryBaseInfo.cs" />
+    <Compile Include="salaryChangeInfo.cs" />
+    <Compile Include="salaryResult.cs" />
+    <Compile Include="sampleLabelPrint.cs" />
+    <Compile Include="Sheet2delete.cs" />
+    <Compile Include="smsSendInfo.cs" />
+    <Compile Include="smsStrategyInfo.cs" />
+    <Compile Include="smsUserInfo.cs" />
+    <Compile Include="smtBomInfo.cs" />
+    <Compile Include="smtCodingRecord.cs" />
+    <Compile Include="smtFailsafeData.cs" />
+    <Compile Include="smtLineProductInfo.cs" />
+    <Compile Include="smtLineWarehouseRecord.cs" />
+    <Compile Include="smtMachineType.cs" />
+    <Compile Include="smtManufactureData.cs" />
+    <Compile Include="smtManufactureMaterialData.cs" />
+    <Compile Include="smtMaterialOutstoreData.cs" />
+    <Compile Include="smtOutStoreRecord.cs" />
+    <Compile Include="smtPBomInfo.cs" />
+    <Compile Include="smtProcessInfo.cs" />
+    <Compile Include="smtProcessRecord.cs" />
+    <Compile Include="smtRepairRecord.cs" />
+    <Compile Include="smtReplaceMaterial.cs" />
+    <Compile Include="smtSolderPaste.cs" />
+    <Compile Include="smtSolderPasteBasic.cs" />
+    <Compile Include="smtSolderPasteDetail.cs" />
+    <Compile Include="smtSolderPastePrint.cs" />
+    <Compile Include="smtStockData.cs" />
+    <Compile Include="smtStockDataLog.cs" />
+    <Compile Include="smtStockDayShow.cs" />
+    <Compile Include="smtStockDefectData.cs" />
+    <Compile Include="smtTaskComputer.cs" />
+    <Compile Include="smtTaskData.cs" />
+    <Compile Include="smtToolLoader.cs" />
+    <Compile Include="staffInfo.cs" />
+    <Compile Include="staffPostData.cs" />
+    <Compile Include="staffSkillData.cs" />
+    <Compile Include="staffTrainData.cs" />
+    <Compile Include="staffTrainDocData.cs" />
+    <Compile Include="staffTrainInfo.cs" />
+    <Compile Include="sysdiagrams.cs" />
+    <Compile Include="systemTreeInfo.cs" />
+    <Compile Include="tempSupplyImport.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="test11.cs" />
+    <Compile Include="testaaa.cs" />
+    <Compile Include="wmsMaterialBarcodePrintCorrespond.cs" />
+    <Compile Include="wmsMaterialBarcodePrintData.cs" />
+    <Compile Include="wmsMaterialInventoryData.cs" />
+    <Compile Include="wmsMaterialInventoryDataHistory.cs" />
+    <Compile Include="wmsMaterialLEDGroupCorrespond.cs" />
+    <Compile Include="wmsMaterialStockData.cs" />
+    <Compile Include="wmsMaterialStockDataHistory.cs" />
+    <Compile Include="wmsMaterialStockInDetail.cs" />
+    <Compile Include="wmsMaterialStockInDetailHistory.cs" />
+    <Compile Include="wmsMaterialStockInInfo.cs" />
+    <Compile Include="wmsMaterialStockInPlan.cs" />
+    <Compile Include="wmsMaterialStockOutDetail.cs" />
+    <Compile Include="wmsMaterialStockOutInfo.cs" />
+    <Compile Include="wmsMaterialStockOutPosition.cs" />
+    <Compile Include="wmsMaterialSupplyInfo.cs" />
+    <Compile Include="wmsMaterialSupplyPrintHistory.cs" />
+    <Compile Include="wmsNormalMaterialAdvanceComputer.cs" />
+    <Compile Include="wmsNormalMaterialShelfNo.cs" />
+    <Compile Include="wmsNormalMaterialStockData.cs" />
+    <Compile Include="wmsNormalMaterialStockOutDetail.cs" />
+    <Compile Include="wmsNormalMaterialStockOutInfo.cs" />
+    <Compile Include="wmsProductCheckData.cs" />
+    <Compile Include="wmsProductErrorLog.cs" />
+    <Compile Include="wmsProductInfo.cs" />
+    <Compile Include="wmsProductInfoPrint.cs" />
+    <Compile Include="wmsProductInstoreDetail.cs" />
+    <Compile Include="wmsProductInstoreDetailHistory.cs" />
+    <Compile Include="wmsProductInstoreInfo.cs" />
+    <Compile Include="wmsProductInstoreInfoHistory.cs" />
+    <Compile Include="wmsProductMaterialCorrespond.cs" />
+    <Compile Include="wmsProductOutStoreAdvanceComputer.cs" />
+    <Compile Include="wmsProductOutStoreAdvanceComputerHistory.cs" />
+    <Compile Include="wmsProductOutStoreDetail.cs" />
+    <Compile Include="wmsProductOutStoreDetailHistory.cs" />
+    <Compile Include="wmsProductOutStoreInfo.cs" />
+    <Compile Include="wmsProductOutStoreInfoHistory.cs" />
+    <Compile Include="wmsProductShelfNo.cs" />
+    <Compile Include="wmsProductShipmentData.cs" />
+    <Compile Include="wmsProductStockData.cs" />
+    <Compile Include="wmsProductStockDataHistory.cs" />
+    <Compile Include="wmsProductStockOutLableCheck.cs" />
+    <Compile Include="wmsProductStockOutLableCheckHistory.cs" />
+    <Compile Include="wmsProductSummaryData.cs" />
+    <Compile Include="wmsProductSummaryDetail.cs" />
+    <Compile Include="wmsSparePartsStockData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,138 @@
+{
+  "HighBeam": {
+    "Channels": [
+      {
+        "Channel": 0,
+        "ChannelName": "/",
+        "Phase": 0,
+        "PWM": 0,
+        "Ts1": 49,
+        "Ts2": 65
+      },
+      {
+        "Channel": 1,
+        "ChannelName": "/",
+        "Phase": 0,
+        "PWM": 0,
+        "Ts1": 50,
+        "Ts2": 66
+      },
+      {
+        "Channel": 2,
+        "ChannelName": "CH1",
+        "Phase": 1023,
+        "PWM": 356,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 3,
+        "ChannelName": "CH4",
+        "Phase": 936,
+        "PWM": 890,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 4,
+        "ChannelName": "CH7",
+        "Phase": 858,
+        "PWM": 890,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 5,
+        "ChannelName": "CH10",
+        "Phase": 780,
+        "PWM": 890,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 6,
+        "ChannelName": "CH13",
+        "Phase": 702,
+        "PWM": 178,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 7,
+        "ChannelName": "CH2",
+        "Phase": 624,
+        "PWM": 890,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 8,
+        "ChannelName": "CH5",
+        "Phase": 546,
+        "PWM": 1023,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 9,
+        "ChannelName": "CH8",
+        "Phase": 468,
+        "PWM": 534,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 10,
+        "ChannelName": "CH11",
+        "Phase": 390,
+        "PWM": 534,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 11,
+        "ChannelName": "CH14",
+        "Phase": 312,
+        "PWM": 178,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 12,
+        "ChannelName": "CH3",
+        "Phase": 234,
+        "PWM": 890,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 13,
+        "ChannelName": "CH6",
+        "Phase": 156,
+        "PWM": 1023,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 14,
+        "ChannelName": "CH9",
+        "Phase": 78,
+        "PWM": 356,
+        "Ts1": 50,
+        "Ts2": 50
+      },
+      {
+        "Channel": 15,
+        "ChannelName": "CH12",
+        "Phase": 0,
+        "PWM": 534,
+        "Ts1": 50,
+        "Ts2": 50
+      }
+    ]
+  },
+  "LastPwmPercentage": 100,
+  "KEEPONTS1": 1601,
+  "KEEPOFFTS1": 2202,
+  "KEEPONTS2": 2703
+}

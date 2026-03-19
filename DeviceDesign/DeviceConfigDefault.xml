@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeviceInfo>
+    <DeviceNo>DE20180002</DeviceNo>
+    <DeviceVersion>V011</DeviceVersion>
+    <DeviceUpdateTime>2019/01/09 10:06:08</DeviceUpdateTime>
+  </DeviceInfo>
+  <FormLayout>
+    <ColumnCount>4</ColumnCount>
+    <RowCount>30</RowCount>
+    <ColumnPercent>25,25,25,25</ColumnPercent>
+    <RowPixCount>40</RowPixCount>
+  </FormLayout>
+  <Controls>
+    <Control>
+      <Name>检测数据</Name>
+      <Type>DataGrid</Type>
+      <RowPosition>0</RowPosition>
+      <ColumnPosition>1</ColumnPosition>
+      <RowSpan>18</RowSpan>
+      <ColumnSpan>1</ColumnSpan>
+    </Control>
+    <Control>
+      <Name>视觉图像</Name>
+      <Type>NiImageViewer</Type>
+      <RowPosition>1</RowPosition>
+      <ColumnPosition>1</ColumnPosition>
+      <RowSpan>21</RowSpan>
+      <ColumnSpan>3</ColumnSpan>
+    </Control>
+  </Controls>
+  <Controllers>
+    <Controller>
+      <Name>It6803</Name>
+      <Type>It6803</Type>
+      <Note>说明</Note>
+    </Controller>
+    <Controller>
+      <Name>Datalogic4500</Name>
+      <Type>Datalogic4500</Type>
+      <Note>说明</Note>
+    </Controller>
+    <Controller>
+      <Name>It6803_1</Name>
+      <Type>It6803</Type>
+      <Note>说明</Note>
+    </Controller>
+  </Controllers>
+  <ControllerProperties>
+    <Property>
+      <ControllerName></ControllerName>
+      <Name></Name>
+      <Value></Value>
+      <Note></Note>
+    </Property>
+    <Property>
+      <ControllerName></ControllerName>
+      <Name></Name>
+      <Value></Value>
+      <Note></Note>
+    </Property>
+  </ControllerProperties>
+  <Parts>
+    <Part>
+      <Name>进板传感器</Name>
+      <DataType>bool</DataType>
+      <ControllerName>Datalogic4500</ControllerName>
+      <ControllerField>Datalogic.Field.I10001</ControllerField>
+    </Part>
+    <Part>
+      <Name>出板传感器</Name>
+      <DataType>bool</DataType>
+      <ControllerName>Datalogic4500</ControllerName>
+      <ControllerField>Datalogic.Field.I10002</ControllerField>
+    </Part>
+  </Parts>
+  <Processes>
+    <Process>
+      <Name>初检</Name>
+      <No>PR4101000001001</No>
+      <ProductName>VW316后灯</ProductName>
+      <ProductNo>PR4101000001</ProductNo>
+    </Process>
+    <Process>
+      <Name>终检</Name>
+      <No>PR4101000001002</No>
+      <ProductName>VW316后灯</ProductName>
+      <ProductNo>PR4101000001</ProductNo>
+    </Process>
+  </Processes>
+  <Paras>
+    <Para>
+      <ProcessNo>PR4101000001002</ProcessNo>
+      <Name>Iin</Name>
+      <DataType>double</DataType>
+      <OkFormat>=</OkFormat>
+      <Value>120</Value>
+      <Min>100</Min>
+      <Max>160</Max>
+      <Unit>mA</Unit>
+      <ControlName>检测数据</ControlName>
+      <ControllerField>It6803.Field.Voltage</ControllerField>
+      <ControllerFieldOffset>1,0</ControllerFieldOffset>
+    </Para>
+    <Para>
+      <ProcessNo>PR4101000001002</ProcessNo>
+      <Name>Vin</Name>
+      <DataType>double</DataType>
+      <OkFormat>=</OkFormat>
+      <Value>120</Value>
+      <Min>100</Min>
+      <Max>160</Max>
+      <Unit>mA</Unit>
+      <ControlName>检测数据</ControlName>
+      <ControllerField>It6803.Field.Voltage</ControllerField>
+      <ControllerFieldOffset>1,0</ControllerFieldOffset>
+    </Para>
+  </Paras>
+  <WorkStations>
+    <WorkStation>
+      <Name>进板</Name>
+      <InitStatusUnit />
+      <CurrentStatusUnit />
+    </WorkStation>
+    <WorkStation>
+      <Name>出板</Name>
+      <InitStatusUnit />
+      <CurrentStatusUnit />
+    </WorkStation>
+    <WorkStation>
+      <Name>翻板</Name>
+      <InitStatusUnit xsi:type="xsd:string"></InitStatusUnit>
+      <CurrentStatusUnit xsi:type="xsd:string"></CurrentStatusUnit>
+    </WorkStation>
+  </WorkStations>
+  <StatusUnits>
+    <StatusUnit>
+      <WorkStationName>进板</WorkStationName>
+      <Name>Init</Name>
+      <EnterFunction>Siemens.Method.Init(192.168.0.1:4300);</EnterFunction>
+      <DuringFunction>Siemens.Method.CycleUpdate(50);</DuringFunction>
+      <PositionSize>100,100,180,90</PositionSize>
+      <TimeOut>2000</TimeOut>
+    </StatusUnit>
+    <StatusUnit>
+      <WorkStationName>进板</WorkStationName>
+      <Name>PCB到位</Name>
+      <EnterFunction />
+      <DuringFunction>Siemens.Method.CycleUpdate(50);</DuringFunction>
+      <PositionSize>100,100,180,90</PositionSize>
+      <TimeOut>2000</TimeOut>
+    </StatusUnit>
+  </StatusUnits>
+  <Conditions>
+    <Condition>
+      <WorkStationName>进板</WorkStationName>
+      <Name>Init_Idle</Name>
+      <SourceSuName>Init</SourceSuName>
+      <TargetSuName>Idle</TargetSuName>
+      <ConditionFunction>APP.Field.EqualTrue==1</ConditionFunction>
+      <ConditionNote />
+      <ExitFunction />
+      <ExitNote />
+      <MiddlePisiton>390,223</MiddlePisiton>
+    </Condition>
+    <Condition>
+      <WorkStationName>进板</WorkStationName>
+      <Name>Init_Idle</Name>
+      <SourceSuName>Init</SourceSuName>
+      <TargetSuName>Idle</TargetSuName>
+      <ConditionFunction>APP.Field.EqualTrue==1</ConditionFunction>
+      <ConditionNote />
+      <ExitFunction />
+      <ExitNote />
+      <MiddlePisiton>390,323</MiddlePisiton>
+    </Condition>
+  </Conditions>
+</DeviceConfig>
