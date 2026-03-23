@@ -18,6 +18,102 @@ namespace DeviceDesign
         //      public static Model.commUserInfo staticUserLogin;
 
         public static string FilePathDeviceConfig;
+
+        #region 控制器变更事件通知
+
+        /// <summary>
+        /// 控制器名称变更事件参数
+        /// </summary>
+        public class ControllerNameChangedEventArgs : EventArgs
+        {
+            public string OldControllerName { get; set; }
+            public string NewControllerName { get; set; }
+            public string ControllerType { get; set; }
+
+            public ControllerNameChangedEventArgs(string oldName, string newName, string controllerType)
+            {
+                OldControllerName = oldName;
+                NewControllerName = newName;
+                ControllerType = controllerType;
+            }
+        }
+
+        /// <summary>
+        /// 控制器名称变更事件通知器
+        /// </summary>
+        public static event EventHandler<ControllerNameChangedEventArgs> ControllerNameChanged;
+
+        /// <summary>
+        /// 触发控制器名称变更事件
+        /// </summary>
+        public static void OnControllerNameChanged(string oldName, string newName, string controllerType)
+        {
+            ControllerNameChanged?.Invoke(null, new ControllerNameChangedEventArgs(oldName, newName, controllerType));
+        }
+
+        /// <summary>
+        /// 更新部件映射表中引用指定控制器的所有记录
+        /// </summary>
+        public static void UpdatePartsControllerName(string oldControllerName, string newControllerName)
+        {
+            if (DeviceConfig?.Parts == null || string.IsNullOrEmpty(oldControllerName) || string.IsNullOrEmpty(newControllerName))
+                return;
+
+            var partsList = DeviceConfig.Parts.ToList();
+            bool hasChanges = false;
+
+            foreach (var part in partsList)
+            {
+                if (part.ControllerName == oldControllerName)
+                {
+                    // 更新控制器名称
+                    part.ControllerName = newControllerName;
+
+                    // 更新 ControllerField（字段全称格式：控制器名.Field.字段名）
+                    if (!string.IsNullOrEmpty(part.ControllerField) && part.ControllerField.StartsWith(oldControllerName + ".Field."))
+                    {
+                        part.ControllerField = newControllerName + ".Field." +
+                            part.ControllerField.Substring((oldControllerName + ".Field.").Length);
+                    }
+
+                    hasChanges = true;
+                }
+            }
+
+            if (hasChanges)
+            {
+                DeviceConfig.Parts = partsList.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// 更新工序参数表中引用指定控制器的所有记录
+        /// </summary>
+        public static void UpdateParasControllerName(string oldControllerName, string newControllerName)
+        {
+            if (DeviceConfig?.Paras == null || string.IsNullOrEmpty(oldControllerName) || string.IsNullOrEmpty(newControllerName))
+                return;
+
+            var parasList = DeviceConfig.Paras.ToList();
+            bool hasChanges = false;
+
+            foreach (var para in parasList)
+            {
+                if (!string.IsNullOrEmpty(para.ControllerField) && para.ControllerField.StartsWith(oldControllerName + ".Field."))
+                {
+                    para.ControllerField = newControllerName + ".Field." +
+                        para.ControllerField.Substring((oldControllerName + ".Field.").Length);
+                    hasChanges = true;
+                }
+            }
+
+            if (hasChanges)
+            {
+                DeviceConfig.Paras = parasList.ToArray();
+            }
+        }
+
+        #endregion
         public static FieldDisplayName AnalysisDisplayName(string displayname)
         {
             var fieldDisplayName = new FieldDisplayName();

@@ -45,6 +45,10 @@ namespace DeviceDesign
 
         #endregion
 
+        // 复制粘贴功能：存储复制的行数据（每行是一个字符串数组）
+        private List<string[]> _copiedFunctionRows = new List<string[]>();
+        private bool _pasteInsertAbove = true; // true=粘贴在选中行上方，false=粘贴在选中行下方
+
         public FormStatusUnit()
         {
             InitializeComponent();
@@ -68,7 +72,7 @@ namespace DeviceDesign
             {
                 _statusUnit = statusunit;
                 _statusUnitName = _statusUnit.Name;
-                _ltStatusUnitName.Enabled = false;
+                // 不再禁用名称编辑，保留编辑功能
             }
             else
             {
@@ -237,6 +241,8 @@ namespace DeviceDesign
             _ltValue.textBox.TextChanged += ValueTextBox_TextChanged;
 
             _btnAdd.Click += _btnAdd_Click;
+            _dgvFunctionEnter.dataGridView.KeyDown += DataGridView_KeyDown;
+            _dgvFunctionDuring.dataGridView.KeyDown += DataGridView_KeyDown;
             UpdateControlsVisible();
 
             if (_statusUnit.Name == null)
@@ -286,6 +292,120 @@ namespace DeviceDesign
             _lcbEqualSymbol.Visible = true;
             _lcbControllerField2.Visible = true;
             _ltValue.Visible = true;
+        }
+
+        /// <summary>
+        /// DataGridView键盘事件处理（Ctrl+C复制、Ctrl+V粘贴）
+        /// </summary>
+        private void DataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            var dgv = sender as DataGridView;
+            if (dgv == null) return;
+
+            // 获取当前操作的是哪个DataGridView
+            var isEnterGrid = ReferenceEquals(dgv, _dgvFunctionEnter.dataGridView);
+            var targetGrid = isEnterGrid ? _dgvFunctionEnter.dataGridView : _dgvFunctionDuring.dataGridView;
+
+            // Ctrl+C 复制
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)
+            {
+                CopySelectedRows(dgv);
+                e.SuppressKeyPress = true;
+            }
+            // Ctrl+V 粘贴
+            else if (e.Modifiers == Keys.Control && e.KeyCode == Keys.V)
+            {
+                PasteRows(targetGrid);
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        /// <summary>
+        /// 复制选中的行
+        /// </summary>
+        private void CopySelectedRows(DataGridView dgv)
+        {
+            _copiedFunctionRows.Clear();
+
+            if (dgv.SelectedRows.Count > 0)
+            {
+                // 多行复制（按选择顺序）
+                foreach (DataGridViewRow row in dgv.SelectedRows)
+                {
+                    if (row.IsNewRow) continue;
+                    var rowData = new string[dgv.ColumnCount];
+                    for (var i = 0; i < dgv.ColumnCount; i++)
+                    {
+                        rowData[i] = row.Cells[i].Value?.ToString() ?? string.Empty;
+                    }
+                    _copiedFunctionRows.Add(rowData);
+                }
+                ;
+            }
+            else if (dgv.SelectedCells.Count > 0)
+            {
+                // 单个单元格复制，取整行
+                var rowIndex = dgv.SelectedCells[0].RowIndex;
+                if (rowIndex >= 0 && rowIndex < dgv.Rows.Count)
+                {
+                    var row = dgv.Rows[rowIndex];
+                    var rowData = new string[dgv.ColumnCount];
+                    for (var i = 0; i < dgv.ColumnCount; i++)
+                    {
+                        rowData[i] = row.Cells[i].Value?.ToString() ?? string.Empty;
+                    }
+                    _copiedFunctionRows.Add(rowData);
+                    ;
+                }
+            }
+            else
+            {
+                ;
+            }
+        }
+
+        /// <summary>
+        /// 粘贴行到目标DataGridView（粘贴在选中行上方）
+        /// </summary>
+        private void PasteRows(DataGridView targetGrid)
+        {
+            if (_copiedFunctionRows.Count == 0)
+            {
+                ;
+                return;
+            }
+
+            int insertIndex;
+            if (targetGrid.SelectedRows.Count > 0)
+            {
+                // 有选中行时，粘贴在选中行上方
+                insertIndex = targetGrid.SelectedRows[0].Index;
+            }
+            else if (targetGrid.SelectedCells.Count > 0)
+            {
+                // 只有单元格选中时，取单元格所在行
+                insertIndex = targetGrid.SelectedCells[0].RowIndex;
+                if (insertIndex < 0 || insertIndex >= targetGrid.Rows.Count)
+                    insertIndex = targetGrid.Rows.Count;
+            }
+            else
+            {
+                // 没有选中时，添加到末尾
+                insertIndex = targetGrid.Rows.Count;
+            }
+
+            // 插入复制的行
+            foreach (var rowData in _copiedFunctionRows)
+            {
+                targetGrid.Rows.Insert(insertIndex);
+                for (var i = 0; i < targetGrid.ColumnCount && i < rowData.Length; i++)
+                {
+                    targetGrid.Rows[insertIndex].Cells[i].Value = rowData[i];
+                }
+                insertIndex++;
+            }
+
+            ;
         }
 
         private void _btnAdd_Click(object sender, EventArgs e)

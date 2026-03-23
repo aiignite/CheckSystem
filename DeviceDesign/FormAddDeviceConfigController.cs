@@ -86,12 +86,17 @@ namespace DeviceDesign
                 return;
             }
 
+            string newControllerName = ltName.Text;
             DeviceConfigController prop = new DeviceConfigController();
-            prop.Name = ltName.Text;
+            prop.Name = newControllerName;
             prop.Type = lcmbControllers.Text;
             prop.Note = ltNote.Text;
             lst.Add(prop);
             ClassComm.DeviceConfig.Controllers = lst.ToArray();
+
+            // 触发事件通知其他窗体（新增控制器时也触发刷新）
+            ClassComm.OnControllerNameChanged(string.Empty, newControllerName, prop.Type);
+
             ClassComm.SaveDeviceConfigToFile(ClassComm.DeviceConfig, ClassComm.FilePathDeviceConfig, Encoding.UTF8);
 
             Close();

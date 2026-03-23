@@ -86,7 +86,7 @@ namespace DeviceDesign
         private void ToolStripButtonSave_Click(object sender, EventArgs e)
         {
             var lst = ClassComm.DeviceConfig.Controllers.ToList();
-            var item = lst.Find(t => t.Name == _controller.Name&&t.Type==_controller.Type);
+            var item = lst.Find(t => t.Name == _controller.Name && t.Type == _controller.Type);
             var index = lst.IndexOf(item);
             if (item != null)
             {
@@ -97,12 +97,26 @@ namespace DeviceDesign
                 Close();
             }
 
+            string oldControllerName = _controller.Name;
+            string newControllerName = ltName.Text;
+
             DeviceConfigController controller = new DeviceConfigController();
-            controller.Name = ltName.Text;
+            controller.Name = newControllerName;
             controller.Type = lcmbControllers.Text;
             controller.Note = ltNote.Text;
-            lst.Insert(index,controller);
+            lst.Insert(index, controller);
             ClassComm.DeviceConfig.Controllers = lst.ToArray();
+
+            // 如果控制器名称发生变化，同步更新部件映射表和工序参数表
+            if (oldControllerName != newControllerName)
+            {
+                ClassComm.UpdatePartsControllerName(oldControllerName, newControllerName);
+                ClassComm.UpdateParasControllerName(oldControllerName, newControllerName);
+
+                // 触发事件通知其他窗体刷新
+                ClassComm.OnControllerNameChanged(oldControllerName, newControllerName, controller.Type);
+            }
+
             ClassComm.SaveDeviceConfigToFile(ClassComm.DeviceConfig, ClassComm.FilePathDeviceConfig, Encoding.UTF8);
 
             Close();

@@ -34,6 +34,74 @@ namespace DeviceDesign
             InitTreeView();
             treeView.NodeMouseClick += TreeView_NodeMouseClick;
             refreshToolStripMenuItem.Click += RefreshToolStripMenuItem_Click;
+
+            // 订阅控制器名称变更事件
+            ClassComm.ControllerNameChanged += ClassComm_ControllerNameChanged;
+        }
+
+        private void ClassComm_ControllerNameChanged(object sender, ClassComm.ControllerNameChangedEventArgs e)
+        {
+            // 在UI线程上刷新控制器树节点
+            if (treeView.InvokeRequired)
+            {
+                treeView.Invoke(new Action(() => RefreshControllerNode(e.OldControllerName, e.NewControllerName)));
+            }
+            else
+            {
+                RefreshControllerNode(e.OldControllerName, e.NewControllerName);
+            }
+        }
+
+        private void RefreshControllerNode(string oldControllerName, string newControllerName)
+        {
+            // 找到"控制器"根节点
+            foreach (TreeNode rootNode in treeView.Nodes)
+            {
+                if (rootNode.Text == "控制器")
+                {
+                    // 如果是新增控制器（oldControllerName为空）
+                    if (string.IsNullOrEmpty(oldControllerName))
+                    {
+                        // 查找是否已存在同名节点
+                        bool exists = false;
+                        foreach (TreeNode controllerNode in rootNode.Nodes)
+                        {
+                            if (controllerNode.Text == newControllerName)
+                            {
+                                exists = true;
+                                break;
+                            }
+                        }
+                        if (!exists)
+                        {
+                            // 查找新控制器在ClassComm中的类型信息
+                            var controller = ClassComm.DeviceConfig.Controllers.ToList().Find(c => c.Name == newControllerName);
+                            if (controller != null)
+                            {
+                                rootNode.Nodes.Add(new TreeNode
+                                {
+                                    Text = controller.Name,
+                                    ImageIndex = 15,
+                                    Tag = "Controller." + controller.Type
+                                });
+                            }
+                        }
+                        return;
+                    }
+
+                    // 如果是重命名控制器
+                    // 查找并更新旧名称的节点
+                    foreach (TreeNode controllerNode in rootNode.Nodes)
+                    {
+                        if (controllerNode.Text == oldControllerName)
+                        {
+                            controllerNode.Text = newControllerName;
+                            // 更新Tag中的控制器类型（如果需要）
+                            return;
+                        }
+                    }
+                }
+            }
         }
 
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)

@@ -906,25 +906,21 @@ namespace DeviceDesign
         {
             if (_selectedStatusUnit == null)
             {
-                MessageBox.Show(@"请先选中一个状态单元后再复制");
                 return;
             }
 
             _copiedStatusUnit = CloneStatusUnit(_selectedStatusUnit);
-            MessageBox.Show($"已复制状态单元: {_selectedStatusUnit.Name}");
         }
 
         private void PasteCopiedStatusUnit()
         {
             if (_selectedWorkstation == null)
             {
-                MessageBox.Show(@"请先选择工作站！");
                 return;
             }
 
             if (_copiedStatusUnit == null)
             {
-                MessageBox.Show(@"当前没有可粘贴的状态单元");
                 return;
             }
 
@@ -946,7 +942,6 @@ namespace DeviceDesign
 
             ClassComm.SaveDeviceConfigToFile(ClassComm.DeviceConfig, _filePath, Encoding.UTF8);
             RefreshWorkstationData();
-            MessageBox.Show($"已粘贴状态单元: {newStatusUnit.Name}");
         }
 
         private bool DeleteSelectedItem()

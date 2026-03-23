@@ -45,6 +45,30 @@ namespace DeviceDesign
 
             DataGridInit();
             ToolStripInit();
+
+            // 订阅控制器名称变更事件，当为部件映射表或工序参数表时需要刷新
+            if (Name == "DeviceConfigPart" || Name == "DeviceConfigPara")
+            {
+                ClassComm.ControllerNameChanged += ClassComm_ControllerNameChanged;
+            }
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            if (Name == "DeviceConfigPart" || Name == "DeviceConfigPara")
+            {
+                ClassComm.ControllerNameChanged -= ClassComm_ControllerNameChanged;
+            }
+            base.OnFormClosed(e);
+        }
+
+        private void ClassComm_ControllerNameChanged(object sender, ClassComm.ControllerNameChangedEventArgs e)
+        {
+            // 刷新部件映射表
+            this.Invoke(new Action(() =>
+            {
+                UpdateDataGrid();
+            }));
         }
 
         #region ToolStrip
